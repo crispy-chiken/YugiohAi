@@ -1,1899 +1,1481 @@
 rowid,GameId,CardName,CardId,Played,Quant,DeckLocation
-1,1,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-2,1,Snake-Eyes Diabellstar,27260347,True,1,0
-3,1,Diabellstar the Black Witch,72270339,False,3,0
-4,1,Fiendsmith Engraver,60764609,True,2,0
-5,1,Lacrima the Scarlet Sorrow,28803166,True,1,0
-6,1,Mulcharmy Fuwaross,42141493,False,3,0
-7,1,Ash Blossom & Joyous Spring,14558128,False,3,0
-8,1,Snake-Eye Oak,45663742,False,1,0
-9,1,Snake-Eye Ash,9674034,False,1,0
-10,1,Snake-Eyes Poplar,90241276,False,1,0
-11,1,Fabled Lurrie,97651498,True,1,0
-12,1,Droll & Lock Bird,94145021,False,3,0
-13,1,Triple Tactics Talent,25311006,False,1,0
-14,1,Bonfire,85106525,False,3,0
-15,1,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-16,1,Sacred Azamina,94845588,False,1,0
-17,1,Fiendsmith's Tract,98567237,True,1,0
-18,1,Called by the Grave,24224830,True,1,0
-19,1,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-20,1,Sinful Spoils Deception,66328392,False,3,0
-21,1,Divine Temple of the Snake-Eye,53639887,True,1,0
-22,1,Infinite Impermanence,10045474,True,3,0
-23,1,Angel Statue - Azurune,44822037,False,1,0
-24,1,Fiendsmith's Desirae,82135803,True,1,1
-25,1,Azamina Mu Rcielago,73391962,False,1,1
-26,1,Azamina Rhea Silvera,46396218,False,1,1
-27,1,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-28,1,Salamangreat Raging Phoenix,57134592,False,1,1
-29,1,Worldsea Dragon Zealantis,45112597,False,1,1
-30,1,Accesscode Talker,86066372,False,1,1
-31,1,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-32,1,Knightmare Phoenix,2857636,False,1,1
-33,1,S:P Little Knight,29301450,False,1,1
-34,1,Silhouhatte Rabbit,1528054,False,1,1
-35,1,Fiendsmith's Sequence,49867899,True,1,1
-36,1,Moon of the Closed Heaven,71818935,False,1,1
-37,1,I:P Masquerena,65741786,False,1,1
-38,1,Fiendsmith's Requiem,2463794,True,1,1
-39,2,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-40,2,Snake-Eyes Diabellstar,27260347,True,1,0
-41,2,Diabellstar the Black Witch,72270339,True,3,0
-42,2,Fiendsmith Engraver,60764609,True,2,0
-43,2,Lacrima the Scarlet Sorrow,28803166,True,1,0
-44,2,Mulcharmy Fuwaross,42141493,False,3,0
-45,2,Ash Blossom & Joyous Spring,14558128,False,3,0
-46,2,Snake-Eye Oak,45663742,True,1,0
-47,2,Snake-Eye Ash,9674034,True,1,0
-48,2,Snake-Eyes Poplar,90241276,True,1,0
-49,2,Fabled Lurrie,97651498,False,1,0
-50,2,Droll & Lock Bird,94145021,False,3,0
-51,2,Triple Tactics Talent,25311006,False,1,0
-52,2,Bonfire,85106525,False,3,0
-53,2,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-54,2,Sacred Azamina,94845588,True,1,0
-55,2,Fiendsmith's Tract,98567237,False,1,0
-56,2,Called by the Grave,24224830,False,1,0
-57,2,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-58,2,Sinful Spoils Deception,66328392,True,3,0
-59,2,Divine Temple of the Snake-Eye,53639887,True,1,0
-60,2,Infinite Impermanence,10045474,True,3,0
-61,2,Angel Statue - Azurune,44822037,True,1,0
-62,2,Fiendsmith's Desirae,82135803,True,1,1
-63,2,Azamina Mu Rcielago,73391962,True,1,1
-64,2,Azamina Rhea Silvera,46396218,True,1,1
-65,2,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-66,2,Salamangreat Raging Phoenix,57134592,True,1,1
-67,2,Worldsea Dragon Zealantis,45112597,True,1,1
-68,2,Accesscode Talker,86066372,False,1,1
-69,2,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-70,2,Knightmare Phoenix,2857636,False,1,1
-71,2,S:P Little Knight,29301450,False,1,1
-72,2,Silhouhatte Rabbit,1528054,True,1,1
-73,2,Fiendsmith's Sequence,49867899,True,1,1
-74,2,Moon of the Closed Heaven,71818935,True,1,1
-75,2,I:P Masquerena,65741786,True,1,1
-76,2,Fiendsmith's Requiem,2463794,True,1,1
-77,3,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-78,3,Snake-Eyes Diabellstar,27260347,True,1,0
+1,1,Runick Destruction,94445733,True,1,0
+2,1,Lady Labrynth of the Silver Castle,81497285,True,3,0
+3,1,Welcome Labrynth,5380979,True,3,0
+4,1,Dimension Shifter,91800273,True,3,0
+5,1,Solemn Strike,40605147,True,3,0
+6,1,Lost Wind,74003290,True,2,0
+7,1,Simultaneous Equation Cannons,25096909,True,3,0
+8,1,Big Welcome Labrynth,92714517,True,3,0
+9,1,Destructive Daruma Karma Cannon,30748475,True,3,0
+10,1,Ice Dragon's Prison,20899496,True,2,0
+11,1,Starry Dragon's Cycle,6278008,True,2,0
+12,1,Dimensional Barrier,83326048,True,2,0
+13,1,Terrors of the Overroot,63086455,False,2,0
+14,1,Runick Flashing Fire,68957034,False,1,0
+15,1,Trap Trick,80101899,False,3,0
+16,1,Runick Freezing Curses,30430448,False,1,0
+17,1,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+18,1,Weighbridge,39103226,False,2,0
+19,1,Geri the Runick Fangs,28373620,True,1,1
+20,1,The Last Warrior from Another Planet,86099788,False,1,1
+21,1,Number S39: Utopia the Lightning,56832966,False,1,1
+22,1,Freki the Runick Fangs,47219274,False,1,1
+23,1,Cyber Dragon Nova,58069384,False,1,1
+24,1,Number 39: Utopia,84013237,False,1,1
+25,1,Cyber Dragon Infinity,10443957,False,1,1
+26,1,"Garura, Wings of Resonant Life",11765832,False,1,1
+27,1,Number C39: Utopia Ray,56840427,False,1,1
+28,1,Hugin the Runick Wings,55990317,False,1,1
+29,1,Thousand-Eyes Restrict,63519819,False,1,1
+30,1,Munin the Runick Wings,92385016,False,1,1
+31,1,Dhampir Vampire Sheridan,32302078,False,1,1
+32,1,D/D/D Stone King Darius,51497409,True,1,1
+33,1,Xyz Armor Torpedo,94151981,True,1,1
+34,2,Mulcharmy Fuwaross,42141493,True,3,0
+35,2,Sinful Spoils Deception,66328392,True,3,0
+36,2,Bonfire,85106525,True,3,0
+37,2,Snake-Eyes Poplar,90241276,True,1,0
+38,2,Diabellstar the Black Witch,72270339,True,3,0
+39,2,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+40,2,Snake-Eye Ash,9674034,True,1,0
+41,2,Fire King Sky Burn,91703676,False,1,0
+42,2,Fire King High Avatar Kirin,2526224,True,2,0
+43,2,Sacred Azamina,94845588,True,1,0
+44,2,Infinite Impermanence,10045474,True,3,0
+45,2,Called by the Grave,24224830,True,1,0
+46,2,Snake-Eyes Diabellstar,27260347,False,1,0
+47,2,Legendary Fire King Ponix,90681088,True,1,0
+48,2,Fire King High Avatar Garunix,23015896,False,1,0
+49,2,Fire King Island,57554544,False,1,0
+50,2,Dominus Impulse,40366667,False,3,0
+51,2,Snake-Eye Oak,45663742,True,1,0
+52,2,Fire King Avatar Arvata,18621798,False,1,0
+53,2,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+54,2,Ash Blossom & Joyous Spring,14558128,False,3,0
+55,2,Divine Temple of the Snake-Eye,53639887,False,1,0
+56,2,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+57,2,Triple Tactics Talent,25311006,False,1,0
+58,2,Sacred Fire King Garunix,66431519,False,1,0
+59,2,Fire King Sanctuary,65305978,False,1,0
+60,2,Fire King Consort Ulkanix,44455560,False,2,0
+61,2,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+62,2,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
+63,2,S:P Little Knight,29301450,True,1,1
+64,2,Knightmare Phoenix,2857636,False,1,1
+65,2,Accesscode Talker,86066372,False,1,1
+66,2,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+67,2,I:P Masquerena,65741786,False,1,1
+68,2,Salamangreat Raging Phoenix,57134592,False,1,1
+69,2,Amphibious Swarmship Amblowhale,20665527,False,1,1
+70,2,Azamina Rhea Silvera,46396218,True,1,1
+71,2,Azamina Mu Rcielago,73391962,False,1,1
+72,2,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+73,2,Relinquished Anima,94259633,True,1,1
+74,2,Salamangreat Sunlight Wolf,87871125,False,1,1
+75,3,Mulcharmy Fuwaross,42141493,True,3,0
+76,3,Sinful Spoils Deception,66328392,True,3,0
+77,3,Bonfire,85106525,True,3,0
+78,3,Snake-Eyes Poplar,90241276,True,1,0
 79,3,Diabellstar the Black Witch,72270339,True,3,0
-80,3,Fiendsmith Engraver,60764609,True,2,0
-81,3,Lacrima the Scarlet Sorrow,28803166,True,1,0
-82,3,Mulcharmy Fuwaross,42141493,True,3,0
-83,3,Ash Blossom & Joyous Spring,14558128,False,3,0
-84,3,Snake-Eye Oak,45663742,True,1,0
-85,3,Snake-Eye Ash,9674034,True,1,0
-86,3,Snake-Eyes Poplar,90241276,True,1,0
-87,3,Fabled Lurrie,97651498,False,1,0
-88,3,Droll & Lock Bird,94145021,False,3,0
-89,3,Triple Tactics Talent,25311006,False,1,0
-90,3,Bonfire,85106525,False,3,0
-91,3,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-92,3,Sacred Azamina,94845588,True,1,0
-93,3,Fiendsmith's Tract,98567237,False,1,0
-94,3,Called by the Grave,24224830,False,1,0
-95,3,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-96,3,Sinful Spoils Deception,66328392,True,3,0
-97,3,Divine Temple of the Snake-Eye,53639887,True,1,0
-98,3,Infinite Impermanence,10045474,False,3,0
-99,3,Angel Statue - Azurune,44822037,True,1,0
-100,3,Fiendsmith's Desirae,82135803,True,1,1
-101,3,Azamina Mu Rcielago,73391962,True,1,1
-102,3,Azamina Rhea Silvera,46396218,True,1,1
-103,3,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-104,3,Salamangreat Raging Phoenix,57134592,True,1,1
-105,3,Worldsea Dragon Zealantis,45112597,True,1,1
+80,3,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+81,3,Snake-Eye Ash,9674034,True,1,0
+82,3,Fire King Sky Burn,91703676,False,1,0
+83,3,Fire King High Avatar Kirin,2526224,True,2,0
+84,3,Sacred Azamina,94845588,True,1,0
+85,3,Infinite Impermanence,10045474,True,3,0
+86,3,Called by the Grave,24224830,True,1,0
+87,3,Snake-Eyes Diabellstar,27260347,True,1,0
+88,3,Legendary Fire King Ponix,90681088,True,1,0
+89,3,Fire King High Avatar Garunix,23015896,True,1,0
+90,3,Fire King Island,57554544,True,1,0
+91,3,Dominus Impulse,40366667,True,3,0
+92,3,Snake-Eye Oak,45663742,True,1,0
+93,3,Fire King Avatar Arvata,18621798,True,1,0
+94,3,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
+95,3,Ash Blossom & Joyous Spring,14558128,True,3,0
+96,3,Divine Temple of the Snake-Eye,53639887,True,1,0
+97,3,Snake-Eyes Flamberge Dragon,48452496,True,1,0
+98,3,Triple Tactics Talent,25311006,True,1,0
+99,3,Sacred Fire King Garunix,66431519,True,1,0
+100,3,Fire King Sanctuary,65305978,False,1,0
+101,3,Fire King Consort Ulkanix,44455560,True,2,0
+102,3,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+103,3,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+104,3,S:P Little Knight,29301450,False,1,1
+105,3,Knightmare Phoenix,2857636,False,1,1
 106,3,Accesscode Talker,86066372,False,1,1
-107,3,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-108,3,Knightmare Phoenix,2857636,False,1,1
-109,3,S:P Little Knight,29301450,True,1,1
-110,3,Silhouhatte Rabbit,1528054,True,1,1
-111,3,Fiendsmith's Sequence,49867899,True,1,1
-112,3,Moon of the Closed Heaven,71818935,True,1,1
-113,3,I:P Masquerena,65741786,True,1,1
-114,3,Fiendsmith's Requiem,2463794,True,1,1
-115,4,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-116,4,Snake-Eyes Diabellstar,27260347,True,1,0
-117,4,Diabellstar the Black Witch,72270339,True,3,0
-118,4,Fiendsmith Engraver,60764609,True,2,0
-119,4,Lacrima the Scarlet Sorrow,28803166,True,1,0
-120,4,Mulcharmy Fuwaross,42141493,True,3,0
-121,4,Ash Blossom & Joyous Spring,14558128,False,3,0
-122,4,Snake-Eye Oak,45663742,True,1,0
-123,4,Snake-Eye Ash,9674034,True,1,0
-124,4,Snake-Eyes Poplar,90241276,True,1,0
-125,4,Fabled Lurrie,97651498,False,1,0
-126,4,Droll & Lock Bird,94145021,False,3,0
-127,4,Triple Tactics Talent,25311006,True,1,0
-128,4,Bonfire,85106525,False,3,0
-129,4,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-130,4,Sacred Azamina,94845588,True,1,0
-131,4,Fiendsmith's Tract,98567237,False,1,0
-132,4,Called by the Grave,24224830,False,1,0
-133,4,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-134,4,Sinful Spoils Deception,66328392,True,3,0
-135,4,Divine Temple of the Snake-Eye,53639887,True,1,0
-136,4,Infinite Impermanence,10045474,True,3,0
-137,4,Angel Statue - Azurune,44822037,True,1,0
-138,4,Fiendsmith's Desirae,82135803,True,1,1
-139,4,Azamina Mu Rcielago,73391962,True,1,1
-140,4,Azamina Rhea Silvera,46396218,True,1,1
-141,4,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-142,4,Salamangreat Raging Phoenix,57134592,True,1,1
-143,4,Worldsea Dragon Zealantis,45112597,True,1,1
-144,4,Accesscode Talker,86066372,False,1,1
-145,4,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-146,4,Knightmare Phoenix,2857636,False,1,1
-147,4,S:P Little Knight,29301450,False,1,1
-148,4,Silhouhatte Rabbit,1528054,True,1,1
-149,4,Fiendsmith's Sequence,49867899,True,1,1
-150,4,Moon of the Closed Heaven,71818935,True,1,1
-151,4,I:P Masquerena,65741786,True,1,1
-152,4,Fiendsmith's Requiem,2463794,True,1,1
-153,5,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-154,5,Snake-Eyes Diabellstar,27260347,True,1,0
-155,5,Diabellstar the Black Witch,72270339,True,3,0
-156,5,Fiendsmith Engraver,60764609,True,2,0
-157,5,Lacrima the Scarlet Sorrow,28803166,True,1,0
-158,5,Mulcharmy Fuwaross,42141493,True,3,0
-159,5,Ash Blossom & Joyous Spring,14558128,False,3,0
-160,5,Snake-Eye Oak,45663742,True,1,0
-161,5,Snake-Eye Ash,9674034,True,1,0
-162,5,Snake-Eyes Poplar,90241276,True,1,0
-163,5,Fabled Lurrie,97651498,False,1,0
-164,5,Droll & Lock Bird,94145021,False,3,0
-165,5,Triple Tactics Talent,25311006,True,1,0
-166,5,Bonfire,85106525,False,3,0
-167,5,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-168,5,Sacred Azamina,94845588,True,1,0
-169,5,Fiendsmith's Tract,98567237,False,1,0
-170,5,Called by the Grave,24224830,False,1,0
-171,5,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-172,5,Sinful Spoils Deception,66328392,True,3,0
-173,5,Divine Temple of the Snake-Eye,53639887,True,1,0
-174,5,Infinite Impermanence,10045474,False,3,0
-175,5,Angel Statue - Azurune,44822037,True,1,0
-176,5,Fiendsmith's Desirae,82135803,True,1,1
-177,5,Azamina Mu Rcielago,73391962,True,1,1
-178,5,Azamina Rhea Silvera,46396218,True,1,1
-179,5,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-180,5,Salamangreat Raging Phoenix,57134592,True,1,1
-181,5,Worldsea Dragon Zealantis,45112597,True,1,1
-182,5,Accesscode Talker,86066372,False,1,1
-183,5,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-184,5,Knightmare Phoenix,2857636,False,1,1
-185,5,S:P Little Knight,29301450,False,1,1
-186,5,Silhouhatte Rabbit,1528054,True,1,1
-187,5,Fiendsmith's Sequence,49867899,True,1,1
-188,5,Moon of the Closed Heaven,71818935,True,1,1
-189,5,I:P Masquerena,65741786,True,1,1
-190,5,Fiendsmith's Requiem,2463794,True,1,1
-191,6,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-192,6,Snake-Eyes Diabellstar,27260347,True,1,0
-193,6,Diabellstar the Black Witch,72270339,False,3,0
-194,6,Fiendsmith Engraver,60764609,True,2,0
-195,6,Lacrima the Scarlet Sorrow,28803166,True,1,0
-196,6,Mulcharmy Fuwaross,42141493,False,3,0
-197,6,Ash Blossom & Joyous Spring,14558128,False,3,0
-198,6,Snake-Eye Oak,45663742,False,1,0
-199,6,Snake-Eye Ash,9674034,False,1,0
-200,6,Snake-Eyes Poplar,90241276,False,1,0
-201,6,Fabled Lurrie,97651498,False,1,0
-202,6,Droll & Lock Bird,94145021,False,3,0
-203,6,Triple Tactics Talent,25311006,False,1,0
-204,6,Bonfire,85106525,False,3,0
-205,6,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-206,6,Sacred Azamina,94845588,False,1,0
-207,6,Fiendsmith's Tract,98567237,False,1,0
-208,6,Called by the Grave,24224830,False,1,0
-209,6,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-210,6,Sinful Spoils Deception,66328392,False,3,0
-211,6,Divine Temple of the Snake-Eye,53639887,True,1,0
-212,6,Infinite Impermanence,10045474,True,3,0
-213,6,Angel Statue - Azurune,44822037,True,1,0
-214,6,Fiendsmith's Desirae,82135803,True,1,1
-215,6,Azamina Mu Rcielago,73391962,False,1,1
-216,6,Azamina Rhea Silvera,46396218,False,1,1
-217,6,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-218,6,Salamangreat Raging Phoenix,57134592,False,1,1
-219,6,Worldsea Dragon Zealantis,45112597,False,1,1
-220,6,Accesscode Talker,86066372,False,1,1
-221,6,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-222,6,Knightmare Phoenix,2857636,False,1,1
-223,6,S:P Little Knight,29301450,False,1,1
-224,6,Silhouhatte Rabbit,1528054,False,1,1
-225,6,Fiendsmith's Sequence,49867899,True,1,1
-226,6,Moon of the Closed Heaven,71818935,False,1,1
-227,6,I:P Masquerena,65741786,False,1,1
-228,6,Fiendsmith's Requiem,2463794,True,1,1
-229,7,Silvy of the White Forest,98385955,False,3,0
-230,7,Rucia of the White Forest,24779554,False,2,0
-231,7,Elzette of the White Forest,61980241,False,2,0
-232,7,Triple Tactics Talent,25311006,False,2,0
-233,7,Upstart Goblin,70368879,False,3,0
-234,7,Metalfoes Fusion,73594093,False,1,0
-235,7,Terraforming,73628505,False,1,0
-236,7,Tales of the White Forest,99289828,False,1,0
-237,7,Runick Freezing Curses,30430448,False,3,0
-238,7,Runick Tip,31562086,False,3,0
-239,7,Runick Dispelling,66712905,False,1,0
-240,7,Runick Slumber,67835547,False,3,0
-241,7,Runick Flashing Fire,68957034,False,3,0
-242,7,Runick Smiting Storm,93229151,False,1,0
-243,7,Runick Destruction,94445733,False,3,0
-244,7,Chicken Game,67616300,False,1,0
-245,7,Runick Fountain,92107604,False,2,0
-246,7,Evenly Matched,15693423,False,3,0
-247,7,Woes of the White Forest,62995268,False,1,0
-248,7,Skill Drain,82732705,False,1,0
-249,7,Geri the Runick Fangs,28373620,False,2,1
-250,7,Hugin the Runick Wings,55990317,False,3,1
-251,7,Chaos Angel,22850702,False,1,1
-252,7,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-253,7,"Diabell, Queen of the White Forest",14307929,False,1,1
-254,7,Coral Dragon,42566602,False,1,1
-255,7,Tri-Edge Master,52445243,False,1,1
-256,7,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-257,7,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-258,7,Zapper Shrimp,92744676,False,1,1
-259,7,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-260,7,S:P Little Knight,29301450,False,1,1
-261,8,Silvy of the White Forest,98385955,False,3,0
-262,8,Rucia of the White Forest,24779554,False,2,0
-263,8,Elzette of the White Forest,61980241,False,2,0
-264,8,Triple Tactics Talent,25311006,False,2,0
-265,8,Upstart Goblin,70368879,False,3,0
-266,8,Metalfoes Fusion,73594093,False,1,0
-267,8,Terraforming,73628505,False,1,0
-268,8,Tales of the White Forest,99289828,False,1,0
-269,8,Runick Freezing Curses,30430448,False,3,0
-270,8,Runick Tip,31562086,False,3,0
-271,8,Runick Dispelling,66712905,False,1,0
-272,8,Runick Slumber,67835547,False,3,0
-273,8,Runick Flashing Fire,68957034,False,3,0
-274,8,Runick Smiting Storm,93229151,False,1,0
-275,8,Runick Destruction,94445733,False,3,0
-276,8,Chicken Game,67616300,False,1,0
-277,8,Runick Fountain,92107604,False,2,0
-278,8,Evenly Matched,15693423,False,3,0
-279,8,Woes of the White Forest,62995268,False,1,0
-280,8,Skill Drain,82732705,False,1,0
-281,8,Geri the Runick Fangs,28373620,False,2,1
-282,8,Hugin the Runick Wings,55990317,False,3,1
-283,8,Chaos Angel,22850702,False,1,1
-284,8,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-285,8,"Diabell, Queen of the White Forest",14307929,False,1,1
-286,8,Coral Dragon,42566602,False,1,1
-287,8,Tri-Edge Master,52445243,False,1,1
-288,8,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-289,8,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-290,8,Zapper Shrimp,92744676,False,1,1
-291,8,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-292,8,S:P Little Knight,29301450,False,1,1
-293,9,Silvy of the White Forest,98385955,False,3,0
-294,9,Rucia of the White Forest,24779554,False,2,0
-295,9,Elzette of the White Forest,61980241,False,2,0
-296,9,Triple Tactics Talent,25311006,False,2,0
-297,9,Upstart Goblin,70368879,False,3,0
-298,9,Metalfoes Fusion,73594093,False,1,0
-299,9,Terraforming,73628505,False,1,0
-300,9,Tales of the White Forest,99289828,False,1,0
-301,9,Runick Freezing Curses,30430448,False,3,0
-302,9,Runick Tip,31562086,False,3,0
-303,9,Runick Dispelling,66712905,False,1,0
-304,9,Runick Slumber,67835547,False,3,0
-305,9,Runick Flashing Fire,68957034,False,3,0
-306,9,Runick Smiting Storm,93229151,False,1,0
-307,9,Runick Destruction,94445733,False,3,0
-308,9,Chicken Game,67616300,False,1,0
-309,9,Runick Fountain,92107604,False,2,0
-310,9,Evenly Matched,15693423,False,3,0
-311,9,Woes of the White Forest,62995268,False,1,0
-312,9,Skill Drain,82732705,False,1,0
-313,9,Geri the Runick Fangs,28373620,False,2,1
-314,9,Hugin the Runick Wings,55990317,False,3,1
-315,9,Chaos Angel,22850702,False,1,1
-316,9,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-317,9,"Diabell, Queen of the White Forest",14307929,False,1,1
-318,9,Coral Dragon,42566602,False,1,1
-319,9,Tri-Edge Master,52445243,False,1,1
-320,9,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-321,9,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-322,9,Zapper Shrimp,92744676,False,1,1
-323,9,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-324,9,S:P Little Knight,29301450,False,1,1
-325,10,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-326,10,Snake-Eyes Diabellstar,27260347,True,1,0
-327,10,Diabellstar the Black Witch,72270339,True,3,0
-328,10,Fiendsmith Engraver,60764609,True,2,0
-329,10,Lacrima the Scarlet Sorrow,28803166,True,1,0
-330,10,Mulcharmy Fuwaross,42141493,False,3,0
-331,10,Ash Blossom & Joyous Spring,14558128,True,3,0
-332,10,Snake-Eye Oak,45663742,True,1,0
-333,10,Snake-Eye Ash,9674034,True,1,0
-334,10,Snake-Eyes Poplar,90241276,True,1,0
-335,10,Fabled Lurrie,97651498,False,1,0
-336,10,Droll & Lock Bird,94145021,False,3,0
-337,10,Triple Tactics Talent,25311006,True,1,0
-338,10,Bonfire,85106525,False,3,0
-339,10,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-340,10,Sacred Azamina,94845588,True,1,0
-341,10,Fiendsmith's Tract,98567237,True,1,0
-342,10,Called by the Grave,24224830,False,1,0
-343,10,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-344,10,Sinful Spoils Deception,66328392,True,3,0
-345,10,Divine Temple of the Snake-Eye,53639887,True,1,0
-346,10,Infinite Impermanence,10045474,True,3,0
-347,10,Angel Statue - Azurune,44822037,True,1,0
-348,10,Fiendsmith's Desirae,82135803,True,1,1
-349,10,Azamina Mu Rcielago,73391962,True,1,1
-350,10,Azamina Rhea Silvera,46396218,True,1,1
-351,10,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-352,10,Salamangreat Raging Phoenix,57134592,True,1,1
-353,10,Worldsea Dragon Zealantis,45112597,False,1,1
-354,10,Accesscode Talker,86066372,False,1,1
-355,10,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-356,10,Knightmare Phoenix,2857636,False,1,1
-357,10,S:P Little Knight,29301450,False,1,1
-358,10,Silhouhatte Rabbit,1528054,True,1,1
-359,10,Fiendsmith's Sequence,49867899,True,1,1
-360,10,Moon of the Closed Heaven,71818935,True,1,1
-361,10,I:P Masquerena,65741786,True,1,1
-362,10,Fiendsmith's Requiem,2463794,True,1,1
-363,11,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-364,11,Snake-Eyes Diabellstar,27260347,False,1,0
-365,11,Diabellstar the Black Witch,72270339,False,3,0
-366,11,Fiendsmith Engraver,60764609,False,2,0
-367,11,Lacrima the Scarlet Sorrow,28803166,False,1,0
-368,11,Mulcharmy Fuwaross,42141493,False,3,0
-369,11,Ash Blossom & Joyous Spring,14558128,False,3,0
-370,11,Snake-Eye Oak,45663742,False,1,0
-371,11,Snake-Eye Ash,9674034,False,1,0
-372,11,Snake-Eyes Poplar,90241276,False,1,0
-373,11,Fabled Lurrie,97651498,False,1,0
-374,11,Droll & Lock Bird,94145021,False,3,0
-375,11,Triple Tactics Talent,25311006,False,1,0
-376,11,Bonfire,85106525,False,3,0
-377,11,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-378,11,Sacred Azamina,94845588,False,1,0
-379,11,Fiendsmith's Tract,98567237,False,1,0
-380,11,Called by the Grave,24224830,False,1,0
-381,11,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-382,11,Sinful Spoils Deception,66328392,False,3,0
-383,11,Divine Temple of the Snake-Eye,53639887,False,1,0
-384,11,Infinite Impermanence,10045474,False,3,0
-385,11,Angel Statue - Azurune,44822037,False,1,0
-386,11,Fiendsmith's Desirae,82135803,False,1,1
-387,11,Azamina Mu Rcielago,73391962,False,1,1
-388,11,Azamina Rhea Silvera,46396218,False,1,1
-389,11,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-390,11,Salamangreat Raging Phoenix,57134592,False,1,1
-391,11,Worldsea Dragon Zealantis,45112597,False,1,1
-392,11,Accesscode Talker,86066372,False,1,1
-393,11,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-394,11,Knightmare Phoenix,2857636,False,1,1
-395,11,S:P Little Knight,29301450,False,1,1
-396,11,Silhouhatte Rabbit,1528054,False,1,1
-397,11,Fiendsmith's Sequence,49867899,False,1,1
-398,11,Moon of the Closed Heaven,71818935,False,1,1
-399,11,I:P Masquerena,65741786,False,1,1
-400,11,Fiendsmith's Requiem,2463794,False,1,1
-401,12,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-402,12,Snake-Eyes Diabellstar,27260347,False,1,0
-403,12,Diabellstar the Black Witch,72270339,False,3,0
-404,12,Fiendsmith Engraver,60764609,True,2,0
-405,12,Lacrima the Scarlet Sorrow,28803166,False,1,0
-406,12,Mulcharmy Fuwaross,42141493,False,3,0
-407,12,Ash Blossom & Joyous Spring,14558128,False,3,0
-408,12,Snake-Eye Oak,45663742,False,1,0
-409,12,Snake-Eye Ash,9674034,False,1,0
-410,12,Snake-Eyes Poplar,90241276,True,1,0
-411,12,Fabled Lurrie,97651498,False,1,0
-412,12,Droll & Lock Bird,94145021,True,3,0
-413,12,Triple Tactics Talent,25311006,True,1,0
-414,12,Bonfire,85106525,False,3,0
-415,12,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-416,12,Sacred Azamina,94845588,True,1,0
-417,12,Fiendsmith's Tract,98567237,True,1,0
-418,12,Called by the Grave,24224830,False,1,0
-419,12,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-420,12,Sinful Spoils Deception,66328392,True,3,0
-421,12,Divine Temple of the Snake-Eye,53639887,False,1,0
-422,12,Infinite Impermanence,10045474,False,3,0
-423,12,Angel Statue - Azurune,44822037,False,1,0
-424,12,Fiendsmith's Desirae,82135803,False,1,1
-425,12,Azamina Mu Rcielago,73391962,True,1,1
-426,12,Azamina Rhea Silvera,46396218,False,1,1
-427,12,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-428,12,Salamangreat Raging Phoenix,57134592,False,1,1
-429,12,Worldsea Dragon Zealantis,45112597,False,1,1
-430,12,Accesscode Talker,86066372,False,1,1
-431,12,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-432,12,Knightmare Phoenix,2857636,False,1,1
-433,12,S:P Little Knight,29301450,False,1,1
-434,12,Silhouhatte Rabbit,1528054,False,1,1
-435,12,Fiendsmith's Sequence,49867899,False,1,1
-436,12,Moon of the Closed Heaven,71818935,False,1,1
+107,3,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+108,3,I:P Masquerena,65741786,False,1,1
+109,3,Salamangreat Raging Phoenix,57134592,False,1,1
+110,3,Amphibious Swarmship Amblowhale,20665527,False,1,1
+111,3,Azamina Rhea Silvera,46396218,False,1,1
+112,3,Azamina Mu Rcielago,73391962,True,1,1
+113,3,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+114,3,Relinquished Anima,94259633,True,1,1
+115,3,Salamangreat Sunlight Wolf,87871125,False,1,1
+116,4,Runick Destruction,94445733,True,1,0
+117,4,Lady Labrynth of the Silver Castle,81497285,True,3,0
+118,4,Welcome Labrynth,5380979,True,3,0
+119,4,Dimension Shifter,91800273,True,3,0
+120,4,Solemn Strike,40605147,True,3,0
+121,4,Lost Wind,74003290,True,2,0
+122,4,Simultaneous Equation Cannons,25096909,True,3,0
+123,4,Big Welcome Labrynth,92714517,True,3,0
+124,4,Destructive Daruma Karma Cannon,30748475,True,3,0
+125,4,Ice Dragon's Prison,20899496,True,2,0
+126,4,Starry Dragon's Cycle,6278008,True,2,0
+127,4,Dimensional Barrier,83326048,True,2,0
+128,4,Terrors of the Overroot,63086455,False,2,0
+129,4,Runick Flashing Fire,68957034,False,1,0
+130,4,Trap Trick,80101899,False,3,0
+131,4,Runick Freezing Curses,30430448,False,1,0
+132,4,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+133,4,Weighbridge,39103226,False,2,0
+134,4,Geri the Runick Fangs,28373620,False,1,1
+135,4,The Last Warrior from Another Planet,86099788,False,1,1
+136,4,Number S39: Utopia the Lightning,56832966,False,1,1
+137,4,Freki the Runick Fangs,47219274,True,1,1
+138,4,Cyber Dragon Nova,58069384,False,1,1
+139,4,Number 39: Utopia,84013237,False,1,1
+140,4,Cyber Dragon Infinity,10443957,False,1,1
+141,4,"Garura, Wings of Resonant Life",11765832,False,1,1
+142,4,Number C39: Utopia Ray,56840427,False,1,1
+143,4,Hugin the Runick Wings,55990317,False,1,1
+144,4,Thousand-Eyes Restrict,63519819,False,1,1
+145,4,Munin the Runick Wings,92385016,False,1,1
+146,4,Dhampir Vampire Sheridan,32302078,False,1,1
+147,4,D/D/D Stone King Darius,51497409,True,1,1
+148,4,Xyz Armor Torpedo,94151981,True,1,1
+149,5,Runick Destruction,94445733,True,1,0
+150,5,Lady Labrynth of the Silver Castle,81497285,True,3,0
+151,5,Welcome Labrynth,5380979,True,3,0
+152,5,Dimension Shifter,91800273,True,3,0
+153,5,Solemn Strike,40605147,True,3,0
+154,5,Lost Wind,74003290,True,2,0
+155,5,Simultaneous Equation Cannons,25096909,True,3,0
+156,5,Big Welcome Labrynth,92714517,True,3,0
+157,5,Destructive Daruma Karma Cannon,30748475,True,3,0
+158,5,Ice Dragon's Prison,20899496,True,2,0
+159,5,Starry Dragon's Cycle,6278008,True,2,0
+160,5,Dimensional Barrier,83326048,True,2,0
+161,5,Terrors of the Overroot,63086455,False,2,0
+162,5,Runick Flashing Fire,68957034,False,1,0
+163,5,Trap Trick,80101899,False,3,0
+164,5,Runick Freezing Curses,30430448,False,1,0
+165,5,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+166,5,Weighbridge,39103226,False,2,0
+167,5,Geri the Runick Fangs,28373620,False,1,1
+168,5,The Last Warrior from Another Planet,86099788,False,1,1
+169,5,Number S39: Utopia the Lightning,56832966,True,1,1
+170,5,Freki the Runick Fangs,47219274,True,1,1
+171,5,Cyber Dragon Nova,58069384,True,1,1
+172,5,Number 39: Utopia,84013237,True,1,1
+173,5,Cyber Dragon Infinity,10443957,False,1,1
+174,5,"Garura, Wings of Resonant Life",11765832,False,1,1
+175,5,Number C39: Utopia Ray,56840427,True,1,1
+176,5,Hugin the Runick Wings,55990317,False,1,1
+177,5,Thousand-Eyes Restrict,63519819,True,1,1
+178,5,Munin the Runick Wings,92385016,True,1,1
+179,5,Dhampir Vampire Sheridan,32302078,False,1,1
+180,5,D/D/D Stone King Darius,51497409,False,1,1
+181,5,Xyz Armor Torpedo,94151981,False,1,1
+182,6,Mulcharmy Fuwaross,42141493,True,3,0
+183,6,Sinful Spoils Deception,66328392,True,3,0
+184,6,Bonfire,85106525,True,3,0
+185,6,Snake-Eyes Poplar,90241276,True,1,0
+186,6,Diabellstar the Black Witch,72270339,True,3,0
+187,6,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+188,6,Snake-Eye Ash,9674034,True,1,0
+189,6,Fire King Sky Burn,91703676,True,1,0
+190,6,Fire King High Avatar Kirin,2526224,True,2,0
+191,6,Sacred Azamina,94845588,True,1,0
+192,6,Infinite Impermanence,10045474,True,3,0
+193,6,Called by the Grave,24224830,True,1,0
+194,6,Snake-Eyes Diabellstar,27260347,False,1,0
+195,6,Legendary Fire King Ponix,90681088,False,1,0
+196,6,Fire King High Avatar Garunix,23015896,False,1,0
+197,6,Fire King Island,57554544,False,1,0
+198,6,Dominus Impulse,40366667,False,3,0
+199,6,Snake-Eye Oak,45663742,True,1,0
+200,6,Fire King Avatar Arvata,18621798,False,1,0
+201,6,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+202,6,Ash Blossom & Joyous Spring,14558128,False,3,0
+203,6,Divine Temple of the Snake-Eye,53639887,False,1,0
+204,6,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+205,6,Triple Tactics Talent,25311006,False,1,0
+206,6,Sacred Fire King Garunix,66431519,False,1,0
+207,6,Fire King Sanctuary,65305978,False,1,0
+208,6,Fire King Consort Ulkanix,44455560,False,2,0
+209,6,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+210,6,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
+211,6,S:P Little Knight,29301450,True,1,1
+212,6,Knightmare Phoenix,2857636,True,1,1
+213,6,Accesscode Talker,86066372,False,1,1
+214,6,"Promethean Princess, Bestower of Flames",2772337,True,2,1
+215,6,I:P Masquerena,65741786,False,1,1
+216,6,Salamangreat Raging Phoenix,57134592,False,1,1
+217,6,Amphibious Swarmship Amblowhale,20665527,False,1,1
+218,6,Azamina Rhea Silvera,46396218,True,1,1
+219,6,Azamina Mu Rcielago,73391962,True,1,1
+220,6,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+221,6,Relinquished Anima,94259633,True,1,1
+222,6,Salamangreat Sunlight Wolf,87871125,True,1,1
+223,7,Runick Destruction,94445733,True,1,0
+224,7,Lady Labrynth of the Silver Castle,81497285,True,3,0
+225,7,Welcome Labrynth,5380979,True,3,0
+226,7,Dimension Shifter,91800273,True,3,0
+227,7,Solemn Strike,40605147,True,3,0
+228,7,Lost Wind,74003290,True,2,0
+229,7,Simultaneous Equation Cannons,25096909,True,3,0
+230,7,Big Welcome Labrynth,92714517,True,3,0
+231,7,Destructive Daruma Karma Cannon,30748475,True,3,0
+232,7,Ice Dragon's Prison,20899496,True,2,0
+233,7,Starry Dragon's Cycle,6278008,False,2,0
+234,7,Dimensional Barrier,83326048,False,2,0
+235,7,Terrors of the Overroot,63086455,False,2,0
+236,7,Runick Flashing Fire,68957034,False,1,0
+237,7,Trap Trick,80101899,False,3,0
+238,7,Runick Freezing Curses,30430448,False,1,0
+239,7,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+240,7,Weighbridge,39103226,False,2,0
+241,7,Geri the Runick Fangs,28373620,False,1,1
+242,7,The Last Warrior from Another Planet,86099788,False,1,1
+243,7,Number S39: Utopia the Lightning,56832966,False,1,1
+244,7,Freki the Runick Fangs,47219274,True,1,1
+245,7,Cyber Dragon Nova,58069384,False,1,1
+246,7,Number 39: Utopia,84013237,False,1,1
+247,7,Cyber Dragon Infinity,10443957,False,1,1
+248,7,"Garura, Wings of Resonant Life",11765832,False,1,1
+249,7,Number C39: Utopia Ray,56840427,False,1,1
+250,7,Hugin the Runick Wings,55990317,False,1,1
+251,7,Thousand-Eyes Restrict,63519819,False,1,1
+252,7,Munin the Runick Wings,92385016,False,1,1
+253,7,Dhampir Vampire Sheridan,32302078,False,1,1
+254,7,D/D/D Stone King Darius,51497409,False,1,1
+255,7,Xyz Armor Torpedo,94151981,False,1,1
+256,8,Mulcharmy Fuwaross,42141493,True,3,0
+257,8,Sinful Spoils Deception,66328392,True,3,0
+258,8,Bonfire,85106525,True,3,0
+259,8,Snake-Eyes Poplar,90241276,True,1,0
+260,8,Diabellstar the Black Witch,72270339,True,3,0
+261,8,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+262,8,Snake-Eye Ash,9674034,True,1,0
+263,8,Fire King Sky Burn,91703676,True,1,0
+264,8,Fire King High Avatar Kirin,2526224,False,2,0
+265,8,Sacred Azamina,94845588,True,1,0
+266,8,Infinite Impermanence,10045474,False,3,0
+267,8,Called by the Grave,24224830,False,1,0
+268,8,Snake-Eyes Diabellstar,27260347,True,1,0
+269,8,Legendary Fire King Ponix,90681088,False,1,0
+270,8,Fire King High Avatar Garunix,23015896,False,1,0
+271,8,Fire King Island,57554544,False,1,0
+272,8,Dominus Impulse,40366667,False,3,0
+273,8,Snake-Eye Oak,45663742,True,1,0
+274,8,Fire King Avatar Arvata,18621798,False,1,0
+275,8,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+276,8,Ash Blossom & Joyous Spring,14558128,False,3,0
+277,8,Divine Temple of the Snake-Eye,53639887,False,1,0
+278,8,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+279,8,Triple Tactics Talent,25311006,False,1,0
+280,8,Sacred Fire King Garunix,66431519,False,1,0
+281,8,Fire King Sanctuary,65305978,False,1,0
+282,8,Fire King Consort Ulkanix,44455560,False,2,0
+283,8,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+284,8,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+285,8,S:P Little Knight,29301450,False,1,1
+286,8,Knightmare Phoenix,2857636,False,1,1
+287,8,Accesscode Talker,86066372,False,1,1
+288,8,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+289,8,I:P Masquerena,65741786,False,1,1
+290,8,Salamangreat Raging Phoenix,57134592,False,1,1
+291,8,Amphibious Swarmship Amblowhale,20665527,False,1,1
+292,8,Azamina Rhea Silvera,46396218,True,1,1
+293,8,Azamina Mu Rcielago,73391962,True,1,1
+294,8,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+295,8,Relinquished Anima,94259633,False,1,1
+296,8,Salamangreat Sunlight Wolf,87871125,False,1,1
+297,9,Runick Destruction,94445733,True,1,0
+298,9,Lady Labrynth of the Silver Castle,81497285,True,3,0
+299,9,Welcome Labrynth,5380979,True,3,0
+300,9,Dimension Shifter,91800273,True,3,0
+301,9,Solemn Strike,40605147,True,3,0
+302,9,Lost Wind,74003290,True,2,0
+303,9,Simultaneous Equation Cannons,25096909,True,3,0
+304,9,Big Welcome Labrynth,92714517,False,3,0
+305,9,Destructive Daruma Karma Cannon,30748475,False,3,0
+306,9,Ice Dragon's Prison,20899496,False,2,0
+307,9,Starry Dragon's Cycle,6278008,False,2,0
+308,9,Dimensional Barrier,83326048,False,2,0
+309,9,Terrors of the Overroot,63086455,False,2,0
+310,9,Runick Flashing Fire,68957034,False,1,0
+311,9,Trap Trick,80101899,False,3,0
+312,9,Runick Freezing Curses,30430448,False,1,0
+313,9,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+314,9,Weighbridge,39103226,False,2,0
+315,9,Geri the Runick Fangs,28373620,False,1,1
+316,9,The Last Warrior from Another Planet,86099788,False,1,1
+317,9,Number S39: Utopia the Lightning,56832966,False,1,1
+318,9,Freki the Runick Fangs,47219274,False,1,1
+319,9,Cyber Dragon Nova,58069384,False,1,1
+320,9,Number 39: Utopia,84013237,False,1,1
+321,9,Cyber Dragon Infinity,10443957,False,1,1
+322,9,"Garura, Wings of Resonant Life",11765832,False,1,1
+323,9,Number C39: Utopia Ray,56840427,False,1,1
+324,9,Hugin the Runick Wings,55990317,False,1,1
+325,9,Thousand-Eyes Restrict,63519819,False,1,1
+326,9,Munin the Runick Wings,92385016,False,1,1
+327,9,Dhampir Vampire Sheridan,32302078,False,1,1
+328,9,D/D/D Stone King Darius,51497409,False,1,1
+329,9,Xyz Armor Torpedo,94151981,False,1,1
+330,10,Mulcharmy Fuwaross,42141493,True,3,0
+331,10,Sinful Spoils Deception,66328392,True,3,0
+332,10,Bonfire,85106525,True,3,0
+333,10,Snake-Eyes Poplar,90241276,True,1,0
+334,10,Diabellstar the Black Witch,72270339,True,3,0
+335,10,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
+336,10,Snake-Eye Ash,9674034,False,1,0
+337,10,Fire King Sky Burn,91703676,False,1,0
+338,10,Fire King High Avatar Kirin,2526224,False,2,0
+339,10,Sacred Azamina,94845588,True,1,0
+340,10,Infinite Impermanence,10045474,False,3,0
+341,10,Called by the Grave,24224830,False,1,0
+342,10,Snake-Eyes Diabellstar,27260347,False,1,0
+343,10,Legendary Fire King Ponix,90681088,False,1,0
+344,10,Fire King High Avatar Garunix,23015896,False,1,0
+345,10,Fire King Island,57554544,False,1,0
+346,10,Dominus Impulse,40366667,False,3,0
+347,10,Snake-Eye Oak,45663742,True,1,0
+348,10,Fire King Avatar Arvata,18621798,False,1,0
+349,10,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+350,10,Ash Blossom & Joyous Spring,14558128,False,3,0
+351,10,Divine Temple of the Snake-Eye,53639887,False,1,0
+352,10,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+353,10,Triple Tactics Talent,25311006,False,1,0
+354,10,Sacred Fire King Garunix,66431519,False,1,0
+355,10,Fire King Sanctuary,65305978,False,1,0
+356,10,Fire King Consort Ulkanix,44455560,False,2,0
+357,10,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+358,10,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+359,10,S:P Little Knight,29301450,False,1,1
+360,10,Knightmare Phoenix,2857636,False,1,1
+361,10,Accesscode Talker,86066372,False,1,1
+362,10,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+363,10,I:P Masquerena,65741786,True,1,1
+364,10,Salamangreat Raging Phoenix,57134592,False,1,1
+365,10,Amphibious Swarmship Amblowhale,20665527,False,1,1
+366,10,Azamina Rhea Silvera,46396218,True,1,1
+367,10,Azamina Mu Rcielago,73391962,False,1,1
+368,10,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+369,10,Relinquished Anima,94259633,False,1,1
+370,10,Salamangreat Sunlight Wolf,87871125,False,1,1
+371,11,Runick Destruction,94445733,True,1,0
+372,11,Lady Labrynth of the Silver Castle,81497285,True,3,0
+373,11,Welcome Labrynth,5380979,True,3,0
+374,11,Dimension Shifter,91800273,True,3,0
+375,11,Solemn Strike,40605147,True,3,0
+376,11,Lost Wind,74003290,True,2,0
+377,11,Simultaneous Equation Cannons,25096909,True,3,0
+378,11,Big Welcome Labrynth,92714517,True,3,0
+379,11,Destructive Daruma Karma Cannon,30748475,True,3,0
+380,11,Ice Dragon's Prison,20899496,True,2,0
+381,11,Starry Dragon's Cycle,6278008,True,2,0
+382,11,Dimensional Barrier,83326048,False,2,0
+383,11,Terrors of the Overroot,63086455,False,2,0
+384,11,Runick Flashing Fire,68957034,False,1,0
+385,11,Trap Trick,80101899,False,3,0
+386,11,Runick Freezing Curses,30430448,False,1,0
+387,11,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+388,11,Weighbridge,39103226,False,2,0
+389,11,Geri the Runick Fangs,28373620,False,1,1
+390,11,The Last Warrior from Another Planet,86099788,False,1,1
+391,11,Number S39: Utopia the Lightning,56832966,False,1,1
+392,11,Freki the Runick Fangs,47219274,False,1,1
+393,11,Cyber Dragon Nova,58069384,False,1,1
+394,11,Number 39: Utopia,84013237,False,1,1
+395,11,Cyber Dragon Infinity,10443957,False,1,1
+396,11,"Garura, Wings of Resonant Life",11765832,False,1,1
+397,11,Number C39: Utopia Ray,56840427,False,1,1
+398,11,Hugin the Runick Wings,55990317,False,1,1
+399,11,Thousand-Eyes Restrict,63519819,False,1,1
+400,11,Munin the Runick Wings,92385016,True,1,1
+401,11,Dhampir Vampire Sheridan,32302078,False,1,1
+402,11,D/D/D Stone King Darius,51497409,False,1,1
+403,11,Xyz Armor Torpedo,94151981,False,1,1
+404,12,Mulcharmy Fuwaross,42141493,True,3,0
+405,12,Sinful Spoils Deception,66328392,True,3,0
+406,12,Bonfire,85106525,True,3,0
+407,12,Snake-Eyes Poplar,90241276,True,1,0
+408,12,Diabellstar the Black Witch,72270339,True,3,0
+409,12,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+410,12,Snake-Eye Ash,9674034,True,1,0
+411,12,Fire King Sky Burn,91703676,True,1,0
+412,12,Fire King High Avatar Kirin,2526224,False,2,0
+413,12,Sacred Azamina,94845588,True,1,0
+414,12,Infinite Impermanence,10045474,False,3,0
+415,12,Called by the Grave,24224830,False,1,0
+416,12,Snake-Eyes Diabellstar,27260347,False,1,0
+417,12,Legendary Fire King Ponix,90681088,False,1,0
+418,12,Fire King High Avatar Garunix,23015896,False,1,0
+419,12,Fire King Island,57554544,False,1,0
+420,12,Dominus Impulse,40366667,False,3,0
+421,12,Snake-Eye Oak,45663742,True,1,0
+422,12,Fire King Avatar Arvata,18621798,False,1,0
+423,12,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+424,12,Ash Blossom & Joyous Spring,14558128,False,3,0
+425,12,Divine Temple of the Snake-Eye,53639887,False,1,0
+426,12,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+427,12,Triple Tactics Talent,25311006,False,1,0
+428,12,Sacred Fire King Garunix,66431519,False,1,0
+429,12,Fire King Sanctuary,65305978,False,1,0
+430,12,Fire King Consort Ulkanix,44455560,False,2,0
+431,12,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+432,12,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+433,12,S:P Little Knight,29301450,True,1,1
+434,12,Knightmare Phoenix,2857636,True,1,1
+435,12,Accesscode Talker,86066372,False,1,1
+436,12,"Promethean Princess, Bestower of Flames",2772337,True,2,1
 437,12,I:P Masquerena,65741786,False,1,1
-438,12,Fiendsmith's Requiem,2463794,False,1,1
-439,13,Lady Labrynth of the Silver Castle,81497285,True,3,0
-440,13,Lovely Labrynth of the Silver Castle,2347656,True,1,0
-441,13,Dimension Shifter,91800273,True,3,0
-442,13,Card of Demise,59750328,False,1,0
-443,13,Pot of Duality,98645731,False,3,0
-444,13,Runick Freezing Curses,30430448,False,2,0
-445,13,Welcome Labrynth,5380979,True,3,0
-446,13,Ice Dragon's Prison,20899496,True,2,0
-447,13,Simultaneous Equation Cannons,25096909,True,3,0
-448,13,Destructive Daruma Karma Cannon,30748475,True,3,0
-449,13,Dominus Impulse,40366667,False,3,0
-450,13,Torrential Tribute,53582587,False,2,0
-451,13,Terrors of the Overroot,63086455,False,1,0
-452,13,Trap Trick,80101899,True,3,0
-453,13,Big Welcome Labrynth,92714517,True,3,0
-454,13,Skill Drain,82732705,False,1,0
-455,13,Solemn Strike,40605147,False,3,0
-456,13,Cyberse Clock Dragon,42717221,False,1,1
-457,13,"Garura, Wings of Resonant Life",11765832,False,1,1
-458,13,Freki the Runick Fangs,47219274,False,1,1
-459,13,Elder Entity N'tss,80532587,False,1,1
-460,13,Munin the Runick Wings,92385016,False,1,1
-461,13,Hugin the Runick Wings,55990317,False,1,1
-462,13,Lyrilusc - Independent Nightingale,76815942,False,1,1
-463,13,Goblin's Crazy Beast,71100270,False,2,1
-464,13,Number C69: Heraldry Crest of Horror,11522979,False,2,1
-465,13,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-466,13,Evilswarm Exciton Knight,46772449,False,1,1
-467,13,"Dante, Traveler of the Burning Abyss",83531441,False,2,1
-468,14,Lady Labrynth of the Silver Castle,81497285,True,3,0
-469,14,Lovely Labrynth of the Silver Castle,2347656,True,1,0
-470,14,Dimension Shifter,91800273,True,3,0
-471,14,Card of Demise,59750328,False,1,0
-472,14,Pot of Duality,98645731,True,3,0
-473,14,Runick Freezing Curses,30430448,True,2,0
-474,14,Welcome Labrynth,5380979,True,3,0
-475,14,Ice Dragon's Prison,20899496,False,2,0
-476,14,Simultaneous Equation Cannons,25096909,True,3,0
-477,14,Destructive Daruma Karma Cannon,30748475,True,3,0
-478,14,Dominus Impulse,40366667,False,3,0
-479,14,Torrential Tribute,53582587,True,2,0
-480,14,Terrors of the Overroot,63086455,False,1,0
-481,14,Trap Trick,80101899,False,3,0
-482,14,Big Welcome Labrynth,92714517,False,3,0
-483,14,Skill Drain,82732705,True,1,0
-484,14,Solemn Strike,40605147,False,3,0
-485,14,Cyberse Clock Dragon,42717221,False,1,1
-486,14,"Garura, Wings of Resonant Life",11765832,False,1,1
-487,14,Freki the Runick Fangs,47219274,False,1,1
-488,14,Elder Entity N'tss,80532587,False,1,1
-489,14,Munin the Runick Wings,92385016,False,1,1
-490,14,Hugin the Runick Wings,55990317,False,1,1
-491,14,Lyrilusc - Independent Nightingale,76815942,True,1,1
-492,14,Goblin's Crazy Beast,71100270,False,2,1
-493,14,Number C69: Heraldry Crest of Horror,11522979,True,2,1
-494,14,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-495,14,Evilswarm Exciton Knight,46772449,False,1,1
-496,14,"Dante, Traveler of the Burning Abyss",83531441,False,2,1
-497,15,Lady Labrynth of the Silver Castle,81497285,True,3,0
-498,15,Lovely Labrynth of the Silver Castle,2347656,True,1,0
-499,15,Dimension Shifter,91800273,False,3,0
-500,15,Card of Demise,59750328,True,1,0
-501,15,Pot of Duality,98645731,True,3,0
-502,15,Runick Freezing Curses,30430448,True,2,0
-503,15,Welcome Labrynth,5380979,True,3,0
-504,15,Ice Dragon's Prison,20899496,False,2,0
-505,15,Simultaneous Equation Cannons,25096909,False,3,0
-506,15,Destructive Daruma Karma Cannon,30748475,False,3,0
-507,15,Dominus Impulse,40366667,True,3,0
-508,15,Torrential Tribute,53582587,True,2,0
-509,15,Terrors of the Overroot,63086455,False,1,0
-510,15,Trap Trick,80101899,False,3,0
-511,15,Big Welcome Labrynth,92714517,True,3,0
-512,15,Skill Drain,82732705,False,1,0
-513,15,Solemn Strike,40605147,False,3,0
-514,15,Cyberse Clock Dragon,42717221,False,1,1
-515,15,"Garura, Wings of Resonant Life",11765832,False,1,1
-516,15,Freki the Runick Fangs,47219274,False,1,1
-517,15,Elder Entity N'tss,80532587,False,1,1
-518,15,Munin the Runick Wings,92385016,False,1,1
-519,15,Hugin the Runick Wings,55990317,False,1,1
-520,15,Lyrilusc - Independent Nightingale,76815942,False,1,1
-521,15,Goblin's Crazy Beast,71100270,False,2,1
-522,15,Number C69: Heraldry Crest of Horror,11522979,False,2,1
-523,15,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-524,15,Evilswarm Exciton Knight,46772449,False,1,1
-525,15,"Dante, Traveler of the Burning Abyss",83531441,False,2,1
-526,16,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-527,16,Snake-Eyes Diabellstar,27260347,True,1,0
-528,16,Diabellstar the Black Witch,72270339,True,3,0
-529,16,Fiendsmith Engraver,60764609,True,2,0
-530,16,Lacrima the Scarlet Sorrow,28803166,False,1,0
-531,16,Mulcharmy Fuwaross,42141493,False,3,0
-532,16,Ash Blossom & Joyous Spring,14558128,False,3,0
-533,16,Snake-Eye Oak,45663742,True,1,0
-534,16,Snake-Eye Ash,9674034,False,1,0
-535,16,Snake-Eyes Poplar,90241276,False,1,0
-536,16,Fabled Lurrie,97651498,True,1,0
-537,16,Droll & Lock Bird,94145021,False,3,0
-538,16,Triple Tactics Talent,25311006,False,1,0
-539,16,Bonfire,85106525,True,3,0
-540,16,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-541,16,Sacred Azamina,94845588,True,1,0
-542,16,Fiendsmith's Tract,98567237,True,1,0
-543,16,Called by the Grave,24224830,False,1,0
-544,16,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-545,16,Sinful Spoils Deception,66328392,True,3,0
-546,16,Divine Temple of the Snake-Eye,53639887,True,1,0
-547,16,Infinite Impermanence,10045474,True,3,0
-548,16,Angel Statue - Azurune,44822037,False,1,0
-549,16,Fiendsmith's Desirae,82135803,False,1,1
-550,16,Azamina Mu Rcielago,73391962,False,1,1
-551,16,Azamina Rhea Silvera,46396218,False,1,1
-552,16,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-553,16,Salamangreat Raging Phoenix,57134592,False,1,1
-554,16,Worldsea Dragon Zealantis,45112597,False,1,1
-555,16,Accesscode Talker,86066372,False,1,1
-556,16,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-557,16,Knightmare Phoenix,2857636,False,1,1
-558,16,S:P Little Knight,29301450,False,1,1
-559,16,Silhouhatte Rabbit,1528054,False,1,1
-560,16,Fiendsmith's Sequence,49867899,False,1,1
-561,16,Moon of the Closed Heaven,71818935,False,1,1
-562,16,I:P Masquerena,65741786,False,1,1
-563,16,Fiendsmith's Requiem,2463794,False,1,1
-564,17,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-565,17,Snake-Eyes Diabellstar,27260347,True,1,0
-566,17,Diabellstar the Black Witch,72270339,True,3,0
-567,17,Fiendsmith Engraver,60764609,True,2,0
-568,17,Lacrima the Scarlet Sorrow,28803166,True,1,0
-569,17,Mulcharmy Fuwaross,42141493,False,3,0
-570,17,Ash Blossom & Joyous Spring,14558128,False,3,0
-571,17,Snake-Eye Oak,45663742,True,1,0
-572,17,Snake-Eye Ash,9674034,True,1,0
-573,17,Snake-Eyes Poplar,90241276,True,1,0
-574,17,Fabled Lurrie,97651498,False,1,0
-575,17,Droll & Lock Bird,94145021,False,3,0
-576,17,Triple Tactics Talent,25311006,False,1,0
-577,17,Bonfire,85106525,False,3,0
-578,17,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-579,17,Sacred Azamina,94845588,False,1,0
-580,17,Fiendsmith's Tract,98567237,False,1,0
-581,17,Called by the Grave,24224830,False,1,0
-582,17,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-583,17,Sinful Spoils Deception,66328392,False,3,0
-584,17,Divine Temple of the Snake-Eye,53639887,True,1,0
-585,17,Infinite Impermanence,10045474,False,3,0
-586,17,Angel Statue - Azurune,44822037,True,1,0
-587,17,Fiendsmith's Desirae,82135803,True,1,1
-588,17,Azamina Mu Rcielago,73391962,False,1,1
-589,17,Azamina Rhea Silvera,46396218,False,1,1
-590,17,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-591,17,Salamangreat Raging Phoenix,57134592,True,1,1
-592,17,Worldsea Dragon Zealantis,45112597,True,1,1
-593,17,Accesscode Talker,86066372,False,1,1
-594,17,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-595,17,Knightmare Phoenix,2857636,False,1,1
-596,17,S:P Little Knight,29301450,False,1,1
-597,17,Silhouhatte Rabbit,1528054,True,1,1
-598,17,Fiendsmith's Sequence,49867899,True,1,1
-599,17,Moon of the Closed Heaven,71818935,True,1,1
-600,17,I:P Masquerena,65741786,True,1,1
-601,17,Fiendsmith's Requiem,2463794,True,1,1
-602,18,Lady Labrynth of the Silver Castle,81497285,True,3,0
-603,18,Lovely Labrynth of the Silver Castle,2347656,True,1,0
-604,18,Dimension Shifter,91800273,True,3,0
-605,18,Runick Freezing Curses,30430448,False,1,0
-606,18,Runick Flashing Fire,68957034,False,1,0
-607,18,Runick Destruction,94445733,False,1,0
-608,18,Welcome Labrynth,5380979,True,3,0
-609,18,Starry Dragon's Cycle,6278008,False,2,0
-610,18,Ice Dragon's Prison,20899496,True,2,0
-611,18,Simultaneous Equation Cannons,25096909,False,3,0
-612,18,Destructive Daruma Karma Cannon,30748475,True,3,0
-613,18,Weighbridge,39103226,True,2,0
-614,18,Terrors of the Overroot,63086455,True,2,0
-615,18,Lost Wind,74003290,False,2,0
-616,18,Trap Trick,80101899,True,3,0
-617,18,Dimensional Barrier,83326048,False,2,0
-618,18,Big Welcome Labrynth,92714517,True,3,0
-619,18,Solemn Strike,40605147,True,3,0
-620,18,Cyberse Clock Dragon,42717221,False,1,1
-621,18,"Garura, Wings of Resonant Life",11765832,False,1,1
-622,18,Freki the Runick Fangs,47219274,False,1,1
-623,18,Elder Entity N'tss,80532587,False,1,1
-624,18,Munin the Runick Wings,92385016,False,1,1
-625,18,Hugin the Runick Wings,55990317,False,1,1
-626,18,Lyrilusc - Independent Nightingale,76815942,False,1,1
-627,18,Goblin's Crazy Beast,71100270,False,2,1
-628,18,Number C69: Heraldry Crest of Horror,11522979,False,2,1
-629,18,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-630,18,Evilswarm Exciton Knight,46772449,False,1,1
-631,18,"Dante, Traveler of the Burning Abyss",83531441,False,2,1
-632,19,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-633,19,Snake-Eyes Diabellstar,27260347,True,1,0
-634,19,Diabellstar the Black Witch,72270339,False,3,0
-635,19,Fiendsmith Engraver,60764609,True,2,0
-636,19,Lacrima the Scarlet Sorrow,28803166,False,1,0
-637,19,Mulcharmy Fuwaross,42141493,False,3,0
-638,19,Ash Blossom & Joyous Spring,14558128,False,3,0
-639,19,Snake-Eye Oak,45663742,False,1,0
-640,19,Snake-Eye Ash,9674034,False,1,0
-641,19,Snake-Eyes Poplar,90241276,True,1,0
-642,19,Fabled Lurrie,97651498,False,1,0
-643,19,Droll & Lock Bird,94145021,False,3,0
-644,19,Triple Tactics Talent,25311006,False,1,0
-645,19,Bonfire,85106525,False,3,0
-646,19,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-647,19,Sacred Azamina,94845588,False,1,0
-648,19,Fiendsmith's Tract,98567237,True,1,0
-649,19,Called by the Grave,24224830,False,1,0
-650,19,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-651,19,Sinful Spoils Deception,66328392,True,3,0
-652,19,Divine Temple of the Snake-Eye,53639887,True,1,0
-653,19,Infinite Impermanence,10045474,True,3,0
-654,19,Angel Statue - Azurune,44822037,True,1,0
-655,19,Fiendsmith's Desirae,82135803,False,1,1
-656,19,Azamina Mu Rcielago,73391962,False,1,1
-657,19,Azamina Rhea Silvera,46396218,False,1,1
-658,19,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-659,19,Salamangreat Raging Phoenix,57134592,False,1,1
-660,19,Worldsea Dragon Zealantis,45112597,False,1,1
-661,19,Accesscode Talker,86066372,False,1,1
-662,19,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-663,19,Knightmare Phoenix,2857636,False,1,1
-664,19,S:P Little Knight,29301450,False,1,1
-665,19,Silhouhatte Rabbit,1528054,False,1,1
-666,19,Fiendsmith's Sequence,49867899,False,1,1
-667,19,Moon of the Closed Heaven,71818935,False,1,1
-668,19,I:P Masquerena,65741786,False,1,1
-669,19,Fiendsmith's Requiem,2463794,False,1,1
-670,20,Lady Labrynth of the Silver Castle,81497285,True,3,0
-671,20,Lovely Labrynth of the Silver Castle,2347656,True,1,0
-672,20,Dimension Shifter,91800273,True,3,0
-673,20,Runick Freezing Curses,30430448,False,1,0
-674,20,Runick Flashing Fire,68957034,False,1,0
-675,20,Runick Destruction,94445733,False,1,0
-676,20,Welcome Labrynth,5380979,False,3,0
-677,20,Starry Dragon's Cycle,6278008,False,2,0
-678,20,Ice Dragon's Prison,20899496,False,2,0
-679,20,Simultaneous Equation Cannons,25096909,True,3,0
-680,20,Destructive Daruma Karma Cannon,30748475,True,3,0
-681,20,Weighbridge,39103226,False,2,0
-682,20,Terrors of the Overroot,63086455,True,2,0
-683,20,Lost Wind,74003290,True,2,0
-684,20,Trap Trick,80101899,True,3,0
-685,20,Dimensional Barrier,83326048,False,2,0
-686,20,Big Welcome Labrynth,92714517,True,3,0
-687,20,Solemn Strike,40605147,False,3,0
-688,20,Cyberse Clock Dragon,42717221,False,1,1
-689,20,"Garura, Wings of Resonant Life",11765832,False,1,1
-690,20,Freki the Runick Fangs,47219274,False,1,1
-691,20,Elder Entity N'tss,80532587,False,1,1
-692,20,Munin the Runick Wings,92385016,False,1,1
-693,20,Hugin the Runick Wings,55990317,False,1,1
-694,20,Lyrilusc - Independent Nightingale,76815942,False,1,1
-695,20,Goblin's Crazy Beast,71100270,False,2,1
-696,20,Number C69: Heraldry Crest of Horror,11522979,False,2,1
-697,20,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-698,20,Evilswarm Exciton Knight,46772449,False,1,1
-699,20,"Dante, Traveler of the Burning Abyss",83531441,False,2,1
-700,21,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-701,21,Snake-Eyes Diabellstar,27260347,False,1,0
-702,21,Diabellstar the Black Witch,72270339,False,3,0
-703,21,Fiendsmith Engraver,60764609,False,2,0
-704,21,Lacrima the Scarlet Sorrow,28803166,False,1,0
-705,21,Mulcharmy Fuwaross,42141493,False,3,0
-706,21,Ash Blossom & Joyous Spring,14558128,False,3,0
-707,21,Snake-Eye Oak,45663742,False,1,0
-708,21,Snake-Eye Ash,9674034,False,1,0
-709,21,Snake-Eyes Poplar,90241276,False,1,0
-710,21,Fabled Lurrie,97651498,False,1,0
-711,21,Droll & Lock Bird,94145021,False,3,0
-712,21,Triple Tactics Talent,25311006,False,1,0
-713,21,Bonfire,85106525,False,3,0
-714,21,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-715,21,Sacred Azamina,94845588,False,1,0
-716,21,Fiendsmith's Tract,98567237,False,1,0
-717,21,Called by the Grave,24224830,False,1,0
-718,21,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-719,21,Sinful Spoils Deception,66328392,False,3,0
-720,21,Divine Temple of the Snake-Eye,53639887,False,1,0
-721,21,Infinite Impermanence,10045474,False,3,0
-722,21,Angel Statue - Azurune,44822037,False,1,0
-723,21,Fiendsmith's Desirae,82135803,False,1,1
-724,21,Azamina Mu Rcielago,73391962,False,1,1
-725,21,Azamina Rhea Silvera,46396218,False,1,1
-726,21,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-727,21,Salamangreat Raging Phoenix,57134592,False,1,1
-728,21,Worldsea Dragon Zealantis,45112597,False,1,1
-729,21,Accesscode Talker,86066372,False,1,1
-730,21,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-731,21,Knightmare Phoenix,2857636,False,1,1
-732,21,S:P Little Knight,29301450,False,1,1
-733,21,Silhouhatte Rabbit,1528054,False,1,1
-734,21,Fiendsmith's Sequence,49867899,False,1,1
-735,21,Moon of the Closed Heaven,71818935,False,1,1
-736,21,I:P Masquerena,65741786,False,1,1
-737,21,Fiendsmith's Requiem,2463794,False,1,1
-738,22,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-739,22,Snake-Eyes Diabellstar,27260347,True,1,0
-740,22,Diabellstar the Black Witch,72270339,True,3,0
-741,22,Fiendsmith Engraver,60764609,True,2,0
-742,22,Lacrima the Scarlet Sorrow,28803166,True,1,0
-743,22,Mulcharmy Fuwaross,42141493,True,3,0
-744,22,Ash Blossom & Joyous Spring,14558128,False,3,0
-745,22,Snake-Eye Oak,45663742,True,1,0
-746,22,Snake-Eye Ash,9674034,True,1,0
-747,22,Snake-Eyes Poplar,90241276,True,1,0
-748,22,Fabled Lurrie,97651498,False,1,0
-749,22,Droll & Lock Bird,94145021,False,3,0
-750,22,Triple Tactics Talent,25311006,False,1,0
-751,22,Bonfire,85106525,True,3,0
-752,22,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-753,22,Sacred Azamina,94845588,True,1,0
-754,22,Fiendsmith's Tract,98567237,False,1,0
-755,22,Called by the Grave,24224830,False,1,0
-756,22,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-757,22,Sinful Spoils Deception,66328392,True,3,0
-758,22,Divine Temple of the Snake-Eye,53639887,True,1,0
-759,22,Infinite Impermanence,10045474,False,3,0
-760,22,Angel Statue - Azurune,44822037,True,1,0
-761,22,Fiendsmith's Desirae,82135803,True,1,1
-762,22,Azamina Mu Rcielago,73391962,True,1,1
-763,22,Azamina Rhea Silvera,46396218,True,1,1
-764,22,Number 38: Hope Harbinger Dragon Titanic Galaxy,63767246,False,1,1
-765,22,Salamangreat Raging Phoenix,57134592,True,1,1
-766,22,Worldsea Dragon Zealantis,45112597,True,1,1
-767,22,Accesscode Talker,86066372,False,1,1
-768,22,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-769,22,Knightmare Phoenix,2857636,True,1,1
-770,22,S:P Little Knight,29301450,False,1,1
-771,22,Silhouhatte Rabbit,1528054,True,1,1
-772,22,Fiendsmith's Sequence,49867899,True,1,1
-773,22,Moon of the Closed Heaven,71818935,True,1,1
-774,22,I:P Masquerena,65741786,True,1,1
-775,22,Fiendsmith's Requiem,2463794,True,1,1
-776,23,Lady Labrynth of the Silver Castle,81497285,False,3,0
-777,23,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-778,23,Dimension Shifter,91800273,False,3,0
-779,23,Runick Freezing Curses,30430448,False,1,0
-780,23,Runick Flashing Fire,68957034,False,1,0
-781,23,Runick Destruction,94445733,False,1,0
-782,23,Welcome Labrynth,5380979,False,3,0
-783,23,Starry Dragon's Cycle,6278008,False,2,0
-784,23,Ice Dragon's Prison,20899496,False,2,0
-785,23,Simultaneous Equation Cannons,25096909,True,3,0
-786,23,Destructive Daruma Karma Cannon,30748475,True,3,0
-787,23,Weighbridge,39103226,True,2,0
-788,23,Terrors of the Overroot,63086455,False,2,0
-789,23,Lost Wind,74003290,False,2,0
-790,23,Trap Trick,80101899,True,3,0
-791,23,Dimensional Barrier,83326048,False,2,0
-792,23,Big Welcome Labrynth,92714517,True,3,0
-793,23,Solemn Strike,40605147,False,3,0
-794,23,Cyberse Clock Dragon,42717221,False,1,1
-795,23,"Garura, Wings of Resonant Life",11765832,False,1,1
-796,23,Freki the Runick Fangs,47219274,False,1,1
-797,23,Elder Entity N'tss,80532587,False,1,1
-798,23,Munin the Runick Wings,92385016,False,1,1
-799,23,Hugin the Runick Wings,55990317,False,1,1
-800,23,Lyrilusc - Independent Nightingale,76815942,False,1,1
-801,23,Goblin's Crazy Beast,71100270,False,2,1
-802,23,Number C69: Heraldry Crest of Horror,11522979,False,2,1
-803,23,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-804,23,Evilswarm Exciton Knight,46772449,False,1,1
-805,23,"Dante, Traveler of the Burning Abyss",83531441,False,2,1
-806,24,Lady Labrynth of the Silver Castle,81497285,False,3,0
-807,24,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-808,24,Dimension Shifter,91800273,False,3,0
-809,24,Runick Freezing Curses,30430448,True,1,0
-810,24,Runick Flashing Fire,68957034,False,1,0
-811,24,Runick Destruction,94445733,False,1,0
-812,24,Welcome Labrynth,5380979,False,3,0
-813,24,Starry Dragon's Cycle,6278008,False,2,0
-814,24,Ice Dragon's Prison,20899496,False,2,0
-815,24,Simultaneous Equation Cannons,25096909,True,3,0
-816,24,Destructive Daruma Karma Cannon,30748475,False,3,0
-817,24,Weighbridge,39103226,False,2,0
-818,24,Terrors of the Overroot,63086455,False,2,0
-819,24,Lost Wind,74003290,False,2,0
-820,24,Trap Trick,80101899,True,3,0
-821,24,Dimensional Barrier,83326048,False,2,0
-822,24,Big Welcome Labrynth,92714517,True,3,0
-823,24,Solemn Strike,40605147,False,3,0
-824,24,The Last Warrior from Another Planet,86099788,False,1,1
-825,24,"Garura, Wings of Resonant Life",11765832,False,1,1
-826,24,Freki the Runick Fangs,47219274,False,1,1
-827,24,Geri the Runick Fangs,28373620,False,1,1
-828,24,Munin the Runick Wings,92385016,False,1,1
-829,24,Hugin the Runick Wings,55990317,False,1,1
-830,24,Thousand-Eyes Restrict,63519819,False,1,1
-831,24,Dhampir Vampire Sheridan,32302078,False,1,1
-832,24,Cyber Dragon Infinity,10443957,False,1,1
-833,24,Number S39: Utopia the Lightning,56832966,False,1,1
-834,24,Cyber Dragon Nova,58069384,False,1,1
-835,24,Number C39: Utopia Ray,56840427,False,1,1
-836,24,Number 39: Utopia,84013237,False,1,1
-837,24,Xyz Armor Torpedo,94151981,False,1,1
-838,24,D/D/D Stone King Darius,51497409,False,1,1
-839,25,Yubel - Terror Incarnate,4779091,True,1,0
-840,25,Yubel,78371393,True,1,0
-841,25,Spirit of Yubel,90829280,True,2,0
-842,25,Bystial Druiswurm,6637331,False,1,0
-843,25,Bystial Magnamhut,33854624,False,1,0
-844,25,Bystial Baldrake,72656408,False,1,0
-845,25,Unchained Soul of Sharvara,41165831,True,1,0
-846,25,Fiendsmith Engraver,60764609,True,2,0
-847,25,Lacrima the Scarlet Sorrow,28803166,True,1,0
-848,25,Mulcharmy Fuwaross,42141493,False,3,0
-849,25,Ash Blossom & Joyous Spring,14558127,True,3,0
-850,25,Dark Beckoning Beast,81034083,True,3,0
-851,25,Fabled Lurrie,97651498,False,1,0
-852,25,Gruesome Grave Squirmer,24215921,True,1,0
-853,25,Samsara D Lotus,62318994,True,3,0
-854,25,Droll & Lock Bird,94145021,False,3,0
-855,25,One for One,2295440,False,1,0
-856,25,Terraforming,73628505,True,1,0
-857,25,Fiendsmith's Tract,98567237,False,1,0
-858,25,Nightmare Pain,65261141,True,1,0
-859,25,Opening of the Spirit Gates,80312545,True,1,0
-860,25,Nightmare Throne,93729896,True,3,0
-861,25,Infinite Impermanence,10045474,False,3,0
-862,25,Abominable Chamber of the Unchained,80801743,True,1,0
-863,25,Fiendsmith's Desirae,82135803,True,1,1
-864,25,Phantom of Yubel,80453041,True,2,1
-865,25,Aerial Eater,28143384,False,1,1
-866,25,Necroquip Princess,93860227,False,1,1
-867,25,"Varudras, the Final Bringer of the End Times",70636044,True,1,1
-868,25,D/D/D Wave High King Caesar,79559912,False,1,1
-869,25,Unchained Soul Lord of Yama,24269961,True,2,1
-870,25,Unchained Soul of Rage,67680512,True,1,1
-871,25,S:P Little Knight,29301450,False,1,1
-872,25,Fiendsmith's Sequence,49867899,True,1,1
-873,25,Moon of the Closed Heaven,71818935,True,1,1
-874,25,Muckraker From the Underworld,71607202,False,1,1
-875,25,Fiendsmith's Requiem,2463794,True,1,1
-876,26,Yubel - Terror Incarnate,4779091,False,1,0
-877,26,Yubel,78371393,True,1,0
-878,26,Spirit of Yubel,90829280,True,2,0
-879,26,Bystial Druiswurm,6637331,False,1,0
-880,26,Bystial Magnamhut,33854624,False,1,0
-881,26,Bystial Baldrake,72656408,False,1,0
-882,26,Unchained Soul of Sharvara,41165831,True,1,0
-883,26,Fiendsmith Engraver,60764609,True,2,0
-884,26,Lacrima the Scarlet Sorrow,28803166,True,1,0
-885,26,Mulcharmy Fuwaross,42141493,True,3,0
-886,26,Ash Blossom & Joyous Spring,14558127,True,3,0
-887,26,Dark Beckoning Beast,81034083,True,3,0
-888,26,Fabled Lurrie,97651498,False,1,0
-889,26,Gruesome Grave Squirmer,24215921,True,1,0
-890,26,Samsara D Lotus,62318994,True,3,0
-891,26,Droll & Lock Bird,94145021,False,3,0
-892,26,One for One,2295440,False,1,0
-893,26,Terraforming,73628505,False,1,0
-894,26,Fiendsmith's Tract,98567237,False,1,0
-895,26,Nightmare Pain,65261141,True,1,0
-896,26,Opening of the Spirit Gates,80312545,True,1,0
-897,26,Nightmare Throne,93729896,False,3,0
-898,26,Infinite Impermanence,10045474,False,3,0
-899,26,Abominable Chamber of the Unchained,80801743,True,1,0
-900,26,Fiendsmith's Desirae,82135803,True,1,1
-901,26,Phantom of Yubel,80453041,True,2,1
-902,26,Aerial Eater,28143384,False,1,1
-903,26,Necroquip Princess,93860227,False,1,1
-904,26,"Varudras, the Final Bringer of the End Times",70636044,True,1,1
-905,26,D/D/D Wave High King Caesar,79559912,False,1,1
-906,26,Unchained Soul Lord of Yama,24269961,True,2,1
-907,26,Unchained Soul of Rage,67680512,True,1,1
-908,26,S:P Little Knight,29301450,False,1,1
-909,26,Fiendsmith's Sequence,49867899,True,1,1
-910,26,Moon of the Closed Heaven,71818935,True,1,1
-911,26,Muckraker From the Underworld,71607202,False,1,1
-912,26,Fiendsmith's Requiem,2463794,True,1,1
-913,27,Lady Labrynth of the Silver Castle,81497285,False,3,0
-914,27,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-915,27,Dimension Shifter,91800273,True,3,0
-916,27,Runick Freezing Curses,30430448,False,1,0
-917,27,Runick Flashing Fire,68957034,False,1,0
-918,27,Runick Destruction,94445733,False,1,0
-919,27,Welcome Labrynth,5380979,True,3,0
-920,27,Starry Dragon's Cycle,6278008,False,2,0
-921,27,Ice Dragon's Prison,20899496,False,2,0
-922,27,Simultaneous Equation Cannons,25096909,False,3,0
-923,27,Destructive Daruma Karma Cannon,30748475,False,3,0
-924,27,Weighbridge,39103226,True,2,0
-925,27,Terrors of the Overroot,63086455,True,2,0
-926,27,Lost Wind,74003290,False,2,0
-927,27,Trap Trick,80101899,False,3,0
-928,27,Dimensional Barrier,83326048,False,2,0
-929,27,Big Welcome Labrynth,92714517,True,3,0
-930,27,Solemn Strike,40605147,False,3,0
-931,27,The Last Warrior from Another Planet,86099788,False,1,1
-932,27,"Garura, Wings of Resonant Life",11765832,False,1,1
-933,27,Freki the Runick Fangs,47219274,False,1,1
-934,27,Geri the Runick Fangs,28373620,False,1,1
-935,27,Munin the Runick Wings,92385016,False,1,1
-936,27,Hugin the Runick Wings,55990317,False,1,1
-937,27,Thousand-Eyes Restrict,63519819,False,1,1
-938,27,Dhampir Vampire Sheridan,32302078,False,1,1
-939,27,Cyber Dragon Infinity,10443957,False,1,1
-940,27,Number S39: Utopia the Lightning,56832966,False,1,1
-941,27,Cyber Dragon Nova,58069384,False,1,1
-942,27,Number C39: Utopia Ray,56840427,False,1,1
-943,27,Number 39: Utopia,84013237,False,1,1
-944,27,Xyz Armor Torpedo,94151981,False,1,1
-945,27,D/D/D Stone King Darius,51497409,False,1,1
-946,28,Yubel - Terror Incarnate,4779091,False,1,0
-947,28,Yubel,78371393,True,1,0
-948,28,Spirit of Yubel,90829280,True,2,0
-949,28,Bystial Druiswurm,6637331,False,1,0
-950,28,Bystial Magnamhut,33854624,False,1,0
-951,28,Bystial Baldrake,72656408,False,1,0
-952,28,Unchained Soul of Sharvara,41165831,True,1,0
-953,28,Fiendsmith Engraver,60764609,False,2,0
-954,28,Lacrima the Scarlet Sorrow,28803166,False,1,0
-955,28,Mulcharmy Fuwaross,42141493,True,3,0
-956,28,Ash Blossom & Joyous Spring,14558127,True,3,0
-957,28,Dark Beckoning Beast,81034083,True,3,0
-958,28,Fabled Lurrie,97651498,False,1,0
-959,28,Gruesome Grave Squirmer,24215921,True,1,0
-960,28,Samsara D Lotus,62318994,True,3,0
-961,28,Droll & Lock Bird,94145021,True,3,0
-962,28,One for One,2295440,False,1,0
-963,28,Terraforming,73628505,False,1,0
-964,28,Fiendsmith's Tract,98567237,False,1,0
-965,28,Nightmare Pain,65261141,True,1,0
-966,28,Opening of the Spirit Gates,80312545,True,1,0
-967,28,Nightmare Throne,93729896,False,3,0
-968,28,Infinite Impermanence,10045474,False,3,0
-969,28,Abominable Chamber of the Unchained,80801743,False,1,0
-970,28,Fiendsmith's Desirae,82135803,False,1,1
-971,28,Phantom of Yubel,80453041,True,2,1
-972,28,Aerial Eater,28143384,False,1,1
-973,28,Necroquip Princess,93860227,False,1,1
-974,28,"Varudras, the Final Bringer of the End Times",70636044,False,1,1
-975,28,D/D/D Wave High King Caesar,79559912,False,1,1
-976,28,Unchained Soul Lord of Yama,24269961,True,2,1
-977,28,Unchained Soul of Rage,67680512,False,1,1
-978,28,S:P Little Knight,29301450,False,1,1
-979,28,Fiendsmith's Sequence,49867899,False,1,1
-980,28,Moon of the Closed Heaven,71818935,False,1,1
-981,28,Muckraker From the Underworld,71607202,False,1,1
-982,28,Fiendsmith's Requiem,2463794,False,1,1
-983,29,Yubel - Terror Incarnate,4779091,False,1,0
-984,29,Yubel,78371393,True,1,0
-985,29,Spirit of Yubel,90829280,True,2,0
-986,29,Bystial Druiswurm,6637331,False,1,0
-987,29,Bystial Magnamhut,33854624,False,1,0
-988,29,Bystial Baldrake,72656408,True,1,0
-989,29,Unchained Soul of Sharvara,41165831,True,1,0
-990,29,Fiendsmith Engraver,60764609,True,2,0
-991,29,Lacrima the Scarlet Sorrow,28803166,True,1,0
-992,29,Mulcharmy Fuwaross,42141493,True,3,0
-993,29,Ash Blossom & Joyous Spring,14558127,True,3,0
-994,29,Dark Beckoning Beast,81034083,True,3,0
-995,29,Fabled Lurrie,97651498,False,1,0
-996,29,Gruesome Grave Squirmer,24215921,True,1,0
-997,29,Samsara D Lotus,62318994,False,3,0
-998,29,Droll & Lock Bird,94145021,True,3,0
-999,29,One for One,2295440,False,1,0
-1000,29,Terraforming,73628505,False,1,0
-1001,29,Fiendsmith's Tract,98567237,False,1,0
-1002,29,Nightmare Pain,65261141,True,1,0
-1003,29,Opening of the Spirit Gates,80312545,True,1,0
-1004,29,Nightmare Throne,93729896,False,3,0
-1005,29,Infinite Impermanence,10045474,True,3,0
-1006,29,Abominable Chamber of the Unchained,80801743,True,1,0
-1007,29,Fiendsmith's Desirae,82135803,True,1,1
-1008,29,Phantom of Yubel,80453041,True,2,1
-1009,29,Aerial Eater,28143384,True,1,1
-1010,29,Necroquip Princess,93860227,False,1,1
-1011,29,"Varudras, the Final Bringer of the End Times",70636044,True,1,1
-1012,29,D/D/D Wave High King Caesar,79559912,False,1,1
-1013,29,Unchained Soul Lord of Yama,24269961,True,2,1
-1014,29,Unchained Soul of Rage,67680512,True,1,1
-1015,29,S:P Little Knight,29301450,False,1,1
-1016,29,Fiendsmith's Sequence,49867899,True,1,1
-1017,29,Moon of the Closed Heaven,71818935,True,1,1
-1018,29,Muckraker From the Underworld,71607202,True,1,1
-1019,29,Fiendsmith's Requiem,2463794,True,1,1
-1020,30,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1021,30,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1022,30,Dimension Shifter,91800273,True,3,0
-1023,30,Runick Freezing Curses,30430448,False,1,0
-1024,30,Runick Flashing Fire,68957034,False,1,0
-1025,30,Runick Destruction,94445733,True,1,0
-1026,30,Welcome Labrynth,5380979,False,3,0
-1027,30,Starry Dragon's Cycle,6278008,False,2,0
-1028,30,Ice Dragon's Prison,20899496,True,2,0
-1029,30,Simultaneous Equation Cannons,25096909,True,3,0
-1030,30,Destructive Daruma Karma Cannon,30748475,True,3,0
-1031,30,Weighbridge,39103226,False,2,0
-1032,30,Terrors of the Overroot,63086455,False,2,0
-1033,30,Lost Wind,74003290,True,2,0
-1034,30,Trap Trick,80101899,True,3,0
-1035,30,Dimensional Barrier,83326048,False,2,0
-1036,30,Big Welcome Labrynth,92714517,True,3,0
-1037,30,Solemn Strike,40605147,False,3,0
-1038,30,The Last Warrior from Another Planet,86099788,False,1,1
-1039,30,"Garura, Wings of Resonant Life",11765832,False,1,1
-1040,30,Freki the Runick Fangs,47219274,False,1,1
-1041,30,Geri the Runick Fangs,28373620,False,1,1
-1042,30,Munin the Runick Wings,92385016,True,1,1
-1043,30,Hugin the Runick Wings,55990317,False,1,1
-1044,30,Thousand-Eyes Restrict,63519819,False,1,1
-1045,30,Dhampir Vampire Sheridan,32302078,False,1,1
-1046,30,Cyber Dragon Infinity,10443957,False,1,1
-1047,30,Number S39: Utopia the Lightning,56832966,False,1,1
-1048,30,Cyber Dragon Nova,58069384,False,1,1
-1049,30,Number C39: Utopia Ray,56840427,False,1,1
-1050,30,Number 39: Utopia,84013237,False,1,1
-1051,30,Xyz Armor Torpedo,94151981,True,1,1
-1052,30,D/D/D Stone King Darius,51497409,True,1,1
-1053,31,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1054,31,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1055,31,Dimension Shifter,91800273,False,3,0
-1056,31,Runick Freezing Curses,30430448,False,1,0
-1057,31,Runick Flashing Fire,68957034,False,1,0
-1058,31,Runick Destruction,94445733,False,1,0
-1059,31,Welcome Labrynth,5380979,False,3,0
-1060,31,Starry Dragon's Cycle,6278008,True,2,0
-1061,31,Ice Dragon's Prison,20899496,False,2,0
-1062,31,Simultaneous Equation Cannons,25096909,True,3,0
-1063,31,Destructive Daruma Karma Cannon,30748475,False,3,0
-1064,31,Weighbridge,39103226,False,2,0
-1065,31,Terrors of the Overroot,63086455,False,2,0
-1066,31,Lost Wind,74003290,False,2,0
-1067,31,Trap Trick,80101899,False,3,0
-1068,31,Dimensional Barrier,83326048,False,2,0
-1069,31,Big Welcome Labrynth,92714517,True,3,0
-1070,31,Solemn Strike,40605147,True,3,0
-1071,31,The Last Warrior from Another Planet,86099788,False,1,1
-1072,31,"Garura, Wings of Resonant Life",11765832,False,1,1
-1073,31,Freki the Runick Fangs,47219274,False,1,1
-1074,31,Geri the Runick Fangs,28373620,False,1,1
-1075,31,Munin the Runick Wings,92385016,False,1,1
-1076,31,Hugin the Runick Wings,55990317,False,1,1
-1077,31,Thousand-Eyes Restrict,63519819,True,1,1
-1078,31,Dhampir Vampire Sheridan,32302078,False,1,1
-1079,31,Cyber Dragon Infinity,10443957,False,1,1
-1080,31,Number S39: Utopia the Lightning,56832966,True,1,1
-1081,31,Cyber Dragon Nova,58069384,True,1,1
-1082,31,Number C39: Utopia Ray,56840427,False,1,1
-1083,31,Number 39: Utopia,84013237,False,1,1
-1084,31,Xyz Armor Torpedo,94151981,False,1,1
-1085,31,D/D/D Stone King Darius,51497409,False,1,1
-1086,32,Yubel - Terror Incarnate,4779091,False,1,0
-1087,32,Yubel,78371393,True,1,0
-1088,32,Spirit of Yubel,90829280,True,2,0
-1089,32,Bystial Druiswurm,6637331,False,1,0
-1090,32,Bystial Magnamhut,33854624,False,1,0
-1091,32,Bystial Baldrake,72656408,False,1,0
-1092,32,Unchained Soul of Sharvara,41165831,False,1,0
-1093,32,Fiendsmith Engraver,60764609,False,2,0
-1094,32,Lacrima the Scarlet Sorrow,28803166,False,1,0
-1095,32,Mulcharmy Fuwaross,42141493,False,3,0
-1096,32,Ash Blossom & Joyous Spring,14558127,False,3,0
-1097,32,Dark Beckoning Beast,81034083,False,3,0
-1098,32,Fabled Lurrie,97651498,False,1,0
-1099,32,Gruesome Grave Squirmer,24215921,False,1,0
-1100,32,Samsara D Lotus,62318994,True,3,0
-1101,32,Droll & Lock Bird,94145021,False,3,0
-1102,32,One for One,2295440,False,1,0
-1103,32,Terraforming,73628505,False,1,0
-1104,32,Fiendsmith's Tract,98567237,False,1,0
-1105,32,Nightmare Pain,65261141,True,1,0
-1106,32,Opening of the Spirit Gates,80312545,False,1,0
-1107,32,Nightmare Throne,93729896,True,3,0
-1108,32,Infinite Impermanence,10045474,True,3,0
-1109,32,Abominable Chamber of the Unchained,80801743,False,1,0
-1110,32,Fiendsmith's Desirae,82135803,False,1,1
-1111,32,Phantom of Yubel,80453041,True,2,1
-1112,32,Aerial Eater,28143384,False,1,1
-1113,32,Necroquip Princess,93860227,False,1,1
-1114,32,"Varudras, the Final Bringer of the End Times",70636044,False,1,1
-1115,32,D/D/D Wave High King Caesar,79559912,False,1,1
-1116,32,Unchained Soul Lord of Yama,24269961,False,2,1
-1117,32,Unchained Soul of Rage,67680512,False,1,1
-1118,32,S:P Little Knight,29301450,False,1,1
-1119,32,Fiendsmith's Sequence,49867899,False,1,1
-1120,32,Moon of the Closed Heaven,71818935,False,1,1
-1121,32,Muckraker From the Underworld,71607202,False,1,1
-1122,32,Fiendsmith's Requiem,2463794,False,1,1
-1123,33,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1124,33,Lovely Labrynth of the Silver Castle,2347656,True,1,0
-1125,33,Dimension Shifter,91800273,False,3,0
-1126,33,Runick Freezing Curses,30430448,False,1,0
-1127,33,Runick Flashing Fire,68957034,True,1,0
-1128,33,Runick Destruction,94445733,False,1,0
-1129,33,Welcome Labrynth,5380979,True,3,0
-1130,33,Starry Dragon's Cycle,6278008,True,2,0
-1131,33,Ice Dragon's Prison,20899496,False,2,0
-1132,33,Simultaneous Equation Cannons,25096909,True,3,0
-1133,33,Destructive Daruma Karma Cannon,30748475,True,3,0
-1134,33,Weighbridge,39103226,False,2,0
-1135,33,Terrors of the Overroot,63086455,False,2,0
-1136,33,Lost Wind,74003290,False,2,0
-1137,33,Trap Trick,80101899,True,3,0
-1138,33,Dimensional Barrier,83326048,False,2,0
-1139,33,Big Welcome Labrynth,92714517,True,3,0
-1140,33,Solemn Strike,40605147,False,3,0
-1141,33,The Last Warrior from Another Planet,86099788,False,1,1
-1142,33,"Garura, Wings of Resonant Life",11765832,False,1,1
-1143,33,Freki the Runick Fangs,47219274,False,1,1
-1144,33,Geri the Runick Fangs,28373620,False,1,1
-1145,33,Munin the Runick Wings,92385016,False,1,1
-1146,33,Hugin the Runick Wings,55990317,False,1,1
-1147,33,Thousand-Eyes Restrict,63519819,False,1,1
-1148,33,Dhampir Vampire Sheridan,32302078,False,1,1
-1149,33,Cyber Dragon Infinity,10443957,False,1,1
-1150,33,Number S39: Utopia the Lightning,56832966,False,1,1
-1151,33,Cyber Dragon Nova,58069384,False,1,1
-1152,33,Number C39: Utopia Ray,56840427,False,1,1
-1153,33,Number 39: Utopia,84013237,False,1,1
-1154,33,Xyz Armor Torpedo,94151981,False,1,1
-1155,33,D/D/D Stone King Darius,51497409,False,1,1
-1156,34,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1157,34,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1158,34,Dimension Shifter,91800273,True,3,0
-1159,34,Runick Freezing Curses,30430448,False,1,0
-1160,34,Runick Flashing Fire,68957034,False,1,0
-1161,34,Runick Destruction,94445733,False,1,0
-1162,34,Welcome Labrynth,5380979,False,3,0
-1163,34,Starry Dragon's Cycle,6278008,False,2,0
-1164,34,Ice Dragon's Prison,20899496,False,2,0
-1165,34,Simultaneous Equation Cannons,25096909,False,3,0
-1166,34,Destructive Daruma Karma Cannon,30748475,False,3,0
-1167,34,Weighbridge,39103226,True,2,0
-1168,34,Terrors of the Overroot,63086455,False,2,0
-1169,34,Lost Wind,74003290,True,2,0
-1170,34,Trap Trick,80101899,False,3,0
-1171,34,Dimensional Barrier,83326048,False,2,0
-1172,34,Big Welcome Labrynth,92714517,False,3,0
-1173,34,Solemn Strike,40605147,True,3,0
-1174,34,The Last Warrior from Another Planet,86099788,False,1,1
-1175,34,"Garura, Wings of Resonant Life",11765832,False,1,1
-1176,34,Freki the Runick Fangs,47219274,False,1,1
-1177,34,Geri the Runick Fangs,28373620,False,1,1
-1178,34,Munin the Runick Wings,92385016,False,1,1
-1179,34,Hugin the Runick Wings,55990317,False,1,1
-1180,34,Thousand-Eyes Restrict,63519819,False,1,1
-1181,34,Dhampir Vampire Sheridan,32302078,False,1,1
-1182,34,Cyber Dragon Infinity,10443957,False,1,1
-1183,34,Number S39: Utopia the Lightning,56832966,False,1,1
-1184,34,Cyber Dragon Nova,58069384,False,1,1
-1185,34,Number C39: Utopia Ray,56840427,False,1,1
-1186,34,Number 39: Utopia,84013237,False,1,1
-1187,34,Xyz Armor Torpedo,94151981,False,1,1
-1188,34,D/D/D Stone King Darius,51497409,False,1,1
-1189,35,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-1190,35,Snake-Eyes Diabellstar,27260347,True,1,0
-1191,35,Fire King High Avatar Garunix,23015896,True,1,0
-1192,35,Sacred Fire King Garunix,66431519,True,1,0
-1193,35,Fire King High Avatar Kirin,2526224,True,2,0
-1194,35,Diabellstar the Black Witch,72270339,True,3,0
-1195,35,Fire King Avatar Arvata,18621798,False,1,0
-1196,35,Fire King Consort Ulkanix,44455560,False,2,0
-1197,35,Mulcharmy Fuwaross,42141493,False,3,0
-1198,35,Ash Blossom & Joyous Spring,14558128,False,3,0
-1199,35,Snake-Eye Oak,45663742,True,1,0
-1200,35,Snake-Eye Ash,9674034,True,1,0
-1201,35,Snake-Eyes Poplar,90241276,True,1,0
-1202,35,Legendary Fire King Ponix,90681088,True,1,0
-1203,35,Triple Tactics Talent,25311006,False,1,0
-1204,35,Bonfire,85106525,False,3,0
-1205,35,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-1206,35,Sacred Azamina,94845588,True,1,0
-1207,35,Called by the Grave,24224830,False,1,0
-1208,35,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-1209,35,Fire King Sky Burn,91703676,True,1,0
-1210,35,Fire King Sanctuary,65305978,True,1,0
-1211,35,Sinful Spoils Deception,66328392,True,3,0
-1212,35,Divine Temple of the Snake-Eye,53639887,True,1,0
-1213,35,Fire King Island,57554544,True,1,0
-1214,35,Infinite Impermanence,10045474,False,3,0
-1215,35,Dominus Impulse,40366667,True,3,0
-1216,35,Azamina Mu Rcielago,73391962,True,1,1
-1217,35,Azamina Rhea Silvera,46396218,False,1,1
-1218,35,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
-1219,35,Salamangreat Raging Phoenix,57134592,False,1,1
-1220,35,Amphibious Swarmship Amblowhale,20665527,False,1,1
-1221,35,Accesscode Talker,86066372,False,1,1
-1222,35,"Promethean Princess, Bestower of Flames",2772337,False,2,1
-1223,35,Knightmare Phoenix,2857636,False,1,1
-1224,35,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
-1225,35,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
-1226,35,Salamangreat Sunlight Wolf,87871125,False,1,1
-1227,35,S:P Little Knight,29301450,False,1,1
-1228,35,I:P Masquerena,65741786,False,1,1
-1229,35,Relinquished Anima,94259633,True,1,1
-1230,36,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1231,36,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1232,36,Dimension Shifter,91800273,True,3,0
-1233,36,Runick Freezing Curses,30430448,False,1,0
-1234,36,Runick Flashing Fire,68957034,False,1,0
-1235,36,Runick Destruction,94445733,True,1,0
-1236,36,Welcome Labrynth,5380979,False,3,0
-1237,36,Starry Dragon's Cycle,6278008,False,2,0
-1238,36,Ice Dragon's Prison,20899496,False,2,0
-1239,36,Simultaneous Equation Cannons,25096909,True,3,0
-1240,36,Destructive Daruma Karma Cannon,30748475,False,3,0
-1241,36,Weighbridge,39103226,False,2,0
-1242,36,Terrors of the Overroot,63086455,False,2,0
-1243,36,Lost Wind,74003290,False,2,0
-1244,36,Trap Trick,80101899,False,3,0
-1245,36,Dimensional Barrier,83326048,False,2,0
-1246,36,Big Welcome Labrynth,92714517,True,3,0
-1247,36,Solemn Strike,40605147,False,3,0
-1248,36,The Last Warrior from Another Planet,86099788,False,1,1
-1249,36,"Garura, Wings of Resonant Life",11765832,False,1,1
-1250,36,Freki the Runick Fangs,47219274,False,1,1
-1251,36,Geri the Runick Fangs,28373620,False,1,1
-1252,36,Munin the Runick Wings,92385016,False,1,1
-1253,36,Hugin the Runick Wings,55990317,True,1,1
-1254,36,Thousand-Eyes Restrict,63519819,False,1,1
-1255,36,Dhampir Vampire Sheridan,32302078,False,1,1
-1256,36,Cyber Dragon Infinity,10443957,False,1,1
-1257,36,Number S39: Utopia the Lightning,56832966,False,1,1
-1258,36,Cyber Dragon Nova,58069384,False,1,1
-1259,36,Number C39: Utopia Ray,56840427,True,1,1
-1260,36,Number 39: Utopia,84013237,True,1,1
-1261,36,Xyz Armor Torpedo,94151981,False,1,1
-1262,36,D/D/D Stone King Darius,51497409,False,1,1
-1263,37,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-1264,37,Snake-Eyes Diabellstar,27260347,False,1,0
-1265,37,Fire King High Avatar Garunix,23015896,True,1,0
-1266,37,Sacred Fire King Garunix,66431519,True,1,0
-1267,37,Fire King High Avatar Kirin,2526224,True,2,0
-1268,37,Diabellstar the Black Witch,72270339,True,3,0
-1269,37,Fire King Avatar Arvata,18621798,False,1,0
-1270,37,Fire King Consort Ulkanix,44455560,True,2,0
-1271,37,Mulcharmy Fuwaross,42141493,False,3,0
-1272,37,Ash Blossom & Joyous Spring,14558128,True,3,0
-1273,37,Snake-Eye Oak,45663742,False,1,0
-1274,37,Snake-Eye Ash,9674034,False,1,0
-1275,37,Snake-Eyes Poplar,90241276,False,1,0
-1276,37,Legendary Fire King Ponix,90681088,False,1,0
-1277,37,Triple Tactics Talent,25311006,False,1,0
-1278,37,Bonfire,85106525,False,3,0
-1279,37,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-1280,37,Sacred Azamina,94845588,True,1,0
-1281,37,Called by the Grave,24224830,False,1,0
-1282,37,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-1283,37,Fire King Sky Burn,91703676,True,1,0
-1284,37,Fire King Sanctuary,65305978,False,1,0
-1285,37,Sinful Spoils Deception,66328392,True,3,0
-1286,37,Divine Temple of the Snake-Eye,53639887,False,1,0
-1287,37,Fire King Island,57554544,False,1,0
-1288,37,Infinite Impermanence,10045474,False,3,0
-1289,37,Dominus Impulse,40366667,False,3,0
-1290,37,Azamina Mu Rcielago,73391962,False,1,1
-1291,37,Azamina Rhea Silvera,46396218,False,1,1
-1292,37,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
-1293,37,Salamangreat Raging Phoenix,57134592,False,1,1
-1294,37,Amphibious Swarmship Amblowhale,20665527,False,1,1
-1295,37,Accesscode Talker,86066372,False,1,1
-1296,37,"Promethean Princess, Bestower of Flames",2772337,False,2,1
-1297,37,Knightmare Phoenix,2857636,False,1,1
-1298,37,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
-1299,37,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
-1300,37,Salamangreat Sunlight Wolf,87871125,False,1,1
-1301,37,S:P Little Knight,29301450,False,1,1
-1302,37,I:P Masquerena,65741786,False,1,1
-1303,37,Relinquished Anima,94259633,False,1,1
-1304,38,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1305,38,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1306,38,Dimension Shifter,91800273,False,3,0
-1307,38,Runick Freezing Curses,30430448,True,1,0
-1308,38,Runick Flashing Fire,68957034,False,1,0
-1309,38,Runick Destruction,94445733,True,1,0
-1310,38,Welcome Labrynth,5380979,True,3,0
-1311,38,Starry Dragon's Cycle,6278008,True,2,0
-1312,38,Ice Dragon's Prison,20899496,True,2,0
-1313,38,Simultaneous Equation Cannons,25096909,False,3,0
-1314,38,Destructive Daruma Karma Cannon,30748475,True,3,0
-1315,38,Weighbridge,39103226,True,2,0
-1316,38,Terrors of the Overroot,63086455,True,2,0
-1317,38,Lost Wind,74003290,False,2,0
-1318,38,Trap Trick,80101899,True,3,0
-1319,38,Dimensional Barrier,83326048,False,2,0
-1320,38,Big Welcome Labrynth,92714517,True,3,0
-1321,38,Solemn Strike,40605147,True,3,0
-1322,38,The Last Warrior from Another Planet,86099788,False,1,1
-1323,38,"Garura, Wings of Resonant Life",11765832,False,1,1
-1324,38,Freki the Runick Fangs,47219274,False,1,1
-1325,38,Geri the Runick Fangs,28373620,True,1,1
-1326,38,Munin the Runick Wings,92385016,False,1,1
-1327,38,Hugin the Runick Wings,55990317,False,1,1
-1328,38,Thousand-Eyes Restrict,63519819,False,1,1
-1329,38,Dhampir Vampire Sheridan,32302078,False,1,1
-1330,38,Cyber Dragon Infinity,10443957,False,1,1
-1331,38,Number S39: Utopia the Lightning,56832966,False,1,1
-1332,38,Cyber Dragon Nova,58069384,False,1,1
-1333,38,Number C39: Utopia Ray,56840427,False,1,1
-1334,38,Number 39: Utopia,84013237,False,1,1
-1335,38,Xyz Armor Torpedo,94151981,False,1,1
-1336,38,D/D/D Stone King Darius,51497409,False,1,1
-1337,39,"Nibiru, the Primal Being",27204311,False,3,0
-1338,39,Bystial Magnamhut,33854624,False,1,0
-1339,39,Dimension Shifter,91800273,True,3,0
-1340,39,Tenpai Dragon Chundra,91810826,True,3,0
-1341,39,Mulcharmy Fuwaross,42141493,True,3,0
-1342,39,Mulcharmy Purulia,84192580,True,1,0
-1343,39,Tenpai Dragon Fadra,65326118,True,2,0
-1344,39,Dora Dora,11590299,True,1,0
-1345,39,Ash Blossom & Joyous Spring,14558127,False,1,0
-1346,39,Ash Blossom & Joyous Spring,14558128,False,2,0
-1347,39,Tenpai Dragon Genroku,23657016,False,2,0
-1348,39,Droll & Lock Bird,94145021,True,2,0
-1349,39,Lightning Storm,14532163,True,3,0
-1350,39,Harpie's Feather Duster,18144506,False,1,0
-1351,39,Terraforming,73628505,False,1,0
-1352,39,Pot of Prosperity,84211599,False,1,0
-1353,39,Sangen Kaimen,66730191,False,3,0
-1354,39,Sangen Summoning,30336082,True,1,0
-1355,39,Infinite Impermanence,10045474,True,3,0
-1356,39,Dominus Impulse,40366667,True,3,0
-1357,39,Sangenpai Transcendent Dragion,18969888,True,2,1
-1358,39,Trident Dragion,39402797,False,1,1
-1359,39,Sangenpai Bident Dragion,82570174,True,2,1
-1360,39,Samurai Destroyer,40509732,False,1,1
-1361,39,Odd-Eyes Meteorburst Dragon,80696379,False,1,1
-1362,39,Kuibelt the Blade Dragon,87837090,False,1,1
-1363,39,Black Rose Dragon,73580471,False,1,1
-1364,39,Salamangreat Raging Phoenix,57134592,False,1,1
-1365,39,Worldsea Dragon Zealantis,45112597,False,1,1
-1366,39,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-1367,39,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
-1368,39,Hieratic Seal of the Heavenly Spheres,24361622,True,2,1
-1369,40,"Nibiru, the Primal Being",27204311,True,3,0
-1370,40,Bystial Magnamhut,33854624,False,1,0
-1371,40,Dimension Shifter,91800273,False,3,0
-1372,40,Tenpai Dragon Chundra,91810826,True,3,0
-1373,40,Mulcharmy Fuwaross,42141493,False,3,0
-1374,40,Tenpai Dragon Paidra,39931513,True,3,0
-1375,40,Tenpai Dragon Fadra,65326118,True,2,0
-1376,40,Dora Dora,11590299,False,1,0
-1377,40,Ash Blossom & Joyous Spring,14558127,False,1,0
-1378,40,Ash Blossom & Joyous Spring,14558128,False,2,0
-1379,40,Tenpai Dragon Genroku,23657016,True,2,0
-1380,40,Droll & Lock Bird,94145021,False,2,0
-1381,40,Lightning Storm,14532163,False,1,0
-1382,40,Harpie's Feather Duster,18144506,False,1,0
-1383,40,Terraforming,73628505,True,1,0
-1384,40,Pot of Prosperity,84211599,False,1,0
-1385,40,Sangen Kaimen,66730191,True,3,0
-1386,40,Sangen Summoning,30336082,True,1,0
-1387,40,Infinite Impermanence,10045474,True,3,0
-1388,40,Dominus Impulse,40366667,True,3,0
-1389,40,Sangenpai Transcendent Dragion,18969888,False,2,1
-1390,40,Trident Dragion,39402797,False,1,1
-1391,40,Sangenpai Bident Dragion,82570174,False,2,1
-1392,40,Samurai Destroyer,40509732,False,1,1
-1393,40,Odd-Eyes Meteorburst Dragon,80696379,False,1,1
-1394,40,Kuibelt the Blade Dragon,87837090,True,1,1
-1395,40,Black Rose Dragon,73580471,True,1,1
-1396,40,Salamangreat Raging Phoenix,57134592,False,1,1
-1397,40,Worldsea Dragon Zealantis,45112597,False,1,1
-1398,40,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-1399,40,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
-1400,40,Hieratic Seal of the Heavenly Spheres,24361622,False,2,1
-1401,41,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1402,41,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1403,41,Dimension Shifter,91800273,True,3,0
-1404,41,Runick Freezing Curses,30430448,False,1,0
-1405,41,Runick Flashing Fire,68957034,False,1,0
-1406,41,Runick Destruction,94445733,False,1,0
-1407,41,Welcome Labrynth,5380979,False,3,0
-1408,41,Starry Dragon's Cycle,6278008,True,2,0
-1409,41,Ice Dragon's Prison,20899496,False,2,0
-1410,41,Simultaneous Equation Cannons,25096909,True,3,0
-1411,41,Destructive Daruma Karma Cannon,30748475,True,3,0
-1412,41,Weighbridge,39103226,False,2,0
-1413,41,Terrors of the Overroot,63086455,False,2,0
-1414,41,Lost Wind,74003290,False,2,0
-1415,41,Trap Trick,80101899,False,3,0
-1416,41,Dimensional Barrier,83326048,False,2,0
-1417,41,Big Welcome Labrynth,92714517,True,3,0
-1418,41,Solemn Strike,40605147,False,3,0
-1419,41,The Last Warrior from Another Planet,86099788,False,1,1
-1420,41,"Garura, Wings of Resonant Life",11765832,False,1,1
-1421,41,Freki the Runick Fangs,47219274,False,1,1
-1422,41,Geri the Runick Fangs,28373620,False,1,1
-1423,41,Munin the Runick Wings,92385016,True,1,1
-1424,41,Hugin the Runick Wings,55990317,False,1,1
-1425,41,Thousand-Eyes Restrict,63519819,False,1,1
-1426,41,Dhampir Vampire Sheridan,32302078,False,1,1
-1427,41,Cyber Dragon Infinity,10443957,False,1,1
-1428,41,Number S39: Utopia the Lightning,56832966,False,1,1
-1429,41,Cyber Dragon Nova,58069384,False,1,1
-1430,41,Number C39: Utopia Ray,56840427,True,1,1
-1431,41,Number 39: Utopia,84013237,True,1,1
-1432,41,Xyz Armor Torpedo,94151981,False,1,1
-1433,41,D/D/D Stone King Darius,51497409,False,1,1
-1434,42,Lady Labrynth of the Silver Castle,81497285,False,3,0
-1435,42,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1436,42,Dimension Shifter,91800273,True,3,0
-1437,42,Runick Freezing Curses,30430448,True,1,0
-1438,42,Runick Flashing Fire,68957034,False,1,0
-1439,42,Runick Destruction,94445733,False,1,0
-1440,42,Welcome Labrynth,5380979,False,3,0
-1441,42,Starry Dragon's Cycle,6278008,False,2,0
-1442,42,Ice Dragon's Prison,20899496,False,2,0
-1443,42,Simultaneous Equation Cannons,25096909,False,3,0
-1444,42,Destructive Daruma Karma Cannon,30748475,False,3,0
-1445,42,Weighbridge,39103226,False,2,0
-1446,42,Terrors of the Overroot,63086455,False,2,0
-1447,42,Lost Wind,74003290,True,2,0
-1448,42,Trap Trick,80101899,False,3,0
-1449,42,Dimensional Barrier,83326048,False,2,0
-1450,42,Big Welcome Labrynth,92714517,True,3,0
-1451,42,Solemn Strike,40605147,False,3,0
-1452,42,The Last Warrior from Another Planet,86099788,False,1,1
-1453,42,"Garura, Wings of Resonant Life",11765832,False,1,1
-1454,42,Freki the Runick Fangs,47219274,False,1,1
-1455,42,Geri the Runick Fangs,28373620,False,1,1
-1456,42,Munin the Runick Wings,92385016,False,1,1
-1457,42,Hugin the Runick Wings,55990317,False,1,1
-1458,42,Thousand-Eyes Restrict,63519819,False,1,1
-1459,42,Dhampir Vampire Sheridan,32302078,False,1,1
-1460,42,Cyber Dragon Infinity,10443957,False,1,1
-1461,42,Number S39: Utopia the Lightning,56832966,False,1,1
-1462,42,Cyber Dragon Nova,58069384,False,1,1
-1463,42,Number C39: Utopia Ray,56840427,False,1,1
-1464,42,Number 39: Utopia,84013237,False,1,1
-1465,42,Xyz Armor Torpedo,94151981,False,1,1
-1466,42,D/D/D Stone King Darius,51497409,False,1,1
-1467,43,"Nibiru, the Primal Being",27204311,False,3,0
-1468,43,Bystial Magnamhut,33854624,True,1,0
-1469,43,Dimension Shifter,91800273,True,3,0
-1470,43,Tenpai Dragon Chundra,91810826,True,3,0
-1471,43,Mulcharmy Fuwaross,42141493,False,3,0
-1472,43,Tenpai Dragon Paidra,39931513,True,3,0
-1473,43,Tenpai Dragon Fadra,65326118,False,2,0
-1474,43,Dora Dora,11590299,False,1,0
-1475,43,Ash Blossom & Joyous Spring,14558127,True,1,0
-1476,43,Ash Blossom & Joyous Spring,14558128,True,2,0
-1477,43,Tenpai Dragon Genroku,23657016,False,2,0
-1478,43,Droll & Lock Bird,94145021,False,2,0
-1479,43,Lightning Storm,14532163,False,1,0
-1480,43,Harpie's Feather Duster,18144506,False,1,0
-1481,43,Terraforming,73628505,False,1,0
-1482,43,Pot of Prosperity,84211599,False,1,0
-1483,43,Sangen Kaimen,66730191,True,3,0
-1484,43,Sangen Summoning,30336082,True,1,0
-1485,43,Infinite Impermanence,10045474,True,3,0
-1486,43,Dominus Impulse,40366667,True,3,0
-1487,43,Sangenpai Transcendent Dragion,18969888,False,2,1
-1488,43,Trident Dragion,39402797,False,1,1
-1489,43,Sangenpai Bident Dragion,82570174,True,2,1
-1490,43,Samurai Destroyer,40509732,False,1,1
-1491,43,Odd-Eyes Meteorburst Dragon,80696379,False,1,1
-1492,43,Kuibelt the Blade Dragon,87837090,False,1,1
-1493,43,Black Rose Dragon,73580471,False,1,1
-1494,43,Salamangreat Raging Phoenix,57134592,False,1,1
-1495,43,Worldsea Dragon Zealantis,45112597,False,1,1
-1496,43,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-1497,43,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
-1498,43,Hieratic Seal of the Heavenly Spheres,24361622,False,2,1
-1499,44,Lady Labrynth of the Silver Castle,81497285,False,3,0
-1500,44,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1501,44,Dimension Shifter,91800273,True,3,0
-1502,44,Runick Freezing Curses,30430448,True,1,0
-1503,44,Runick Flashing Fire,68957034,False,1,0
-1504,44,Runick Destruction,94445733,False,1,0
-1505,44,Welcome Labrynth,5380979,True,3,0
-1506,44,Starry Dragon's Cycle,6278008,False,2,0
-1507,44,Ice Dragon's Prison,20899496,False,2,0
-1508,44,Simultaneous Equation Cannons,25096909,True,3,0
-1509,44,Destructive Daruma Karma Cannon,30748475,False,3,0
-1510,44,Weighbridge,39103226,False,2,0
-1511,44,Terrors of the Overroot,63086455,False,2,0
-1512,44,Lost Wind,74003290,True,2,0
-1513,44,Trap Trick,80101899,False,3,0
-1514,44,Dimensional Barrier,83326048,False,2,0
-1515,44,Big Welcome Labrynth,92714517,False,3,0
-1516,44,Solemn Strike,40605147,False,3,0
-1517,44,The Last Warrior from Another Planet,86099788,False,1,1
-1518,44,"Garura, Wings of Resonant Life",11765832,False,1,1
-1519,44,Freki the Runick Fangs,47219274,False,1,1
-1520,44,Geri the Runick Fangs,28373620,False,1,1
-1521,44,Munin the Runick Wings,92385016,False,1,1
-1522,44,Hugin the Runick Wings,55990317,False,1,1
-1523,44,Thousand-Eyes Restrict,63519819,False,1,1
-1524,44,Dhampir Vampire Sheridan,32302078,False,1,1
-1525,44,Cyber Dragon Infinity,10443957,False,1,1
-1526,44,Number S39: Utopia the Lightning,56832966,False,1,1
-1527,44,Cyber Dragon Nova,58069384,False,1,1
-1528,44,Number C39: Utopia Ray,56840427,False,1,1
-1529,44,Number 39: Utopia,84013237,False,1,1
-1530,44,Xyz Armor Torpedo,94151981,False,1,1
-1531,44,D/D/D Stone King Darius,51497409,False,1,1
-1532,45,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1533,45,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1534,45,Dimension Shifter,91800273,False,3,0
-1535,45,Runick Freezing Curses,30430448,False,1,0
-1536,45,Runick Flashing Fire,68957034,False,1,0
-1537,45,Runick Destruction,94445733,False,1,0
-1538,45,Welcome Labrynth,5380979,False,3,0
-1539,45,Starry Dragon's Cycle,6278008,False,2,0
-1540,45,Ice Dragon's Prison,20899496,False,2,0
-1541,45,Simultaneous Equation Cannons,25096909,False,3,0
-1542,45,Destructive Daruma Karma Cannon,30748475,False,3,0
-1543,45,Weighbridge,39103226,True,2,0
-1544,45,Terrors of the Overroot,63086455,False,2,0
-1545,45,Lost Wind,74003290,False,2,0
-1546,45,Trap Trick,80101899,False,3,0
-1547,45,Dimensional Barrier,83326048,False,2,0
-1548,45,Big Welcome Labrynth,92714517,True,3,0
-1549,45,Solemn Strike,40605147,False,3,0
-1550,45,The Last Warrior from Another Planet,86099788,False,1,1
-1551,45,"Garura, Wings of Resonant Life",11765832,False,1,1
-1552,45,Freki the Runick Fangs,47219274,False,1,1
-1553,45,Geri the Runick Fangs,28373620,False,1,1
-1554,45,Munin the Runick Wings,92385016,False,1,1
-1555,45,Hugin the Runick Wings,55990317,False,1,1
-1556,45,Thousand-Eyes Restrict,63519819,False,1,1
-1557,45,Dhampir Vampire Sheridan,32302078,False,1,1
-1558,45,Cyber Dragon Infinity,10443957,False,1,1
-1559,45,Number S39: Utopia the Lightning,56832966,False,1,1
-1560,45,Cyber Dragon Nova,58069384,False,1,1
-1561,45,Number C39: Utopia Ray,56840427,False,1,1
-1562,45,Number 39: Utopia,84013237,False,1,1
-1563,45,Xyz Armor Torpedo,94151981,False,1,1
-1564,45,D/D/D Stone King Darius,51497409,False,1,1
-1565,46,Lady Labrynth of the Silver Castle,81497285,True,3,0
-1566,46,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1567,46,Dimension Shifter,91800273,False,3,0
-1568,46,Runick Freezing Curses,30430448,False,1,0
-1569,46,Runick Flashing Fire,68957034,True,1,0
-1570,46,Runick Destruction,94445733,False,1,0
-1571,46,Welcome Labrynth,5380979,False,3,0
-1572,46,Starry Dragon's Cycle,6278008,True,2,0
-1573,46,Ice Dragon's Prison,20899496,False,2,0
-1574,46,Simultaneous Equation Cannons,25096909,False,3,0
-1575,46,Destructive Daruma Karma Cannon,30748475,True,3,0
-1576,46,Weighbridge,39103226,False,2,0
-1577,46,Terrors of the Overroot,63086455,True,2,0
-1578,46,Lost Wind,74003290,False,2,0
-1579,46,Trap Trick,80101899,False,3,0
-1580,46,Dimensional Barrier,83326048,False,2,0
-1581,46,Big Welcome Labrynth,92714517,False,3,0
-1582,46,Solemn Strike,40605147,False,3,0
-1583,46,The Last Warrior from Another Planet,86099788,False,1,1
-1584,46,"Garura, Wings of Resonant Life",11765832,False,1,1
-1585,46,Freki the Runick Fangs,47219274,False,1,1
-1586,46,Geri the Runick Fangs,28373620,True,1,1
-1587,46,Munin the Runick Wings,92385016,False,1,1
-1588,46,Hugin the Runick Wings,55990317,False,1,1
-1589,46,Thousand-Eyes Restrict,63519819,False,1,1
-1590,46,Dhampir Vampire Sheridan,32302078,False,1,1
-1591,46,Cyber Dragon Infinity,10443957,False,1,1
-1592,46,Number S39: Utopia the Lightning,56832966,False,1,1
-1593,46,Cyber Dragon Nova,58069384,False,1,1
-1594,46,Number C39: Utopia Ray,56840427,False,1,1
-1595,46,Number 39: Utopia,84013237,False,1,1
-1596,46,Xyz Armor Torpedo,94151981,False,1,1
-1597,46,D/D/D Stone King Darius,51497409,False,1,1
-1598,47,"Nibiru, the Primal Being",27204311,False,3,0
-1599,47,Bystial Magnamhut,33854624,False,1,0
-1600,47,Dimension Shifter,91800273,True,3,0
-1601,47,Tenpai Dragon Chundra,91810826,True,3,0
-1602,47,Mulcharmy Fuwaross,42141493,False,3,0
-1603,47,Tenpai Dragon Paidra,39931513,True,3,0
-1604,47,Tenpai Dragon Fadra,65326118,True,2,0
-1605,47,Dora Dora,11590299,False,1,0
-1606,47,Ash Blossom & Joyous Spring,14558127,False,1,0
-1607,47,Ash Blossom & Joyous Spring,14558128,False,2,0
-1608,47,Tenpai Dragon Genroku,23657016,True,2,0
-1609,47,Droll & Lock Bird,94145021,False,2,0
-1610,47,Lightning Storm,14532163,True,1,0
-1611,47,Harpie's Feather Duster,18144506,False,1,0
-1612,47,Terraforming,73628505,False,1,0
-1613,47,Pot of Prosperity,84211599,False,1,0
-1614,47,Sangen Kaimen,66730191,False,3,0
-1615,47,Sangen Summoning,30336082,True,1,0
-1616,47,Infinite Impermanence,10045474,False,3,0
-1617,47,Dominus Impulse,40366667,False,3,0
-1618,47,Sangenpai Transcendent Dragion,18969888,True,2,1
-1619,47,Trident Dragion,39402797,True,1,1
-1620,47,Sangenpai Bident Dragion,82570174,True,2,1
-1621,47,Samurai Destroyer,40509732,False,1,1
-1622,47,Odd-Eyes Meteorburst Dragon,80696379,False,1,1
-1623,47,Kuibelt the Blade Dragon,87837090,False,1,1
-1624,47,Black Rose Dragon,73580471,False,1,1
-1625,47,Salamangreat Raging Phoenix,57134592,False,1,1
-1626,47,Worldsea Dragon Zealantis,45112597,False,1,1
-1627,47,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-1628,47,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
-1629,47,Hieratic Seal of the Heavenly Spheres,24361622,False,2,1
-1630,48,Lady Labrynth of the Silver Castle,81497285,False,3,0
-1631,48,Lovely Labrynth of the Silver Castle,2347656,False,1,0
-1632,48,Dimension Shifter,91800273,False,3,0
-1633,48,Runick Freezing Curses,30430448,False,1,0
-1634,48,Runick Flashing Fire,68957034,False,1,0
-1635,48,Runick Destruction,94445733,False,1,0
-1636,48,Welcome Labrynth,5380979,False,3,0
-1637,48,Starry Dragon's Cycle,6278008,False,2,0
-1638,48,Ice Dragon's Prison,20899496,False,2,0
-1639,48,Simultaneous Equation Cannons,25096909,False,3,0
-1640,48,Destructive Daruma Karma Cannon,30748475,False,3,0
-1641,48,Weighbridge,39103226,False,2,0
-1642,48,Terrors of the Overroot,63086455,False,2,0
-1643,48,Lost Wind,74003290,False,2,0
-1644,48,Trap Trick,80101899,False,3,0
-1645,48,Dimensional Barrier,83326048,False,2,0
-1646,48,Big Welcome Labrynth,92714517,False,3,0
-1647,48,Solemn Strike,40605147,False,3,0
-1648,48,The Last Warrior from Another Planet,86099788,False,1,1
-1649,48,"Garura, Wings of Resonant Life",11765832,False,1,1
-1650,48,Freki the Runick Fangs,47219274,False,1,1
-1651,48,Geri the Runick Fangs,28373620,False,1,1
-1652,48,Munin the Runick Wings,92385016,False,1,1
-1653,48,Hugin the Runick Wings,55990317,False,1,1
-1654,48,Thousand-Eyes Restrict,63519819,False,1,1
-1655,48,Dhampir Vampire Sheridan,32302078,False,1,1
-1656,48,Cyber Dragon Infinity,10443957,False,1,1
-1657,48,Number S39: Utopia the Lightning,56832966,False,1,1
-1658,48,Cyber Dragon Nova,58069384,False,1,1
-1659,48,Number C39: Utopia Ray,56840427,False,1,1
-1660,48,Number 39: Utopia,84013237,False,1,1
-1661,48,Xyz Armor Torpedo,94151981,False,1,1
-1662,48,D/D/D Stone King Darius,51497409,False,1,1
-1663,49,Silvy of the White Forest,98385955,False,3,0
-1664,49,Rucia of the White Forest,24779554,False,2,0
-1665,49,Elzette of the White Forest,61980241,False,2,0
-1666,49,Triple Tactics Talent,25311006,False,2,0
-1667,49,Upstart Goblin,70368879,False,3,0
-1668,49,Metalfoes Fusion,73594093,False,1,0
-1669,49,Terraforming,73628505,False,1,0
-1670,49,Tales of the White Forest,99289828,False,1,0
-1671,49,Runick Freezing Curses,30430448,False,3,0
-1672,49,Runick Tip,31562086,False,3,0
-1673,49,Runick Dispelling,66712905,False,1,0
-1674,49,Runick Slumber,67835547,False,3,0
-1675,49,Runick Flashing Fire,68957034,False,3,0
-1676,49,Runick Smiting Storm,93229151,False,1,0
-1677,49,Runick Destruction,94445733,False,3,0
-1678,49,Chicken Game,67616300,False,1,0
-1679,49,Runick Fountain,92107604,False,2,0
-1680,49,Evenly Matched,15693423,False,3,0
-1681,49,Woes of the White Forest,62995268,False,1,0
-1682,49,Skill Drain,82732705,False,1,0
-1683,49,Geri the Runick Fangs,28373620,False,2,1
-1684,49,Hugin the Runick Wings,55990317,False,3,1
-1685,49,Chaos Angel,22850702,False,1,1
-1686,49,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-1687,49,"Diabell, Queen of the White Forest",14307929,False,1,1
-1688,49,Coral Dragon,42566602,False,1,1
-1689,49,Tri-Edge Master,52445243,False,1,1
-1690,49,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-1691,49,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-1692,49,Zapper Shrimp,92744676,False,1,1
-1693,49,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-1694,49,S:P Little Knight,29301450,False,1,1
-1695,50,Silvy of the White Forest,98385955,False,3,0
-1696,50,Rucia of the White Forest,24779554,False,2,0
-1697,50,Elzette of the White Forest,61980241,False,2,0
-1698,50,Triple Tactics Talent,25311006,False,2,0
-1699,50,Upstart Goblin,70368879,False,3,0
-1700,50,Metalfoes Fusion,73594093,False,1,0
-1701,50,Terraforming,73628505,False,1,0
-1702,50,Tales of the White Forest,99289828,False,1,0
-1703,50,Runick Freezing Curses,30430448,False,3,0
-1704,50,Runick Tip,31562086,False,3,0
-1705,50,Runick Dispelling,66712905,False,1,0
-1706,50,Runick Slumber,67835547,False,3,0
-1707,50,Runick Flashing Fire,68957034,False,3,0
-1708,50,Runick Smiting Storm,93229151,False,1,0
-1709,50,Runick Destruction,94445733,False,3,0
-1710,50,Chicken Game,67616300,False,1,0
-1711,50,Runick Fountain,92107604,False,2,0
-1712,50,Evenly Matched,15693423,False,3,0
-1713,50,Woes of the White Forest,62995268,False,1,0
-1714,50,Skill Drain,82732705,False,1,0
-1715,50,Geri the Runick Fangs,28373620,False,2,1
-1716,50,Hugin the Runick Wings,55990317,False,3,1
-1717,50,Chaos Angel,22850702,False,1,1
-1718,50,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-1719,50,"Diabell, Queen of the White Forest",14307929,False,1,1
-1720,50,Coral Dragon,42566602,False,1,1
-1721,50,Tri-Edge Master,52445243,False,1,1
-1722,50,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-1723,50,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-1724,50,Zapper Shrimp,92744676,False,1,1
-1725,50,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-1726,50,S:P Little Knight,29301450,False,1,1
-1727,51,Snake-Eyes Flamberge Dragon,48452496,False,1,0
-1728,51,Snake-Eyes Diabellstar,27260347,False,1,0
-1729,51,Diabellstar the Black Witch,72270339,False,3,0
-1730,51,Fiendsmith Engraver,60764609,True,2,0
-1731,51,Lacrima the Scarlet Sorrow,28803166,True,1,0
-1732,51,Mulcharmy Fuwaross,42141493,False,3,0
-1733,51,Ash Blossom & Joyous Spring,14558128,True,3,0
-1734,51,Snake-Eye Oak,45663742,False,1,0
-1735,51,Snake-Eye Ash,9674034,False,1,0
-1736,51,Snake-Eyes Poplar,90241276,False,1,0
-1737,51,Fabled Lurrie,97651498,True,1,0
-1738,51,Droll & Lock Bird,94145021,False,3,0
-1739,51,Triple Tactics Talent,25311006,False,1,0
-1740,51,Bonfire,85106525,False,3,0
-1741,51,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
-1742,51,Sacred Azamina,94845588,False,1,0
-1743,51,Fiendsmith's Tract,98567237,True,1,0
-1744,51,Called by the Grave,24224830,False,1,0
-1745,51,WANTED: Seeker of Sinful Spoils,80845034,False,3,0
-1746,51,Sinful Spoils Deception,66328392,False,3,0
-1747,51,Divine Temple of the Snake-Eye,53639887,False,1,0
-1748,51,Infinite Impermanence,10045474,False,3,0
-1749,51,Angel Statue - Azurune,44822037,False,1,0
-1750,51,Fiendsmith's Desirae,82135803,True,1,1
-1751,51,Azamina Mu Rcielago,73391962,False,1,1
-1752,51,Azamina Rhea Silvera,46396218,False,1,1
-1753,51,Salamangreat Raging Phoenix,57134592,False,1,1
-1754,51,Saryuja Skull Dread,74997493,False,1,1
-1755,51,Worldsea Dragon Zealantis,45112597,False,1,1
-1756,51,Accesscode Talker,86066372,False,1,1
-1757,51,"Promethean Princess, Bestower of Flames",2772337,False,1,1
-1758,51,Knightmare Phoenix,2857636,False,1,1
-1759,51,S:P Little Knight,29301450,False,1,1
-1760,51,Silhouhatte Rabbit,1528054,False,1,1
-1761,51,Fiendsmith's Sequence,49867899,True,1,1
-1762,51,Moon of the Closed Heaven,71818935,False,1,1
-1763,51,I:P Masquerena,65741786,False,1,1
-1764,51,Fiendsmith's Requiem,2463794,True,1,1
-1765,52,Silvy of the White Forest,98385955,False,3,0
-1766,52,Rucia of the White Forest,24779554,False,2,0
-1767,52,Elzette of the White Forest,61980241,False,2,0
-1768,52,Triple Tactics Talent,25311006,False,2,0
-1769,52,Upstart Goblin,70368879,True,3,0
-1770,52,Metalfoes Fusion,73594093,False,1,0
-1771,52,Terraforming,73628505,False,1,0
-1772,52,Tales of the White Forest,99289828,False,1,0
-1773,52,Runick Freezing Curses,30430448,False,3,0
-1774,52,Runick Tip,31562086,False,3,0
-1775,52,Runick Dispelling,66712905,False,1,0
-1776,52,Runick Slumber,67835547,False,3,0
-1777,52,Runick Flashing Fire,68957034,False,3,0
-1778,52,Runick Smiting Storm,93229151,False,1,0
-1779,52,Runick Destruction,94445733,False,3,0
-1780,52,Chicken Game,67616300,False,1,0
-1781,52,Runick Fountain,92107604,False,2,0
-1782,52,Evenly Matched,15693423,False,3,0
-1783,52,Woes of the White Forest,62995268,True,1,0
-1784,52,Skill Drain,82732705,False,1,0
-1785,52,Geri the Runick Fangs,28373620,False,2,1
-1786,52,Hugin the Runick Wings,55990317,False,3,1
-1787,52,Chaos Angel,22850702,False,1,1
-1788,52,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-1789,52,"Diabell, Queen of the White Forest",14307929,False,1,1
-1790,52,Coral Dragon,42566602,False,1,1
-1791,52,Tri-Edge Master,52445243,False,1,1
-1792,52,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-1793,52,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-1794,52,Zapper Shrimp,92744676,False,1,1
-1795,52,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-1796,52,S:P Little Knight,29301450,False,1,1
-1797,53,Silvy of the White Forest,98385955,False,3,0
-1798,53,Rucia of the White Forest,24779554,False,2,0
-1799,53,Elzette of the White Forest,61980241,False,2,0
-1800,53,Triple Tactics Talent,25311006,False,2,0
-1801,53,Upstart Goblin,70368879,False,3,0
-1802,53,Metalfoes Fusion,73594093,False,1,0
-1803,53,Terraforming,73628505,True,1,0
-1804,53,Tales of the White Forest,99289828,False,1,0
-1805,53,Runick Freezing Curses,30430448,True,3,0
-1806,53,Runick Tip,31562086,False,3,0
-1807,53,Runick Dispelling,66712905,False,1,0
-1808,53,Runick Slumber,67835547,False,3,0
-1809,53,Runick Flashing Fire,68957034,False,3,0
-1810,53,Runick Smiting Storm,93229151,False,1,0
-1811,53,Runick Destruction,94445733,False,3,0
-1812,53,Chicken Game,67616300,False,1,0
-1813,53,Runick Fountain,92107604,True,2,0
-1814,53,Evenly Matched,15693423,False,3,0
-1815,53,Woes of the White Forest,62995268,False,1,0
-1816,53,Skill Drain,82732705,False,1,0
-1817,53,Geri the Runick Fangs,28373620,False,2,1
-1818,53,Hugin the Runick Wings,55990317,False,3,1
-1819,53,Chaos Angel,22850702,False,1,1
-1820,53,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-1821,53,"Diabell, Queen of the White Forest",14307929,False,1,1
-1822,53,Coral Dragon,42566602,False,1,1
-1823,53,Tri-Edge Master,52445243,False,1,1
-1824,53,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-1825,53,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-1826,53,Zapper Shrimp,92744676,False,1,1
-1827,53,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-1828,53,S:P Little Knight,29301450,False,1,1
-1829,54,Silvy of the White Forest,98385955,False,3,0
-1830,54,Rucia of the White Forest,24779554,False,2,0
-1831,54,Elzette of the White Forest,61980241,False,2,0
-1832,54,Triple Tactics Talent,25311006,False,2,0
-1833,54,Upstart Goblin,70368879,False,3,0
-1834,54,Metalfoes Fusion,73594093,False,1,0
-1835,54,Terraforming,73628505,False,1,0
-1836,54,Tales of the White Forest,99289828,False,1,0
-1837,54,Runick Freezing Curses,30430448,False,3,0
-1838,54,Runick Tip,31562086,False,3,0
-1839,54,Runick Dispelling,66712905,False,1,0
-1840,54,Runick Slumber,67835547,False,3,0
-1841,54,Runick Flashing Fire,68957034,False,3,0
-1842,54,Runick Smiting Storm,93229151,False,1,0
-1843,54,Runick Destruction,94445733,False,3,0
-1844,54,Chicken Game,67616300,False,1,0
-1845,54,Runick Fountain,92107604,False,2,0
-1846,54,Evenly Matched,15693423,False,3,0
-1847,54,Woes of the White Forest,62995268,False,1,0
-1848,54,Skill Drain,82732705,False,1,0
-1849,54,Geri the Runick Fangs,28373620,False,2,1
-1850,54,Hugin the Runick Wings,55990317,False,3,1
-1851,54,Chaos Angel,22850702,False,1,1
-1852,54,Swordsoul Supreme Sovereign - Chengying,96633955,False,1,1
-1853,54,"Diabell, Queen of the White Forest",14307929,False,1,1
-1854,54,Coral Dragon,42566602,False,1,1
-1855,54,Tri-Edge Master,52445243,False,1,1
-1856,54,"Rciela, Sinister Soul of the White Forest",77313225,False,1,1
-1857,54,"Silvera, Wolf Tamer of the White Forest",41924516,False,1,1
-1858,54,Zapper Shrimp,92744676,False,1,1
-1859,54,Number 41: Bagooska the Terribly Tired Tapir,90590304,False,1,1
-1860,54,S:P Little Knight,29301450,False,1,1
-1861,55,Snake-Eyes Flamberge Dragon,48452496,True,1,0
-1862,55,Snake-Eyes Diabellstar,27260347,True,1,0
-1863,55,Diabellstar the Black Witch,72270339,True,3,0
-1864,55,Fiendsmith Engraver,60764609,True,2,0
-1865,55,Lacrima the Scarlet Sorrow,28803166,True,1,0
-1866,55,Mulcharmy Fuwaross,42141493,False,3,0
-1867,55,Ash Blossom & Joyous Spring,14558128,False,3,0
-1868,55,Snake-Eye Oak,45663742,True,1,0
-1869,55,Snake-Eye Ash,9674034,True,1,0
-1870,55,Snake-Eyes Poplar,90241276,True,1,0
-1871,55,Fabled Lurrie,97651498,False,1,0
-1872,55,Droll & Lock Bird,94145021,True,3,0
-1873,55,Triple Tactics Talent,25311006,False,1,0
-1874,55,Bonfire,85106525,True,3,0
-1875,55,Original Sinful Spoils - Snake-Eye,89023486,True,1,0
-1876,55,Sacred Azamina,94845588,True,1,0
-1877,55,Fiendsmith's Tract,98567237,False,1,0
-1878,55,Called by the Grave,24224830,False,1,0
-1879,55,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
-1880,55,Sinful Spoils Deception,66328392,True,3,0
-1881,55,Divine Temple of the Snake-Eye,53639887,True,1,0
-1882,55,Infinite Impermanence,10045474,False,3,0
-1883,55,Angel Statue - Azurune,44822037,True,1,0
-1884,55,Fiendsmith's Desirae,82135803,True,1,1
-1885,55,Azamina Mu Rcielago,73391962,True,1,1
-1886,55,Azamina Rhea Silvera,46396218,True,1,1
-1887,55,Salamangreat Raging Phoenix,57134592,True,1,1
-1888,55,Saryuja Skull Dread,74997493,False,1,1
-1889,55,Worldsea Dragon Zealantis,45112597,True,1,1
-1890,55,Accesscode Talker,86066372,False,1,1
-1891,55,"Promethean Princess, Bestower of Flames",2772337,True,1,1
-1892,55,Knightmare Phoenix,2857636,False,1,1
-1893,55,S:P Little Knight,29301450,False,1,1
-1894,55,Silhouhatte Rabbit,1528054,True,1,1
-1895,55,Fiendsmith's Sequence,49867899,True,1,1
-1896,55,Moon of the Closed Heaven,71818935,True,1,1
-1897,55,I:P Masquerena,65741786,True,1,1
-1898,55,Fiendsmith's Requiem,2463794,True,1,1
+438,12,Salamangreat Raging Phoenix,57134592,False,1,1
+439,12,Amphibious Swarmship Amblowhale,20665527,False,1,1
+440,12,Azamina Rhea Silvera,46396218,True,1,1
+441,12,Azamina Mu Rcielago,73391962,False,1,1
+442,12,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+443,12,Relinquished Anima,94259633,False,1,1
+444,12,Salamangreat Sunlight Wolf,87871125,False,1,1
+445,13,Mulcharmy Fuwaross,42141493,True,3,0
+446,13,Sinful Spoils Deception,66328392,True,3,0
+447,13,Bonfire,85106525,True,3,0
+448,13,Snake-Eyes Poplar,90241276,True,1,0
+449,13,Diabellstar the Black Witch,72270339,True,3,0
+450,13,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+451,13,Snake-Eye Ash,9674034,False,1,0
+452,13,Fire King Sky Burn,91703676,False,1,0
+453,13,Fire King High Avatar Kirin,2526224,True,2,0
+454,13,Sacred Azamina,94845588,True,1,0
+455,13,Infinite Impermanence,10045474,True,3,0
+456,13,Called by the Grave,24224830,True,1,0
+457,13,Snake-Eyes Diabellstar,27260347,True,1,0
+458,13,Legendary Fire King Ponix,90681088,True,1,0
+459,13,Fire King High Avatar Garunix,23015896,False,1,0
+460,13,Fire King Island,57554544,False,1,0
+461,13,Dominus Impulse,40366667,False,3,0
+462,13,Snake-Eye Oak,45663742,False,1,0
+463,13,Fire King Avatar Arvata,18621798,False,1,0
+464,13,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+465,13,Ash Blossom & Joyous Spring,14558128,False,3,0
+466,13,Divine Temple of the Snake-Eye,53639887,False,1,0
+467,13,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+468,13,Triple Tactics Talent,25311006,False,1,0
+469,13,Sacred Fire King Garunix,66431519,False,1,0
+470,13,Fire King Sanctuary,65305978,False,1,0
+471,13,Fire King Consort Ulkanix,44455560,False,2,0
+472,13,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+473,13,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+474,13,S:P Little Knight,29301450,False,1,1
+475,13,Knightmare Phoenix,2857636,False,1,1
+476,13,Accesscode Talker,86066372,False,1,1
+477,13,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+478,13,I:P Masquerena,65741786,True,1,1
+479,13,Salamangreat Raging Phoenix,57134592,False,1,1
+480,13,Amphibious Swarmship Amblowhale,20665527,False,1,1
+481,13,Azamina Rhea Silvera,46396218,False,1,1
+482,13,Azamina Mu Rcielago,73391962,True,1,1
+483,13,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+484,13,Relinquished Anima,94259633,True,1,1
+485,13,Salamangreat Sunlight Wolf,87871125,False,1,1
+486,14,Runick Destruction,94445733,True,1,0
+487,14,Lady Labrynth of the Silver Castle,81497285,True,3,0
+488,14,Welcome Labrynth,5380979,True,3,0
+489,14,Dimension Shifter,91800273,True,3,0
+490,14,Solemn Strike,40605147,True,3,0
+491,14,Lost Wind,74003290,True,2,0
+492,14,Simultaneous Equation Cannons,25096909,True,3,0
+493,14,Big Welcome Labrynth,92714517,True,3,0
+494,14,Destructive Daruma Karma Cannon,30748475,True,3,0
+495,14,Ice Dragon's Prison,20899496,True,2,0
+496,14,Starry Dragon's Cycle,6278008,False,2,0
+497,14,Dimensional Barrier,83326048,False,2,0
+498,14,Terrors of the Overroot,63086455,False,2,0
+499,14,Runick Flashing Fire,68957034,False,1,0
+500,14,Trap Trick,80101899,False,3,0
+501,14,Runick Freezing Curses,30430448,False,1,0
+502,14,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+503,14,Weighbridge,39103226,False,2,0
+504,14,Geri the Runick Fangs,28373620,False,1,1
+505,14,The Last Warrior from Another Planet,86099788,False,1,1
+506,14,Number S39: Utopia the Lightning,56832966,True,1,1
+507,14,Freki the Runick Fangs,47219274,False,1,1
+508,14,Cyber Dragon Nova,58069384,True,1,1
+509,14,Number 39: Utopia,84013237,False,1,1
+510,14,Cyber Dragon Infinity,10443957,False,1,1
+511,14,"Garura, Wings of Resonant Life",11765832,False,1,1
+512,14,Number C39: Utopia Ray,56840427,False,1,1
+513,14,Hugin the Runick Wings,55990317,True,1,1
+514,14,Thousand-Eyes Restrict,63519819,False,1,1
+515,14,Munin the Runick Wings,92385016,False,1,1
+516,14,Dhampir Vampire Sheridan,32302078,False,1,1
+517,14,D/D/D Stone King Darius,51497409,False,1,1
+518,14,Xyz Armor Torpedo,94151981,False,1,1
+519,15,Mulcharmy Fuwaross,42141493,True,3,0
+520,15,Sinful Spoils Deception,66328392,True,3,0
+521,15,Bonfire,85106525,True,3,0
+522,15,Snake-Eyes Poplar,90241276,True,1,0
+523,15,Diabellstar the Black Witch,72270339,True,3,0
+524,15,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+525,15,Snake-Eye Ash,9674034,False,1,0
+526,15,Fire King Sky Burn,91703676,False,1,0
+527,15,Fire King High Avatar Kirin,2526224,True,2,0
+528,15,Sacred Azamina,94845588,True,1,0
+529,15,Infinite Impermanence,10045474,True,3,0
+530,15,Called by the Grave,24224830,True,1,0
+531,15,Snake-Eyes Diabellstar,27260347,True,1,0
+532,15,Legendary Fire King Ponix,90681088,True,1,0
+533,15,Fire King High Avatar Garunix,23015896,False,1,0
+534,15,Fire King Island,57554544,False,1,0
+535,15,Dominus Impulse,40366667,False,3,0
+536,15,Snake-Eye Oak,45663742,True,1,0
+537,15,Fire King Avatar Arvata,18621798,False,1,0
+538,15,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+539,15,Ash Blossom & Joyous Spring,14558128,False,3,0
+540,15,Divine Temple of the Snake-Eye,53639887,False,1,0
+541,15,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+542,15,Triple Tactics Talent,25311006,False,1,0
+543,15,Sacred Fire King Garunix,66431519,False,1,0
+544,15,Fire King Sanctuary,65305978,False,1,0
+545,15,Fire King Consort Ulkanix,44455560,False,2,0
+546,15,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+547,15,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
+548,15,S:P Little Knight,29301450,False,1,1
+549,15,Knightmare Phoenix,2857636,False,1,1
+550,15,Accesscode Talker,86066372,False,1,1
+551,15,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+552,15,I:P Masquerena,65741786,False,1,1
+553,15,Salamangreat Raging Phoenix,57134592,False,1,1
+554,15,Amphibious Swarmship Amblowhale,20665527,False,1,1
+555,15,Azamina Rhea Silvera,46396218,False,1,1
+556,15,Azamina Mu Rcielago,73391962,True,1,1
+557,15,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+558,15,Relinquished Anima,94259633,True,1,1
+559,15,Salamangreat Sunlight Wolf,87871125,False,1,1
+560,16,Runick Destruction,94445733,True,1,0
+561,16,Lady Labrynth of the Silver Castle,81497285,True,3,0
+562,16,Welcome Labrynth,5380979,True,3,0
+563,16,Dimension Shifter,91800273,True,3,0
+564,16,Solemn Strike,40605147,True,3,0
+565,16,Lost Wind,74003290,True,2,0
+566,16,Simultaneous Equation Cannons,25096909,True,3,0
+567,16,Big Welcome Labrynth,92714517,True,3,0
+568,16,Destructive Daruma Karma Cannon,30748475,True,3,0
+569,16,Ice Dragon's Prison,20899496,True,2,0
+570,16,Starry Dragon's Cycle,6278008,True,2,0
+571,16,Dimensional Barrier,83326048,False,2,0
+572,16,Terrors of the Overroot,63086455,False,2,0
+573,16,Runick Flashing Fire,68957034,False,1,0
+574,16,Trap Trick,80101899,False,3,0
+575,16,Runick Freezing Curses,30430448,False,1,0
+576,16,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+577,16,Weighbridge,39103226,False,2,0
+578,16,Geri the Runick Fangs,28373620,False,1,1
+579,16,The Last Warrior from Another Planet,86099788,False,1,1
+580,16,Number S39: Utopia the Lightning,56832966,False,1,1
+581,16,Freki the Runick Fangs,47219274,False,1,1
+582,16,Cyber Dragon Nova,58069384,False,1,1
+583,16,Number 39: Utopia,84013237,True,1,1
+584,16,Cyber Dragon Infinity,10443957,False,1,1
+585,16,"Garura, Wings of Resonant Life",11765832,False,1,1
+586,16,Number C39: Utopia Ray,56840427,True,1,1
+587,16,Hugin the Runick Wings,55990317,False,1,1
+588,16,Thousand-Eyes Restrict,63519819,False,1,1
+589,16,Munin the Runick Wings,92385016,True,1,1
+590,16,Dhampir Vampire Sheridan,32302078,False,1,1
+591,16,D/D/D Stone King Darius,51497409,False,1,1
+592,16,Xyz Armor Torpedo,94151981,False,1,1
+593,17,Runick Destruction,94445733,True,1,0
+594,17,Lady Labrynth of the Silver Castle,81497285,True,3,0
+595,17,Welcome Labrynth,5380979,True,3,0
+596,17,Dimension Shifter,91800273,True,3,0
+597,17,Solemn Strike,40605147,True,3,0
+598,17,Lost Wind,74003290,True,2,0
+599,17,Simultaneous Equation Cannons,25096909,True,3,0
+600,17,Big Welcome Labrynth,92714517,True,3,0
+601,17,Destructive Daruma Karma Cannon,30748475,True,3,0
+602,17,Ice Dragon's Prison,20899496,True,2,0
+603,17,Starry Dragon's Cycle,6278008,False,2,0
+604,17,Dimensional Barrier,83326048,False,2,0
+605,17,Terrors of the Overroot,63086455,False,2,0
+606,17,Runick Flashing Fire,68957034,False,1,0
+607,17,Trap Trick,80101899,False,3,0
+608,17,Runick Freezing Curses,30430448,False,1,0
+609,17,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+610,17,Weighbridge,39103226,False,2,0
+611,17,Geri the Runick Fangs,28373620,False,1,1
+612,17,The Last Warrior from Another Planet,86099788,False,1,1
+613,17,Number S39: Utopia the Lightning,56832966,False,1,1
+614,17,Freki the Runick Fangs,47219274,False,1,1
+615,17,Cyber Dragon Nova,58069384,False,1,1
+616,17,Number 39: Utopia,84013237,False,1,1
+617,17,Cyber Dragon Infinity,10443957,False,1,1
+618,17,"Garura, Wings of Resonant Life",11765832,False,1,1
+619,17,Number C39: Utopia Ray,56840427,False,1,1
+620,17,Hugin the Runick Wings,55990317,False,1,1
+621,17,Thousand-Eyes Restrict,63519819,False,1,1
+622,17,Munin the Runick Wings,92385016,False,1,1
+623,17,Dhampir Vampire Sheridan,32302078,False,1,1
+624,17,D/D/D Stone King Darius,51497409,False,1,1
+625,17,Xyz Armor Torpedo,94151981,False,1,1
+626,18,Mulcharmy Fuwaross,42141493,True,3,0
+627,18,Sinful Spoils Deception,66328392,True,3,0
+628,18,Bonfire,85106525,True,3,0
+629,18,Snake-Eyes Poplar,90241276,True,1,0
+630,18,Diabellstar the Black Witch,72270339,True,3,0
+631,18,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+632,18,Snake-Eye Ash,9674034,True,1,0
+633,18,Fire King Sky Burn,91703676,False,1,0
+634,18,Fire King High Avatar Kirin,2526224,True,2,0
+635,18,Sacred Azamina,94845588,True,1,0
+636,18,Infinite Impermanence,10045474,True,3,0
+637,18,Called by the Grave,24224830,True,1,0
+638,18,Snake-Eyes Diabellstar,27260347,False,1,0
+639,18,Legendary Fire King Ponix,90681088,True,1,0
+640,18,Fire King High Avatar Garunix,23015896,False,1,0
+641,18,Fire King Island,57554544,False,1,0
+642,18,Dominus Impulse,40366667,False,3,0
+643,18,Snake-Eye Oak,45663742,False,1,0
+644,18,Fire King Avatar Arvata,18621798,False,1,0
+645,18,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+646,18,Ash Blossom & Joyous Spring,14558128,False,3,0
+647,18,Divine Temple of the Snake-Eye,53639887,False,1,0
+648,18,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+649,18,Triple Tactics Talent,25311006,False,1,0
+650,18,Sacred Fire King Garunix,66431519,False,1,0
+651,18,Fire King Sanctuary,65305978,False,1,0
+652,18,Fire King Consort Ulkanix,44455560,False,2,0
+653,18,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+654,18,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+655,18,S:P Little Knight,29301450,False,1,1
+656,18,Knightmare Phoenix,2857636,True,1,1
+657,18,Accesscode Talker,86066372,False,1,1
+658,18,"Promethean Princess, Bestower of Flames",2772337,True,2,1
+659,18,I:P Masquerena,65741786,False,1,1
+660,18,Salamangreat Raging Phoenix,57134592,False,1,1
+661,18,Amphibious Swarmship Amblowhale,20665527,True,1,1
+662,18,Azamina Rhea Silvera,46396218,False,1,1
+663,18,Azamina Mu Rcielago,73391962,False,1,1
+664,18,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+665,18,Relinquished Anima,94259633,True,1,1
+666,18,Salamangreat Sunlight Wolf,87871125,False,1,1
+667,19,Mulcharmy Fuwaross,42141493,True,3,0
+668,19,Sinful Spoils Deception,66328392,True,3,0
+669,19,Bonfire,85106525,True,3,0
+670,19,Snake-Eyes Poplar,90241276,True,1,0
+671,19,Diabellstar the Black Witch,72270339,True,3,0
+672,19,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+673,19,Snake-Eye Ash,9674034,True,1,0
+674,19,Fire King Sky Burn,91703676,True,1,0
+675,19,Fire King High Avatar Kirin,2526224,False,2,0
+676,19,Sacred Azamina,94845588,True,1,0
+677,19,Infinite Impermanence,10045474,False,3,0
+678,19,Called by the Grave,24224830,False,1,0
+679,19,Snake-Eyes Diabellstar,27260347,True,1,0
+680,19,Legendary Fire King Ponix,90681088,False,1,0
+681,19,Fire King High Avatar Garunix,23015896,False,1,0
+682,19,Fire King Island,57554544,False,1,0
+683,19,Dominus Impulse,40366667,False,3,0
+684,19,Snake-Eye Oak,45663742,True,1,0
+685,19,Fire King Avatar Arvata,18621798,False,1,0
+686,19,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+687,19,Ash Blossom & Joyous Spring,14558128,False,3,0
+688,19,Divine Temple of the Snake-Eye,53639887,False,1,0
+689,19,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+690,19,Triple Tactics Talent,25311006,False,1,0
+691,19,Sacred Fire King Garunix,66431519,False,1,0
+692,19,Fire King Sanctuary,65305978,False,1,0
+693,19,Fire King Consort Ulkanix,44455560,False,2,0
+694,19,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+695,19,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+696,19,S:P Little Knight,29301450,True,1,1
+697,19,Knightmare Phoenix,2857636,False,1,1
+698,19,Accesscode Talker,86066372,False,1,1
+699,19,"Promethean Princess, Bestower of Flames",2772337,True,2,1
+700,19,I:P Masquerena,65741786,False,1,1
+701,19,Salamangreat Raging Phoenix,57134592,False,1,1
+702,19,Amphibious Swarmship Amblowhale,20665527,False,1,1
+703,19,Azamina Rhea Silvera,46396218,True,1,1
+704,19,Azamina Mu Rcielago,73391962,False,1,1
+705,19,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+706,19,Relinquished Anima,94259633,False,1,1
+707,19,Salamangreat Sunlight Wolf,87871125,False,1,1
+708,20,Runick Destruction,94445733,True,1,0
+709,20,Lady Labrynth of the Silver Castle,81497285,True,3,0
+710,20,Welcome Labrynth,5380979,True,3,0
+711,20,Dimension Shifter,91800273,True,3,0
+712,20,Solemn Strike,40605147,True,3,0
+713,20,Lost Wind,74003290,True,2,0
+714,20,Simultaneous Equation Cannons,25096909,True,3,0
+715,20,Big Welcome Labrynth,92714517,True,3,0
+716,20,Destructive Daruma Karma Cannon,30748475,True,3,0
+717,20,Ice Dragon's Prison,20899496,True,2,0
+718,20,Starry Dragon's Cycle,6278008,False,2,0
+719,20,Dimensional Barrier,83326048,False,2,0
+720,20,Terrors of the Overroot,63086455,False,2,0
+721,20,Runick Flashing Fire,68957034,False,1,0
+722,20,Trap Trick,80101899,False,3,0
+723,20,Runick Freezing Curses,30430448,False,1,0
+724,20,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+725,20,Weighbridge,39103226,False,2,0
+726,20,Geri the Runick Fangs,28373620,False,1,1
+727,20,The Last Warrior from Another Planet,86099788,False,1,1
+728,20,Number S39: Utopia the Lightning,56832966,False,1,1
+729,20,Freki the Runick Fangs,47219274,True,1,1
+730,20,Cyber Dragon Nova,58069384,False,1,1
+731,20,Number 39: Utopia,84013237,False,1,1
+732,20,Cyber Dragon Infinity,10443957,False,1,1
+733,20,"Garura, Wings of Resonant Life",11765832,False,1,1
+734,20,Number C39: Utopia Ray,56840427,False,1,1
+735,20,Hugin the Runick Wings,55990317,False,1,1
+736,20,Thousand-Eyes Restrict,63519819,False,1,1
+737,20,Munin the Runick Wings,92385016,False,1,1
+738,20,Dhampir Vampire Sheridan,32302078,False,1,1
+739,20,D/D/D Stone King Darius,51497409,False,1,1
+740,20,Xyz Armor Torpedo,94151981,False,1,1
+741,21,Mulcharmy Fuwaross,42141493,True,3,0
+742,21,Sinful Spoils Deception,66328392,True,3,0
+743,21,Bonfire,85106525,True,3,0
+744,21,Snake-Eyes Poplar,90241276,True,1,0
+745,21,Diabellstar the Black Witch,72270339,True,3,0
+746,21,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+747,21,Snake-Eye Ash,9674034,True,1,0
+748,21,Fire King Sky Burn,91703676,True,1,0
+749,21,Fire King High Avatar Kirin,2526224,False,2,0
+750,21,Sacred Azamina,94845588,True,1,0
+751,21,Infinite Impermanence,10045474,False,3,0
+752,21,Called by the Grave,24224830,False,1,0
+753,21,Snake-Eyes Diabellstar,27260347,True,1,0
+754,21,Legendary Fire King Ponix,90681088,False,1,0
+755,21,Fire King High Avatar Garunix,23015896,False,1,0
+756,21,Fire King Island,57554544,False,1,0
+757,21,Dominus Impulse,40366667,False,3,0
+758,21,Snake-Eye Oak,45663742,True,1,0
+759,21,Fire King Avatar Arvata,18621798,False,1,0
+760,21,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+761,21,Ash Blossom & Joyous Spring,14558128,False,3,0
+762,21,Divine Temple of the Snake-Eye,53639887,False,1,0
+763,21,Snake-Eyes Flamberge Dragon,48452496,True,1,0
+764,21,Triple Tactics Talent,25311006,False,1,0
+765,21,Sacred Fire King Garunix,66431519,False,1,0
+766,21,Fire King Sanctuary,65305978,False,1,0
+767,21,Fire King Consort Ulkanix,44455560,False,2,0
+768,21,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+769,21,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+770,21,S:P Little Knight,29301450,True,1,1
+771,21,Knightmare Phoenix,2857636,False,1,1
+772,21,Accesscode Talker,86066372,False,1,1
+773,21,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+774,21,I:P Masquerena,65741786,False,1,1
+775,21,Salamangreat Raging Phoenix,57134592,False,1,1
+776,21,Amphibious Swarmship Amblowhale,20665527,False,1,1
+777,21,Azamina Rhea Silvera,46396218,False,1,1
+778,21,Azamina Mu Rcielago,73391962,True,1,1
+779,21,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+780,21,Relinquished Anima,94259633,False,1,1
+781,21,Salamangreat Sunlight Wolf,87871125,False,1,1
+782,22,Runick Destruction,94445733,True,1,0
+783,22,Lady Labrynth of the Silver Castle,81497285,True,3,0
+784,22,Welcome Labrynth,5380979,True,3,0
+785,22,Dimension Shifter,91800273,True,3,0
+786,22,Solemn Strike,40605147,True,3,0
+787,22,Lost Wind,74003290,True,2,0
+788,22,Simultaneous Equation Cannons,25096909,True,3,0
+789,22,Big Welcome Labrynth,92714517,True,3,0
+790,22,Destructive Daruma Karma Cannon,30748475,True,3,0
+791,22,Ice Dragon's Prison,20899496,False,2,0
+792,22,Starry Dragon's Cycle,6278008,False,2,0
+793,22,Dimensional Barrier,83326048,False,2,0
+794,22,Terrors of the Overroot,63086455,False,2,0
+795,22,Runick Flashing Fire,68957034,False,1,0
+796,22,Trap Trick,80101899,False,3,0
+797,22,Runick Freezing Curses,30430448,False,1,0
+798,22,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+799,22,Weighbridge,39103226,False,2,0
+800,22,Geri the Runick Fangs,28373620,False,1,1
+801,22,The Last Warrior from Another Planet,86099788,False,1,1
+802,22,Number S39: Utopia the Lightning,56832966,False,1,1
+803,22,Freki the Runick Fangs,47219274,False,1,1
+804,22,Cyber Dragon Nova,58069384,False,1,1
+805,22,Number 39: Utopia,84013237,False,1,1
+806,22,Cyber Dragon Infinity,10443957,False,1,1
+807,22,"Garura, Wings of Resonant Life",11765832,False,1,1
+808,22,Number C39: Utopia Ray,56840427,False,1,1
+809,22,Hugin the Runick Wings,55990317,False,1,1
+810,22,Thousand-Eyes Restrict,63519819,False,1,1
+811,22,Munin the Runick Wings,92385016,True,1,1
+812,22,Dhampir Vampire Sheridan,32302078,False,1,1
+813,22,D/D/D Stone King Darius,51497409,False,1,1
+814,22,Xyz Armor Torpedo,94151981,False,1,1
+815,23,Runick Destruction,94445733,True,1,0
+816,23,Lady Labrynth of the Silver Castle,81497285,True,3,0
+817,23,Welcome Labrynth,5380979,True,3,0
+818,23,Dimension Shifter,91800273,True,3,0
+819,23,Solemn Strike,40605147,True,3,0
+820,23,Lost Wind,74003290,True,2,0
+821,23,Simultaneous Equation Cannons,25096909,True,3,0
+822,23,Big Welcome Labrynth,92714517,True,3,0
+823,23,Destructive Daruma Karma Cannon,30748475,True,3,0
+824,23,Ice Dragon's Prison,20899496,True,2,0
+825,23,Starry Dragon's Cycle,6278008,True,2,0
+826,23,Dimensional Barrier,83326048,False,2,0
+827,23,Terrors of the Overroot,63086455,False,2,0
+828,23,Runick Flashing Fire,68957034,False,1,0
+829,23,Trap Trick,80101899,False,3,0
+830,23,Runick Freezing Curses,30430448,False,1,0
+831,23,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+832,23,Weighbridge,39103226,False,2,0
+833,23,Geri the Runick Fangs,28373620,False,1,1
+834,23,The Last Warrior from Another Planet,86099788,False,1,1
+835,23,Number S39: Utopia the Lightning,56832966,False,1,1
+836,23,Freki the Runick Fangs,47219274,True,1,1
+837,23,Cyber Dragon Nova,58069384,False,1,1
+838,23,Number 39: Utopia,84013237,False,1,1
+839,23,Cyber Dragon Infinity,10443957,False,1,1
+840,23,"Garura, Wings of Resonant Life",11765832,False,1,1
+841,23,Number C39: Utopia Ray,56840427,False,1,1
+842,23,Hugin the Runick Wings,55990317,False,1,1
+843,23,Thousand-Eyes Restrict,63519819,False,1,1
+844,23,Munin the Runick Wings,92385016,False,1,1
+845,23,Dhampir Vampire Sheridan,32302078,False,1,1
+846,23,D/D/D Stone King Darius,51497409,False,1,1
+847,23,Xyz Armor Torpedo,94151981,False,1,1
+848,24,Mulcharmy Fuwaross,42141493,True,3,0
+849,24,Sinful Spoils Deception,66328392,True,3,0
+850,24,Bonfire,85106525,True,3,0
+851,24,Snake-Eyes Poplar,90241276,True,1,0
+852,24,Diabellstar the Black Witch,72270339,True,3,0
+853,24,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+854,24,Snake-Eye Ash,9674034,True,1,0
+855,24,Fire King Sky Burn,91703676,True,1,0
+856,24,Fire King High Avatar Kirin,2526224,True,2,0
+857,24,Sacred Azamina,94845588,True,1,0
+858,24,Infinite Impermanence,10045474,True,3,0
+859,24,Called by the Grave,24224830,True,1,0
+860,24,Snake-Eyes Diabellstar,27260347,True,1,0
+861,24,Legendary Fire King Ponix,90681088,False,1,0
+862,24,Fire King High Avatar Garunix,23015896,False,1,0
+863,24,Fire King Island,57554544,False,1,0
+864,24,Dominus Impulse,40366667,False,3,0
+865,24,Snake-Eye Oak,45663742,False,1,0
+866,24,Fire King Avatar Arvata,18621798,False,1,0
+867,24,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+868,24,Ash Blossom & Joyous Spring,14558128,False,3,0
+869,24,Divine Temple of the Snake-Eye,53639887,False,1,0
+870,24,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+871,24,Triple Tactics Talent,25311006,False,1,0
+872,24,Sacred Fire King Garunix,66431519,False,1,0
+873,24,Fire King Sanctuary,65305978,False,1,0
+874,24,Fire King Consort Ulkanix,44455560,False,2,0
+875,24,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+876,24,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
+877,24,S:P Little Knight,29301450,True,1,1
+878,24,Knightmare Phoenix,2857636,False,1,1
+879,24,Accesscode Talker,86066372,False,1,1
+880,24,"Promethean Princess, Bestower of Flames",2772337,True,2,1
+881,24,I:P Masquerena,65741786,False,1,1
+882,24,Salamangreat Raging Phoenix,57134592,False,1,1
+883,24,Amphibious Swarmship Amblowhale,20665527,True,1,1
+884,24,Azamina Rhea Silvera,46396218,True,1,1
+885,24,Azamina Mu Rcielago,73391962,True,1,1
+886,24,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+887,24,Relinquished Anima,94259633,False,1,1
+888,24,Salamangreat Sunlight Wolf,87871125,False,1,1
+889,25,Runick Destruction,94445733,True,1,0
+890,25,Lady Labrynth of the Silver Castle,81497285,True,3,0
+891,25,Welcome Labrynth,5380979,True,3,0
+892,25,Dimension Shifter,91800273,True,3,0
+893,25,Solemn Strike,40605147,True,3,0
+894,25,Lost Wind,74003290,True,2,0
+895,25,Simultaneous Equation Cannons,25096909,True,3,0
+896,25,Big Welcome Labrynth,92714517,True,3,0
+897,25,Destructive Daruma Karma Cannon,30748475,True,3,0
+898,25,Ice Dragon's Prison,20899496,True,2,0
+899,25,Starry Dragon's Cycle,6278008,True,2,0
+900,25,Dimensional Barrier,83326048,False,2,0
+901,25,Terrors of the Overroot,63086455,False,2,0
+902,25,Runick Flashing Fire,68957034,False,1,0
+903,25,Trap Trick,80101899,False,3,0
+904,25,Runick Freezing Curses,30430448,False,1,0
+905,25,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+906,25,Weighbridge,39103226,False,2,0
+907,25,Geri the Runick Fangs,28373620,False,1,1
+908,25,The Last Warrior from Another Planet,86099788,False,1,1
+909,25,Number S39: Utopia the Lightning,56832966,False,1,1
+910,25,Freki the Runick Fangs,47219274,True,1,1
+911,25,Cyber Dragon Nova,58069384,False,1,1
+912,25,Number 39: Utopia,84013237,False,1,1
+913,25,Cyber Dragon Infinity,10443957,False,1,1
+914,25,"Garura, Wings of Resonant Life",11765832,False,1,1
+915,25,Number C39: Utopia Ray,56840427,False,1,1
+916,25,Hugin the Runick Wings,55990317,False,1,1
+917,25,Thousand-Eyes Restrict,63519819,False,1,1
+918,25,Munin the Runick Wings,92385016,True,1,1
+919,25,Dhampir Vampire Sheridan,32302078,False,1,1
+920,25,D/D/D Stone King Darius,51497409,True,1,1
+921,25,Xyz Armor Torpedo,94151981,True,1,1
+922,26,Mulcharmy Fuwaross,42141493,True,3,0
+923,26,Sinful Spoils Deception,66328392,True,3,0
+924,26,Bonfire,85106525,True,3,0
+925,26,Snake-Eyes Poplar,90241276,True,1,0
+926,26,Diabellstar the Black Witch,72270339,True,3,0
+927,26,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+928,26,Snake-Eye Ash,9674034,True,1,0
+929,26,Fire King Sky Burn,91703676,True,1,0
+930,26,Fire King High Avatar Kirin,2526224,True,2,0
+931,26,Sacred Azamina,94845588,True,1,0
+932,26,Infinite Impermanence,10045474,False,3,0
+933,26,Called by the Grave,24224830,False,1,0
+934,26,Snake-Eyes Diabellstar,27260347,False,1,0
+935,26,Legendary Fire King Ponix,90681088,False,1,0
+936,26,Fire King High Avatar Garunix,23015896,False,1,0
+937,26,Fire King Island,57554544,False,1,0
+938,26,Dominus Impulse,40366667,False,3,0
+939,26,Snake-Eye Oak,45663742,True,1,0
+940,26,Fire King Avatar Arvata,18621798,False,1,0
+941,26,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+942,26,Ash Blossom & Joyous Spring,14558128,False,3,0
+943,26,Divine Temple of the Snake-Eye,53639887,False,1,0
+944,26,Snake-Eyes Flamberge Dragon,48452496,True,1,0
+945,26,Triple Tactics Talent,25311006,False,1,0
+946,26,Sacred Fire King Garunix,66431519,False,1,0
+947,26,Fire King Sanctuary,65305978,False,1,0
+948,26,Fire King Consort Ulkanix,44455560,False,2,0
+949,26,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+950,26,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+951,26,S:P Little Knight,29301450,False,1,1
+952,26,Knightmare Phoenix,2857636,False,1,1
+953,26,Accesscode Talker,86066372,False,1,1
+954,26,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+955,26,I:P Masquerena,65741786,True,1,1
+956,26,Salamangreat Raging Phoenix,57134592,False,1,1
+957,26,Amphibious Swarmship Amblowhale,20665527,False,1,1
+958,26,Azamina Rhea Silvera,46396218,True,1,1
+959,26,Azamina Mu Rcielago,73391962,True,1,1
+960,26,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+961,26,Relinquished Anima,94259633,True,1,1
+962,26,Salamangreat Sunlight Wolf,87871125,False,1,1
+963,27,Mulcharmy Fuwaross,42141493,True,3,0
+964,27,Sinful Spoils Deception,66328392,True,3,0
+965,27,Bonfire,85106525,True,3,0
+966,27,Snake-Eyes Poplar,90241276,True,1,0
+967,27,Diabellstar the Black Witch,72270339,True,3,0
+968,27,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+969,27,Snake-Eye Ash,9674034,True,1,0
+970,27,Fire King Sky Burn,91703676,True,1,0
+971,27,Fire King High Avatar Kirin,2526224,True,2,0
+972,27,Sacred Azamina,94845588,True,1,0
+973,27,Infinite Impermanence,10045474,True,3,0
+974,27,Called by the Grave,24224830,True,1,0
+975,27,Snake-Eyes Diabellstar,27260347,False,1,0
+976,27,Legendary Fire King Ponix,90681088,False,1,0
+977,27,Fire King High Avatar Garunix,23015896,False,1,0
+978,27,Fire King Island,57554544,False,1,0
+979,27,Dominus Impulse,40366667,False,3,0
+980,27,Snake-Eye Oak,45663742,True,1,0
+981,27,Fire King Avatar Arvata,18621798,False,1,0
+982,27,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+983,27,Ash Blossom & Joyous Spring,14558128,False,3,0
+984,27,Divine Temple of the Snake-Eye,53639887,False,1,0
+985,27,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+986,27,Triple Tactics Talent,25311006,False,1,0
+987,27,Sacred Fire King Garunix,66431519,False,1,0
+988,27,Fire King Sanctuary,65305978,False,1,0
+989,27,Fire King Consort Ulkanix,44455560,False,2,0
+990,27,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+991,27,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
+992,27,S:P Little Knight,29301450,True,1,1
+993,27,Knightmare Phoenix,2857636,True,1,1
+994,27,Accesscode Talker,86066372,False,1,1
+995,27,"Promethean Princess, Bestower of Flames",2772337,True,2,1
+996,27,I:P Masquerena,65741786,False,1,1
+997,27,Salamangreat Raging Phoenix,57134592,False,1,1
+998,27,Amphibious Swarmship Amblowhale,20665527,False,1,1
+999,27,Azamina Rhea Silvera,46396218,True,1,1
+1000,27,Azamina Mu Rcielago,73391962,True,1,1
+1001,27,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+1002,27,Relinquished Anima,94259633,True,1,1
+1003,27,Salamangreat Sunlight Wolf,87871125,True,1,1
+1004,28,Runick Destruction,94445733,True,1,0
+1005,28,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1006,28,Welcome Labrynth,5380979,True,3,0
+1007,28,Dimension Shifter,91800273,True,3,0
+1008,28,Solemn Strike,40605147,True,3,0
+1009,28,Lost Wind,74003290,True,2,0
+1010,28,Simultaneous Equation Cannons,25096909,True,3,0
+1011,28,Big Welcome Labrynth,92714517,True,3,0
+1012,28,Destructive Daruma Karma Cannon,30748475,True,3,0
+1013,28,Ice Dragon's Prison,20899496,True,2,0
+1014,28,Starry Dragon's Cycle,6278008,True,2,0
+1015,28,Dimensional Barrier,83326048,False,2,0
+1016,28,Terrors of the Overroot,63086455,False,2,0
+1017,28,Runick Flashing Fire,68957034,False,1,0
+1018,28,Trap Trick,80101899,False,3,0
+1019,28,Runick Freezing Curses,30430448,False,1,0
+1020,28,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+1021,28,Weighbridge,39103226,False,2,0
+1022,28,Geri the Runick Fangs,28373620,False,1,1
+1023,28,The Last Warrior from Another Planet,86099788,False,1,1
+1024,28,Number S39: Utopia the Lightning,56832966,False,1,1
+1025,28,Freki the Runick Fangs,47219274,False,1,1
+1026,28,Cyber Dragon Nova,58069384,False,1,1
+1027,28,Number 39: Utopia,84013237,False,1,1
+1028,28,Cyber Dragon Infinity,10443957,False,1,1
+1029,28,"Garura, Wings of Resonant Life",11765832,False,1,1
+1030,28,Number C39: Utopia Ray,56840427,False,1,1
+1031,28,Hugin the Runick Wings,55990317,True,1,1
+1032,28,Thousand-Eyes Restrict,63519819,False,1,1
+1033,28,Munin the Runick Wings,92385016,False,1,1
+1034,28,Dhampir Vampire Sheridan,32302078,False,1,1
+1035,28,D/D/D Stone King Darius,51497409,False,1,1
+1036,28,Xyz Armor Torpedo,94151981,False,1,1
+1037,29,Runick Destruction,94445733,True,1,0
+1038,29,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1039,29,Welcome Labrynth,5380979,True,3,0
+1040,29,Dimension Shifter,91800273,True,3,0
+1041,29,Solemn Strike,40605147,True,3,0
+1042,29,Lost Wind,74003290,True,2,0
+1043,29,Simultaneous Equation Cannons,25096909,True,3,0
+1044,29,Big Welcome Labrynth,92714517,True,3,0
+1045,29,Destructive Daruma Karma Cannon,30748475,True,3,0
+1046,29,Ice Dragon's Prison,20899496,True,2,0
+1047,29,Starry Dragon's Cycle,6278008,True,2,0
+1048,29,Dimensional Barrier,83326048,True,2,0
+1049,29,Terrors of the Overroot,63086455,False,2,0
+1050,29,Runick Flashing Fire,68957034,False,1,0
+1051,29,Trap Trick,80101899,False,3,0
+1052,29,Runick Freezing Curses,30430448,False,1,0
+1053,29,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+1054,29,Weighbridge,39103226,False,2,0
+1055,29,Geri the Runick Fangs,28373620,True,1,1
+1056,29,The Last Warrior from Another Planet,86099788,False,1,1
+1057,29,Number S39: Utopia the Lightning,56832966,False,1,1
+1058,29,Freki the Runick Fangs,47219274,False,1,1
+1059,29,Cyber Dragon Nova,58069384,False,1,1
+1060,29,Number 39: Utopia,84013237,False,1,1
+1061,29,Cyber Dragon Infinity,10443957,False,1,1
+1062,29,"Garura, Wings of Resonant Life",11765832,False,1,1
+1063,29,Number C39: Utopia Ray,56840427,False,1,1
+1064,29,Hugin the Runick Wings,55990317,False,1,1
+1065,29,Thousand-Eyes Restrict,63519819,False,1,1
+1066,29,Munin the Runick Wings,92385016,False,1,1
+1067,29,Dhampir Vampire Sheridan,32302078,False,1,1
+1068,29,D/D/D Stone King Darius,51497409,True,1,1
+1069,29,Xyz Armor Torpedo,94151981,True,1,1
+1070,30,Mulcharmy Fuwaross,42141493,True,3,0
+1071,30,Sinful Spoils Deception,66328392,True,3,0
+1072,30,Bonfire,85106525,True,3,0
+1073,30,Snake-Eyes Poplar,90241276,True,1,0
+1074,30,Diabellstar the Black Witch,72270339,True,3,0
+1075,30,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+1076,30,Snake-Eye Ash,9674034,True,1,0
+1077,30,Fire King Sky Burn,91703676,False,1,0
+1078,30,Fire King High Avatar Kirin,2526224,True,2,0
+1079,30,Sacred Azamina,94845588,True,1,0
+1080,30,Infinite Impermanence,10045474,True,3,0
+1081,30,Called by the Grave,24224830,True,1,0
+1082,30,Snake-Eyes Diabellstar,27260347,True,1,0
+1083,30,Legendary Fire King Ponix,90681088,True,1,0
+1084,30,Fire King High Avatar Garunix,23015896,True,1,0
+1085,30,Fire King Island,57554544,True,1,0
+1086,30,Dominus Impulse,40366667,True,3,0
+1087,30,Snake-Eye Oak,45663742,True,1,0
+1088,30,Fire King Avatar Arvata,18621798,False,1,0
+1089,30,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+1090,30,Ash Blossom & Joyous Spring,14558128,False,3,0
+1091,30,Divine Temple of the Snake-Eye,53639887,False,1,0
+1092,30,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+1093,30,Triple Tactics Talent,25311006,False,1,0
+1094,30,Sacred Fire King Garunix,66431519,False,1,0
+1095,30,Fire King Sanctuary,65305978,False,1,0
+1096,30,Fire King Consort Ulkanix,44455560,True,2,0
+1097,30,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+1098,30,"Dharc the Dark Charmer, Gloomy",8264361,True,1,1
+1099,30,S:P Little Knight,29301450,False,1,1
+1100,30,Knightmare Phoenix,2857636,True,1,1
+1101,30,Accesscode Talker,86066372,False,1,1
+1102,30,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+1103,30,I:P Masquerena,65741786,False,1,1
+1104,30,Salamangreat Raging Phoenix,57134592,False,1,1
+1105,30,Amphibious Swarmship Amblowhale,20665527,False,1,1
+1106,30,Azamina Rhea Silvera,46396218,True,1,1
+1107,30,Azamina Mu Rcielago,73391962,False,1,1
+1108,30,"Hiita the Fire Charmer, Ablaze",48815792,True,1,1
+1109,30,Relinquished Anima,94259633,True,1,1
+1110,30,Salamangreat Sunlight Wolf,87871125,False,1,1
+1111,31,Runick Destruction,94445733,True,1,0
+1112,31,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1113,31,Welcome Labrynth,5380979,True,3,0
+1114,31,Dimension Shifter,91800273,True,3,0
+1115,31,Solemn Strike,40605147,True,3,0
+1116,31,Lost Wind,74003290,True,2,0
+1117,31,Simultaneous Equation Cannons,25096909,True,3,0
+1118,31,Big Welcome Labrynth,92714517,True,3,0
+1119,31,Destructive Daruma Karma Cannon,30748475,True,3,0
+1120,31,Ice Dragon's Prison,20899496,True,2,0
+1121,31,Starry Dragon's Cycle,6278008,False,2,0
+1122,31,Dimensional Barrier,83326048,False,2,0
+1123,31,Terrors of the Overroot,63086455,False,2,0
+1124,31,Runick Flashing Fire,68957034,False,1,0
+1125,31,Trap Trick,80101899,False,3,0
+1126,31,Runick Freezing Curses,30430448,False,1,0
+1127,31,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+1128,31,Weighbridge,39103226,False,2,0
+1129,31,Geri the Runick Fangs,28373620,False,1,1
+1130,31,The Last Warrior from Another Planet,86099788,False,1,1
+1131,31,Number S39: Utopia the Lightning,56832966,False,1,1
+1132,31,Freki the Runick Fangs,47219274,True,1,1
+1133,31,Cyber Dragon Nova,58069384,False,1,1
+1134,31,Number 39: Utopia,84013237,False,1,1
+1135,31,Cyber Dragon Infinity,10443957,False,1,1
+1136,31,"Garura, Wings of Resonant Life",11765832,False,1,1
+1137,31,Number C39: Utopia Ray,56840427,False,1,1
+1138,31,Hugin the Runick Wings,55990317,False,1,1
+1139,31,Thousand-Eyes Restrict,63519819,False,1,1
+1140,31,Munin the Runick Wings,92385016,True,1,1
+1141,31,Dhampir Vampire Sheridan,32302078,False,1,1
+1142,31,D/D/D Stone King Darius,51497409,True,1,1
+1143,31,Xyz Armor Torpedo,94151981,True,1,1
+1144,32,Mulcharmy Fuwaross,42141493,True,3,0
+1145,32,Sinful Spoils Deception,66328392,True,3,0
+1146,32,Bonfire,85106525,True,3,0
+1147,32,Snake-Eyes Poplar,90241276,True,1,0
+1148,32,Diabellstar the Black Witch,72270339,True,3,0
+1149,32,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+1150,32,Snake-Eye Ash,9674034,True,1,0
+1151,32,Fire King Sky Burn,91703676,True,1,0
+1152,32,Fire King High Avatar Kirin,2526224,False,2,0
+1153,32,Sacred Azamina,94845588,True,1,0
+1154,32,Infinite Impermanence,10045474,False,3,0
+1155,32,Called by the Grave,24224830,False,1,0
+1156,32,Snake-Eyes Diabellstar,27260347,True,1,0
+1157,32,Legendary Fire King Ponix,90681088,False,1,0
+1158,32,Fire King High Avatar Garunix,23015896,False,1,0
+1159,32,Fire King Island,57554544,False,1,0
+1160,32,Dominus Impulse,40366667,False,3,0
+1161,32,Snake-Eye Oak,45663742,True,1,0
+1162,32,Fire King Avatar Arvata,18621798,False,1,0
+1163,32,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+1164,32,Ash Blossom & Joyous Spring,14558128,False,3,0
+1165,32,Divine Temple of the Snake-Eye,53639887,False,1,0
+1166,32,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+1167,32,Triple Tactics Talent,25311006,False,1,0
+1168,32,Sacred Fire King Garunix,66431519,False,1,0
+1169,32,Fire King Sanctuary,65305978,False,1,0
+1170,32,Fire King Consort Ulkanix,44455560,False,2,0
+1171,32,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+1172,32,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+1173,32,S:P Little Knight,29301450,False,1,1
+1174,32,Knightmare Phoenix,2857636,False,1,1
+1175,32,Accesscode Talker,86066372,False,1,1
+1176,32,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+1177,32,I:P Masquerena,65741786,False,1,1
+1178,32,Salamangreat Raging Phoenix,57134592,False,1,1
+1179,32,Amphibious Swarmship Amblowhale,20665527,False,1,1
+1180,32,Azamina Rhea Silvera,46396218,False,1,1
+1181,32,Azamina Mu Rcielago,73391962,True,1,1
+1182,32,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+1183,32,Relinquished Anima,94259633,True,1,1
+1184,32,Salamangreat Sunlight Wolf,87871125,False,1,1
+1185,33,Runick Destruction,94445733,True,1,0
+1186,33,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1187,33,Welcome Labrynth,5380979,True,3,0
+1188,33,Dimension Shifter,91800273,True,3,0
+1189,33,Solemn Strike,40605147,True,3,0
+1190,33,Lost Wind,74003290,True,2,0
+1191,33,Simultaneous Equation Cannons,25096909,True,3,0
+1192,33,Big Welcome Labrynth,92714517,True,3,0
+1193,33,Destructive Daruma Karma Cannon,30748475,True,3,0
+1194,33,Ice Dragon's Prison,20899496,True,2,0
+1195,33,Starry Dragon's Cycle,6278008,False,2,0
+1196,33,Dimensional Barrier,83326048,False,2,0
+1197,33,Terrors of the Overroot,63086455,False,2,0
+1198,33,Runick Flashing Fire,68957034,False,1,0
+1199,33,Trap Trick,80101899,False,3,0
+1200,33,Runick Freezing Curses,30430448,False,1,0
+1201,33,Lovely Labrynth of the Silver Castle,2347656,False,1,0
+1202,33,Weighbridge,39103226,False,2,0
+1203,33,Geri the Runick Fangs,28373620,False,1,1
+1204,33,The Last Warrior from Another Planet,86099788,False,1,1
+1205,33,Number S39: Utopia the Lightning,56832966,False,1,1
+1206,33,Freki the Runick Fangs,47219274,False,1,1
+1207,33,Cyber Dragon Nova,58069384,False,1,1
+1208,33,Number 39: Utopia,84013237,False,1,1
+1209,33,Cyber Dragon Infinity,10443957,False,1,1
+1210,33,"Garura, Wings of Resonant Life",11765832,False,1,1
+1211,33,Number C39: Utopia Ray,56840427,False,1,1
+1212,33,Hugin the Runick Wings,55990317,False,1,1
+1213,33,Thousand-Eyes Restrict,63519819,False,1,1
+1214,33,Munin the Runick Wings,92385016,False,1,1
+1215,33,Dhampir Vampire Sheridan,32302078,False,1,1
+1216,33,D/D/D Stone King Darius,51497409,False,1,1
+1217,33,Xyz Armor Torpedo,94151981,False,1,1
+1218,34,Mulcharmy Fuwaross,42141493,True,3,0
+1219,34,Sinful Spoils Deception,66328392,True,3,0
+1220,34,Bonfire,85106525,True,3,0
+1221,34,Snake-Eyes Poplar,90241276,True,1,0
+1222,34,Diabellstar the Black Witch,72270339,True,3,0
+1223,34,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+1224,34,Snake-Eye Ash,9674034,True,1,0
+1225,34,Fire King Sky Burn,91703676,False,1,0
+1226,34,Fire King High Avatar Kirin,2526224,True,2,0
+1227,34,Sacred Azamina,94845588,True,1,0
+1228,34,Infinite Impermanence,10045474,True,3,0
+1229,34,Called by the Grave,24224830,True,1,0
+1230,34,Snake-Eyes Diabellstar,27260347,False,1,0
+1231,34,Legendary Fire King Ponix,90681088,True,1,0
+1232,34,Fire King High Avatar Garunix,23015896,False,1,0
+1233,34,Fire King Island,57554544,False,1,0
+1234,34,Dominus Impulse,40366667,False,3,0
+1235,34,Snake-Eye Oak,45663742,False,1,0
+1236,34,Fire King Avatar Arvata,18621798,False,1,0
+1237,34,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+1238,34,Ash Blossom & Joyous Spring,14558128,False,3,0
+1239,34,Divine Temple of the Snake-Eye,53639887,False,1,0
+1240,34,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+1241,34,Triple Tactics Talent,25311006,False,1,0
+1242,34,Sacred Fire King Garunix,66431519,False,1,0
+1243,34,Fire King Sanctuary,65305978,False,1,0
+1244,34,Fire King Consort Ulkanix,44455560,False,2,0
+1245,34,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+1246,34,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+1247,34,S:P Little Knight,29301450,False,1,1
+1248,34,Knightmare Phoenix,2857636,False,1,1
+1249,34,Accesscode Talker,86066372,False,1,1
+1250,34,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+1251,34,I:P Masquerena,65741786,True,1,1
+1252,34,Salamangreat Raging Phoenix,57134592,False,1,1
+1253,34,Amphibious Swarmship Amblowhale,20665527,False,1,1
+1254,34,Azamina Rhea Silvera,46396218,True,1,1
+1255,34,Azamina Mu Rcielago,73391962,True,1,1
+1256,34,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+1257,34,Relinquished Anima,94259633,True,1,1
+1258,34,Salamangreat Sunlight Wolf,87871125,False,1,1
+1259,35,Runick Destruction,94445733,True,1,0
+1260,35,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1261,35,Welcome Labrynth,5380979,True,3,0
+1262,35,Dimension Shifter,91800273,True,3,0
+1263,35,Solemn Strike,40605147,True,3,0
+1264,35,Lost Wind,74003290,True,2,0
+1265,35,Simultaneous Equation Cannons,25096909,True,3,0
+1266,35,Big Welcome Labrynth,92714517,True,3,0
+1267,35,Destructive Daruma Karma Cannon,30748475,True,3,0
+1268,35,Ice Dragon's Prison,20899496,True,2,0
+1269,35,Starry Dragon's Cycle,6278008,True,2,0
+1270,35,Dimensional Barrier,83326048,False,2,0
+1271,35,Terrors of the Overroot,63086455,False,2,0
+1272,35,Runick Flashing Fire,68957034,False,1,0
+1273,35,Trap Trick,80101899,False,3,0
+1274,35,Runick Freezing Curses,30430448,False,1,0
+1275,35,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+1276,35,Weighbridge,39103226,False,2,0
+1277,35,Geri the Runick Fangs,28373620,False,1,1
+1278,35,The Last Warrior from Another Planet,86099788,False,1,1
+1279,35,Number S39: Utopia the Lightning,56832966,False,1,1
+1280,35,Freki the Runick Fangs,47219274,True,1,1
+1281,35,Cyber Dragon Nova,58069384,False,1,1
+1282,35,Number 39: Utopia,84013237,False,1,1
+1283,35,Cyber Dragon Infinity,10443957,False,1,1
+1284,35,"Garura, Wings of Resonant Life",11765832,False,1,1
+1285,35,Number C39: Utopia Ray,56840427,False,1,1
+1286,35,Hugin the Runick Wings,55990317,False,1,1
+1287,35,Thousand-Eyes Restrict,63519819,False,1,1
+1288,35,Munin the Runick Wings,92385016,False,1,1
+1289,35,Dhampir Vampire Sheridan,32302078,False,1,1
+1290,35,D/D/D Stone King Darius,51497409,False,1,1
+1291,35,Xyz Armor Torpedo,94151981,False,1,1
+1292,36,Mulcharmy Fuwaross,42141493,True,3,0
+1293,36,Sinful Spoils Deception,66328392,True,3,0
+1294,36,Bonfire,85106525,True,3,0
+1295,36,Snake-Eyes Poplar,90241276,True,1,0
+1296,36,Diabellstar the Black Witch,72270339,True,3,0
+1297,36,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+1298,36,Snake-Eye Ash,9674034,True,1,0
+1299,36,Fire King Sky Burn,91703676,True,1,0
+1300,36,Fire King High Avatar Kirin,2526224,True,2,0
+1301,36,Sacred Azamina,94845588,True,1,0
+1302,36,Infinite Impermanence,10045474,True,3,0
+1303,36,Called by the Grave,24224830,True,1,0
+1304,36,Snake-Eyes Diabellstar,27260347,True,1,0
+1305,36,Legendary Fire King Ponix,90681088,True,1,0
+1306,36,Fire King High Avatar Garunix,23015896,False,1,0
+1307,36,Fire King Island,57554544,False,1,0
+1308,36,Dominus Impulse,40366667,False,3,0
+1309,36,Snake-Eye Oak,45663742,False,1,0
+1310,36,Fire King Avatar Arvata,18621798,False,1,0
+1311,36,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+1312,36,Ash Blossom & Joyous Spring,14558128,False,3,0
+1313,36,Divine Temple of the Snake-Eye,53639887,False,1,0
+1314,36,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+1315,36,Triple Tactics Talent,25311006,False,1,0
+1316,36,Sacred Fire King Garunix,66431519,False,1,0
+1317,36,Fire King Sanctuary,65305978,False,1,0
+1318,36,Fire King Consort Ulkanix,44455560,False,2,0
+1319,36,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+1320,36,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+1321,36,S:P Little Knight,29301450,True,1,1
+1322,36,Knightmare Phoenix,2857636,True,1,1
+1323,36,Accesscode Talker,86066372,False,1,1
+1324,36,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+1325,36,I:P Masquerena,65741786,False,1,1
+1326,36,Salamangreat Raging Phoenix,57134592,False,1,1
+1327,36,Amphibious Swarmship Amblowhale,20665527,False,1,1
+1328,36,Azamina Rhea Silvera,46396218,True,1,1
+1329,36,Azamina Mu Rcielago,73391962,True,1,1
+1330,36,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+1331,36,Relinquished Anima,94259633,True,1,1
+1332,36,Salamangreat Sunlight Wolf,87871125,False,1,1
+1333,37,Runick Destruction,94445733,True,1,0
+1334,37,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1335,37,Welcome Labrynth,5380979,True,3,0
+1336,37,Dimension Shifter,91800273,True,3,0
+1337,37,Solemn Strike,40605147,True,3,0
+1338,37,Lost Wind,74003290,True,2,0
+1339,37,Simultaneous Equation Cannons,25096909,True,3,0
+1340,37,Big Welcome Labrynth,92714517,True,3,0
+1341,37,Destructive Daruma Karma Cannon,30748475,True,3,0
+1342,37,Ice Dragon's Prison,20899496,True,2,0
+1343,37,Starry Dragon's Cycle,6278008,True,2,0
+1344,37,Dimensional Barrier,83326048,False,2,0
+1345,37,Terrors of the Overroot,63086455,False,2,0
+1346,37,Runick Flashing Fire,68957034,False,1,0
+1347,37,Trap Trick,80101899,False,3,0
+1348,37,Runick Freezing Curses,30430448,False,1,0
+1349,37,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+1350,37,Weighbridge,39103226,False,2,0
+1351,37,Geri the Runick Fangs,28373620,False,1,1
+1352,37,The Last Warrior from Another Planet,86099788,False,1,1
+1353,37,Number S39: Utopia the Lightning,56832966,False,1,1
+1354,37,Freki the Runick Fangs,47219274,False,1,1
+1355,37,Cyber Dragon Nova,58069384,False,1,1
+1356,37,Number 39: Utopia,84013237,False,1,1
+1357,37,Cyber Dragon Infinity,10443957,False,1,1
+1358,37,"Garura, Wings of Resonant Life",11765832,False,1,1
+1359,37,Number C39: Utopia Ray,56840427,False,1,1
+1360,37,Hugin the Runick Wings,55990317,False,1,1
+1361,37,Thousand-Eyes Restrict,63519819,False,1,1
+1362,37,Munin the Runick Wings,92385016,True,1,1
+1363,37,Dhampir Vampire Sheridan,32302078,False,1,1
+1364,37,D/D/D Stone King Darius,51497409,False,1,1
+1365,37,Xyz Armor Torpedo,94151981,False,1,1
+1366,38,Mulcharmy Fuwaross,42141493,True,3,0
+1367,38,Sinful Spoils Deception,66328392,True,3,0
+1368,38,Bonfire,85106525,True,3,0
+1369,38,Snake-Eyes Poplar,90241276,True,1,0
+1370,38,Diabellstar the Black Witch,72270339,True,3,0
+1371,38,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+1372,38,Snake-Eye Ash,9674034,True,1,0
+1373,38,Fire King Sky Burn,91703676,True,1,0
+1374,38,Fire King High Avatar Kirin,2526224,True,2,0
+1375,38,Sacred Azamina,94845588,True,1,0
+1376,38,Infinite Impermanence,10045474,True,3,0
+1377,38,Called by the Grave,24224830,False,1,0
+1378,38,Snake-Eyes Diabellstar,27260347,True,1,0
+1379,38,Legendary Fire King Ponix,90681088,False,1,0
+1380,38,Fire King High Avatar Garunix,23015896,False,1,0
+1381,38,Fire King Island,57554544,False,1,0
+1382,38,Dominus Impulse,40366667,False,3,0
+1383,38,Snake-Eye Oak,45663742,True,1,0
+1384,38,Fire King Avatar Arvata,18621798,False,1,0
+1385,38,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+1386,38,Ash Blossom & Joyous Spring,14558128,False,3,0
+1387,38,Divine Temple of the Snake-Eye,53639887,False,1,0
+1388,38,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+1389,38,Triple Tactics Talent,25311006,False,1,0
+1390,38,Sacred Fire King Garunix,66431519,False,1,0
+1391,38,Fire King Sanctuary,65305978,False,1,0
+1392,38,Fire King Consort Ulkanix,44455560,False,2,0
+1393,38,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+1394,38,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+1395,38,S:P Little Knight,29301450,True,1,1
+1396,38,Knightmare Phoenix,2857636,False,1,1
+1397,38,Accesscode Talker,86066372,False,1,1
+1398,38,"Promethean Princess, Bestower of Flames",2772337,True,2,1
+1399,38,I:P Masquerena,65741786,False,1,1
+1400,38,Salamangreat Raging Phoenix,57134592,False,1,1
+1401,38,Amphibious Swarmship Amblowhale,20665527,True,1,1
+1402,38,Azamina Rhea Silvera,46396218,True,1,1
+1403,38,Azamina Mu Rcielago,73391962,True,1,1
+1404,38,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+1405,38,Relinquished Anima,94259633,False,1,1
+1406,38,Salamangreat Sunlight Wolf,87871125,False,1,1
+1407,39,Runick Destruction,94445733,True,1,0
+1408,39,Lady Labrynth of the Silver Castle,81497285,True,3,0
+1409,39,Welcome Labrynth,5380979,True,3,0
+1410,39,Dimension Shifter,91800273,True,3,0
+1411,39,Solemn Strike,40605147,True,3,0
+1412,39,Lost Wind,74003290,True,2,0
+1413,39,Simultaneous Equation Cannons,25096909,True,3,0
+1414,39,Big Welcome Labrynth,92714517,True,3,0
+1415,39,Destructive Daruma Karma Cannon,30748475,False,3,0
+1416,39,Ice Dragon's Prison,20899496,False,2,0
+1417,39,Starry Dragon's Cycle,6278008,False,2,0
+1418,39,Dimensional Barrier,83326048,False,2,0
+1419,39,Terrors of the Overroot,63086455,False,2,0
+1420,39,Runick Flashing Fire,68957034,False,1,0
+1421,39,Trap Trick,80101899,False,3,0
+1422,39,Runick Freezing Curses,30430448,False,1,0
+1423,39,Lovely Labrynth of the Silver Castle,2347656,True,1,0
+1424,39,Weighbridge,39103226,False,2,0
+1425,39,Geri the Runick Fangs,28373620,False,1,1
+1426,39,The Last Warrior from Another Planet,86099788,False,1,1
+1427,39,Number S39: Utopia the Lightning,56832966,False,1,1
+1428,39,Freki the Runick Fangs,47219274,False,1,1
+1429,39,Cyber Dragon Nova,58069384,False,1,1
+1430,39,Number 39: Utopia,84013237,False,1,1
+1431,39,Cyber Dragon Infinity,10443957,False,1,1
+1432,39,"Garura, Wings of Resonant Life",11765832,False,1,1
+1433,39,Number C39: Utopia Ray,56840427,False,1,1
+1434,39,Hugin the Runick Wings,55990317,False,1,1
+1435,39,Thousand-Eyes Restrict,63519819,False,1,1
+1436,39,Munin the Runick Wings,92385016,True,1,1
+1437,39,Dhampir Vampire Sheridan,32302078,False,1,1
+1438,39,D/D/D Stone King Darius,51497409,False,1,1
+1439,39,Xyz Armor Torpedo,94151981,False,1,1
+1440,40,Mulcharmy Fuwaross,42141493,True,3,0
+1441,40,Sinful Spoils Deception,66328392,True,3,0
+1442,40,Bonfire,85106525,True,3,0
+1443,40,Snake-Eyes Poplar,90241276,True,1,0
+1444,40,Diabellstar the Black Witch,72270339,True,3,0
+1445,40,WANTED: Seeker of Sinful Spoils,80845034,True,3,0
+1446,40,Snake-Eye Ash,9674034,True,1,0
+1447,40,Fire King Sky Burn,91703676,True,1,0
+1448,40,Fire King High Avatar Kirin,2526224,False,2,0
+1449,40,Sacred Azamina,94845588,True,1,0
+1450,40,Infinite Impermanence,10045474,False,3,0
+1451,40,Called by the Grave,24224830,False,1,0
+1452,40,Snake-Eyes Diabellstar,27260347,False,1,0
+1453,40,Legendary Fire King Ponix,90681088,False,1,0
+1454,40,Fire King High Avatar Garunix,23015896,False,1,0
+1455,40,Fire King Island,57554544,False,1,0
+1456,40,Dominus Impulse,40366667,False,3,0
+1457,40,Snake-Eye Oak,45663742,True,1,0
+1458,40,Fire King Avatar Arvata,18621798,False,1,0
+1459,40,Original Sinful Spoils - Snake-Eye,89023486,False,1,0
+1460,40,Ash Blossom & Joyous Spring,14558128,False,3,0
+1461,40,Divine Temple of the Snake-Eye,53639887,False,1,0
+1462,40,Snake-Eyes Flamberge Dragon,48452496,False,1,0
+1463,40,Triple Tactics Talent,25311006,False,1,0
+1464,40,Sacred Fire King Garunix,66431519,False,1,0
+1465,40,Fire King Sanctuary,65305978,False,1,0
+1466,40,Fire King Consort Ulkanix,44455560,False,2,0
+1467,40,"Garunix Eternity, Hyang of the Fire Kings",64182380,False,1,1
+1468,40,"Dharc the Dark Charmer, Gloomy",8264361,False,1,1
+1469,40,S:P Little Knight,29301450,True,1,1
+1470,40,Knightmare Phoenix,2857636,True,1,1
+1471,40,Accesscode Talker,86066372,False,1,1
+1472,40,"Promethean Princess, Bestower of Flames",2772337,False,2,1
+1473,40,I:P Masquerena,65741786,True,1,1
+1474,40,Salamangreat Raging Phoenix,57134592,False,1,1
+1475,40,Amphibious Swarmship Amblowhale,20665527,False,1,1
+1476,40,Azamina Rhea Silvera,46396218,True,1,1
+1477,40,Azamina Mu Rcielago,73391962,True,1,1
+1478,40,"Hiita the Fire Charmer, Ablaze",48815792,False,1,1
+1479,40,Relinquished Anima,94259633,False,1,1
+1480,40,Salamangreat Sunlight Wolf,87871125,False,1,1

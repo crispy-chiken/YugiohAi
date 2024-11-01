@@ -8,10 +8,11 @@ using static WindBot.NEAT;
 using System.Linq;
 using System;
 using static WindBot.AbstractAIEngine;
+using System.Diagnostics;
 
 namespace WindBot.Game.AI.Decks
 {
-    [Deck("AIBase", "AI_SnakeEyes")]
+    [Deck("AIBase", "AI_Base")]
     public class AIBase : DefaultExecutor
     {
         protected AbstractAIEngine aIEngine;
@@ -381,16 +382,19 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.Summon, ShouldPerform);
             AddExecutor(ExecutorType.MonsterSet, ShouldPerform);
             AddExecutor(ExecutorType.SummonOrSet, ShouldPerform);
-            AddExecutor(ExecutorType.Repos, ShouldPerform);
+            //AddExecutor(ExecutorType.Repos, ShouldPerform);
             AddExecutor(ExecutorType.SpellSet, ShouldPerform);
 
 
             AddExecutor(ExecutorType.GoToBattlePhase, ShouldPerform);
             AddExecutor(ExecutorType.GoToMainPhase2, ShouldPerform);
             AddExecutor(ExecutorType.GoToEndPhase, ShouldPerform);
-           // AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
+            AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
 
-            aIEngine = new NeuralNet(this);
+            if (SQLComm.IsMCTS)
+                aIEngine = new MCTSEngine(this);
+            else
+                aIEngine = new NeuralNet(this);
         }
 
 
@@ -418,6 +422,8 @@ namespace WindBot.Game.AI.Decks
 
         public bool ShouldPerform()
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             if (Type == ExecutorType.Activate && Card.Id == CardId.SimultaneousCannon)
                 if (!SimultaneousCannonActivate() && !isChainResolving)
                     return false;
@@ -428,18 +434,28 @@ namespace WindBot.Game.AI.Decks
                 if (!used.Contains(Card.Name))
                     used.Add(Card.Name);
             }
+
+            Logger.DebugWriteLine("ShouldPerform Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
             return perform;
         }
 
         // Choose Go first or second
         public override bool OnSelectHand()
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             aIEngine.ShouldPerform(null, "GoFirst", -1, new List<FieldStateValues>(), Duel);
+
+            Logger.DebugWriteLine("OnSelectHand Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
             return true;
         }
 
         public override void OnNewTurn()
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             base.OnNewTurn();
             previousActions.Clear();
             previousActionsEnemy.Clear();
@@ -451,17 +467,25 @@ namespace WindBot.Game.AI.Decks
             lingeringTurnActions = new List<PreviousAction>();
 
             aIEngine.OnNewTurn(Duel);
+
+            Logger.DebugWriteLine("OnNewTurn Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
 
         public override void OnNewPhase()
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             base.OnNewPhase();
             aIEngine.OnNewPhase();
+
+            Logger.DebugWriteLine("OnNewPhase Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
         public override void SetMain(MainPhase main)
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             base.SetMain(main);
             var fieldState = GetFieldState();
             fieldState.Add(new FieldStateValues(
@@ -475,10 +499,14 @@ namespace WindBot.Game.AI.Decks
 
             materialSelected = 0;
             aIEngine.SetMain(main, fieldState, Duel);
+
+            Logger.DebugWriteLine("SetMain Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
         public override void SetBattle(BattlePhase battle)
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             base.SetBattle(battle);
             var fieldState = GetFieldState();
 
@@ -498,18 +526,28 @@ namespace WindBot.Game.AI.Decks
 
 
             aIEngine.SetBattle(battle, fieldState, Duel);
+
+            Logger.DebugWriteLine("SetMain Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
 
         public override bool OnSelectYesNo(long desc)
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             var option = Util.GetOptionFromDesc(desc);
             var cardId = Util.GetCardIdFromDesc(desc);
-            return aIEngine.ShouldPerform(null, "YesNo", desc, GetFieldState(), Duel);
+            var res =  aIEngine.ShouldPerform(null, "YesNo", desc, GetFieldState(), Duel);
+
+            Logger.DebugWriteLine("OnSelectYesNo Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
+            return res;
         }
 
         public override IList<ClientCard> OnSelectCard(IList<ClientCard> _cards, int min, int max, long hint, bool cancelable)
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             //if (Duel.Phase == DuelPhase.BattleStart)
             //    return null;
             if (AI.HaveSelectedCards())
@@ -649,14 +687,23 @@ namespace WindBot.Game.AI.Decks
                 previousActions.Add(new PreviousAction() { cardId = card.Id, type = ExecutorType.Select, description = hint });
             }
 
+            Logger.DebugWriteLine("OnSelectCard Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
             return selected;
         }
 
 
         public override CardPosition OnSelectPosition(int cardId, IList<CardPosition> positions)
         {
-            return aIEngine.OnSelectPosition(cardId, positions, GetFieldState(), Duel);
+            return base.OnSelectPosition(cardId, positions);
+            Stopwatch watch = Stopwatch.StartNew();
+
+            var res = aIEngine.OnSelectPosition(cardId, positions, GetFieldState(), Duel);
             //return base.OnSelectPosition(cardId, positions);
+
+            Logger.DebugWriteLine("OnSelectPosition Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
+            return res;
         }
 
 
@@ -669,9 +716,13 @@ namespace WindBot.Game.AI.Decks
         // Called when a chain is about to happen
         public override void SetChain(IList<ClientCard> cards, IList<long> descs, bool forced)
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             base.SetChain(cards, descs, forced);
 
             aIEngine.SetChain(cards, descs, forced, GetFieldState(), Duel, Util);
+
+            Logger.DebugWriteLine("OnSelectPosition Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
         // As Chain activates
@@ -692,7 +743,7 @@ namespace WindBot.Game.AI.Decks
             }
             else
             {
-                Console.WriteLine("Add Player Chain " + chainLinkCount.ToString() + " " + card.Name);
+                //Console.WriteLine("Add Player Chain " + chainLinkCount.ToString() + " " + card.Name);
                 playerChainIndex.Push(chainLinkCount);
             }
             base.OnChaining(player, card);
@@ -725,7 +776,13 @@ namespace WindBot.Game.AI.Decks
 
         public override int OnSelectOption(IList<long> options)
         {
-            return aIEngine.SelectOption(options, GetFieldState(), Duel, Util);
+            Stopwatch watch = Stopwatch.StartNew();
+
+            var res = aIEngine.SelectOption(options, GetFieldState(), Duel, Util);
+
+            Logger.DebugWriteLine("OnSelectOption Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
+            return res;
         }
 
         // TODO
@@ -733,7 +790,13 @@ namespace WindBot.Game.AI.Decks
 
         public override int OnAnnounceCard(IList<int> avail)
         {
-            return aIEngine.OnAnnounceCard(Util.GetLastChainCard(), avail, GetFieldState(), Duel);
+            Stopwatch watch = Stopwatch.StartNew();
+
+            var res = aIEngine.OnAnnounceCard(Util.GetLastChainCard(), avail, GetFieldState(), Duel);
+
+            Logger.DebugWriteLine("OnAnnounceCard Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
+            return res;
         }
 
         public override void OnPostActivate(bool activate)
@@ -843,10 +906,17 @@ namespace WindBot.Game.AI.Decks
 
         public override ClientCard OnSelectAttacker(IList<ClientCard> attackers, IList<ClientCard> defenders)
         {
+            return base.OnSelectAttacker(attackers, defenders);
+
+            Stopwatch watch = Stopwatch.StartNew();
             if (attackers.Count == 0)
                 return null;
-            return aIEngine.OnSelectAttacker(attackers, GetFieldState(), Duel);
+            var res = aIEngine.OnSelectAttacker(attackers, GetFieldState(), Duel);
+
             //return base.OnSelectAttacker(attackers, defenders);
+            Logger.DebugWriteLine("OnSelectAttacker Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
+            return res;
         }
 
 
@@ -858,6 +928,10 @@ namespace WindBot.Game.AI.Decks
         /// <returns>BattlePhaseAction including the target, or null (in this situation, GameAI will check the next attacker)</returns>
         public override BattlePhaseAction OnSelectAttackTarget(ClientCard attacker, IList<ClientCard> defenders)
         {
+            return base.OnSelectAttackTarget(attacker, defenders);
+
+            Stopwatch watch = Stopwatch.StartNew();
+
             var fieldState = GetFieldState();
 
             // Current Attacker
@@ -868,6 +942,9 @@ namespace WindBot.Game.AI.Decks
 
             // Always attack for now
             ClientCard toAttack = aIEngine.OnSelectAttackTarget(attacker, defenders, fieldState, Duel);
+
+            Logger.DebugWriteLine("OnSelectAttackTarget Time:" + watch.Elapsed, ConsoleColor.Yellow);
+
             if (toAttack != null || attacker.CanDirectAttack)
                 return AI.Attack(attacker, toAttack);//toAttack == null if it is a direct attack
 
@@ -993,6 +1070,8 @@ namespace WindBot.Game.AI.Decks
 
         private List<FieldStateValues> GetFieldState()
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             List<FieldStateValues> c = new List<FieldStateValues>();
 
             //c.Add(new FieldStateValues("", "Turn", Duel.Turn.ToString()));
@@ -1161,6 +1240,8 @@ namespace WindBot.Game.AI.Decks
                             "",
                             ""));
             }
+
+            Logger.DebugWriteLine("     FieldStateValues Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return c;
         }

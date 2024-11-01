@@ -7,7 +7,7 @@ using System.Reflection;
 using WindBot.Game.AI;
 using static System.Net.Mime.MediaTypeNames;
 using static WindBot.AbstractAIEngine;
-using static WindBot.MCST;
+using static WindBot.MCTSEngine;
 using static WindBot.NEAT;
 using static WindBot.NeuralNet;
 
@@ -20,6 +20,7 @@ namespace WindBot
         public static bool IsTraining = false;
         public static bool IsManual = false;
         public static bool ShouldUpdate = false;
+        public static bool ShouldRecord = true;
         public static bool IsMCTS = false;
         public static bool IsRollout = false;
         public static bool IsHardCoded = false;
@@ -54,6 +55,45 @@ namespace WindBot
             return new SqliteConnection(sqlPath);
         }
         #region MCST
+
+        public static List<Node> GetAllNodes()
+        {
+            Dictionary<long, Node> mappings = new Dictionary<long, Node>();
+            var actions = GetAllActions();
+
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+                string sql = $"SELECT rowid, ParentId, ActionId, Reward, Visited FROM MCST WHERE IsFirst = \"{IsFirst}\" AND Name = \"{Name}\" ORDER BY rowid";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                        while (rdr.Read())
+                        {
+                            long parentId = rdr.GetInt64(1);
+                            long actionId = rdr.GetInt64(2);
+
+                            ActionInfo action = null;
+                            if (actions.ContainsKey(actionId))
+                                action = new ActionInfo(actions[actionId]);
+
+                            Node parent = null;
+                            if (mappings.ContainsKey(parentId))
+                                parent = mappings[parentId];
+
+                            Node node = new Node(parent, action);
+                            node.NodeId = long.Parse(rdr["rowid"].ToString());
+                            node.Rewards = rdr.GetDouble(3);
+                            node.Visited = rdr.GetInt32(4);
+
+                            mappings.Add(node.NodeId, node);
+                        }
+                }
+            }
+
+            return mappings.Values.ToList();
+        }
+
         public static bool GetNodeInfo(Node node)
         {
             bool gotInfo = false;
@@ -61,8 +101,8 @@ namespace WindBot
             using(SqliteConnection conn = ConnectToDatabase())
             {
                 conn.Open();
-                string sql = $"SELECT rowid, Reward, Visited, AvgTurn FROM MCST WHERE " +
-                    $"ParentId = \"{node.Parent?.NodeId ?? -4}\" AND CardId = \"{node.CardId}\" AND Action = \"{node.Action}\" AND IsFirst = \"{IsFirst}\" AND Name = \"{Name}\"";
+                string sql = $"SELECT rowid, Reward, Visited FROM MCST WHERE " +
+                    $"ParentId = \"{node.Parent?.NodeId ?? -4}\" AND ActionId = \"{node.Action.ActionId}\" AND IsFirst = \"{IsFirst}\" AND Name = \"{Name}\"";
                 using (SqliteCommand cmd = new SqliteCommand(sql, conn))
                 {
                     using (SqliteDataReader rdr = cmd.ExecuteReader())
@@ -71,7 +111,6 @@ namespace WindBot
                         node.NodeId = long.Parse(rdr["rowid"].ToString());
                         node.Rewards = rdr.GetDouble(1);
                         node.Visited = rdr.GetInt32(2);
-                        node.AvgTurn = rdr.GetDouble(3);
                         gotInfo = true;
                     }
                 }
@@ -84,12 +123,12 @@ namespace WindBot
         public static double GetNodeEstimate(Node node)
         {
             double value = 0;
-            if (node.Action == "GoToEndPhase")
+            if (node.Action.Action == "GoToEndPhase")
                 return value;
             using (SqliteConnection conn = ConnectToDatabase())
             {
                 conn.Open();
-                string sql = $"SELECT SUM(Reward), COUNT(Visited) from MCST WHERE CardId = \"{node.CardId}\" AND Action = \"{node.Action}\" AND IsFirst = \"{IsFirst}\" AND Visited > 0 AND Name = \"{Name}\"" +
+                string sql = $"SELECT SUM(Reward), COUNT(Visited) from MCST WHERE ActionId = \"{node.Action.ActionId}\" AND IsFirst = \"{IsFirst}\" AND Visited > 0 AND Name = \"{Name}\"" +
                     $" AND rowid != \"{node.NodeId}\"";
                 double reward = 0;
                 int visited = 0;
@@ -146,34 +185,6 @@ namespace WindBot
             return total;
         }
 
-        public static float GetAvgCount()
-        {
-            float total = 0;
-            using (SqliteConnection conn = ConnectToDatabase())
-            {
-                conn.Open();
-                string sql = $"SELECT AVG(AvgTurn) FROM MCST WHERE AvgTurn != 9999 AND IsFirst = \"{IsFirst}\" AND Name = \"{Name}\"";
-                try
-                {
-                    using (SqliteCommand cmd = new SqliteCommand(sql, conn))
-                    {
-                        using (SqliteDataReader rdr = cmd.ExecuteReader())
-                            while (rdr.Read())
-                            {
-                                total += rdr.GetFloat(0);
-                            }
-                    }
-                }
-                catch (InvalidCastException)
-                {
-                    Logger.WriteLine("Empty MCST Database AvgCount");
-                }
-                conn.Close();
-            }
-
-            return total;
-        }
-
         public static void InsertNode(Node node)
         {
             if (!IsMCTS)
@@ -195,7 +206,7 @@ namespace WindBot
                     childId = node.Children[0].NodeId;
                 }
 
-                string sql = $"INSERT INTO MCST (Name,ParentId,ChildId,CardId,Action,AvgTurn,Reward,Visited,IsFirst,IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{childId}\",\"{node.CardId}\",\"{node.Action}\",\"9999\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
+                string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
                 using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                 {
                     cmd2.ExecuteNonQuery();
@@ -254,8 +265,6 @@ namespace WindBot
                     {
                         sql = $"UPDATE MCST SET Reward = Reward + {totalRewards / rolloutCount}, " + //+ Math.Max(0, Math.Round(node.Heuristic() / RolloutCount) / 10)
                             $"Visited = Visited + 1";
-                        if (totalRewards > 0)
-                            sql += $", AvgTurn = min(AvgTurn,{turn})";
                         sql += $" WHERE rowid = \"{n.NodeId}\" AND IsFirst = \"{IsFirst}\" AND IsTraining = \"{IsTraining}\" AND Name = \"{Name}\"";
 
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
@@ -279,7 +288,7 @@ namespace WindBot
                             childId = n.Children[0].NodeId;
                         }*/
 
-                        sql = $"INSERT INTO MCST (Name,ParentId,ChildId,CardId,Action,AvgTurn,Reward,Visited,IsFirst,IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{childId}\",\"{n.CardId}\",\"{n.Action}\",\"{turn}\",\"{totalRewards / rolloutCount}\",\"1\",\"{IsFirst}\",\"{IsTraining}\")";
+                        sql = $"INSERT INTO MCST (Name,ParentId,ActionId,Reward,Visited,IsFirst,IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{childId}\",\"{n.Action.ActionId}\",\"{totalRewards / rolloutCount}\",\"1\",\"{IsFirst}\",\"{IsTraining}\")";
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                         {
                             rowsUpdated = cmd2.ExecuteNonQuery();
@@ -295,8 +304,6 @@ namespace WindBot
                 transaction.Commit();
                 conn.Close();
             }
-
-            UpdateWeightTree(nodes, totalRewards, rolloutCount);
 
             ShouldBackPropagate = false;
             IsRollout = false;
@@ -330,61 +337,6 @@ namespace WindBot
             }
         }
 
-        private static void UpdateWeightTree(List<Node> nodes, double reward, double visited)
-        {
-            if (!IsTraining)
-                return;
-
-            using (SqliteConnection conn = ConnectToDatabase())
-            {
-                conn.Open();
-
-                SqliteTransaction transaction = conn.BeginTransaction();
-
-
-                int rowsUpdated = 0;
-                string sql;
-
-                Queue<Node> q = new Queue<Node>(nodes);
-
-                while (q.Count > 0)
-                {
-                    Node n = q.Dequeue();
-
-                    foreach (string verify in n.StateCurrent.CardsInPlay)
-                    {
-                        sql = $"UPDATE WeightTree SET Reward = Reward + {reward / visited}, " +
-                            $"Visited = Visited + 1 WHERE " +
-                            $"CardId = \"{n.CardId}\" AND " +
-                            $"Action = \"{n.Action}\" AND " +
-                            $"Verify = \"{verify}\"";
-
-                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
-                        {
-                            rowsUpdated = cmd2.ExecuteNonQuery();
-                        }
-
-                        if (rowsUpdated <= 0)
-                        {
-
-                            sql = $"INSERT INTO WeightTree (CardId,Action,Verify,Reward,Visited) VALUES (\"{n.CardId}\",\"{n.Action}\",\"{verify}\",\"{reward / visited}\",\"1\")";
-                            using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
-                            {
-                                rowsUpdated = cmd2.ExecuteNonQuery();
-                            }
-                        }
-                    }
-
-                    foreach (Node c in n.Children)
-                    {
-                        q.Enqueue(c);
-                    }
-                }
-
-                transaction.Commit();
-                conn.Close();
-            }
-        }
         #endregion
 
         #region NEAT
@@ -594,6 +546,9 @@ namespace WindBot
 
         public static void SavePlayedCards(bool isFirst, bool postSide, int result, List<string> playedCards, List<CardQuant> allCards)
         {
+            if (!ShouldRecord)
+                return;
+
             playedCards = playedCards.Distinct().ToList();
             using (SqliteConnection conn = ConnectToDatabase())
             {
@@ -631,9 +586,7 @@ namespace WindBot
 
         public static void SavePlayHistory(List<History> records, int result)
         {
-            //if (!IsTraining && !IsManual)
-            //    return;
-            if (!ShouldUpdate && !IsManual)
+            if (!IsTraining && !ShouldRecord && !IsManual)
                 return;
 
             //if (result != 0)
@@ -844,9 +797,9 @@ namespace WindBot
 
         #region Util
 
-        public static List<ActionInfo> GetAllActions()
+        public static Dictionary<long, ActionInfo> GetAllActions()
         {
-            List<ActionInfo> selectActions = new List<ActionInfo>();
+            Dictionary<long, ActionInfo> selectActions = new Dictionary<long, ActionInfo>();
 
             using (SqliteConnection conn = ConnectToDatabase())
             {
@@ -860,13 +813,41 @@ namespace WindBot
                             long id = rdr.GetInt64(0);
                             string name = rdr.GetString(1);
                             string action = rdr.GetString(2);
-                            selectActions.Add(new ActionInfo(id, name, action));
+                            selectActions.Add(id, new ActionInfo(id, name, action));
                         }
                 }
                 conn.Close();
             }
 
             return selectActions;
+        }
+
+        public static List<FieldStateValues> GetAllComparisons()
+        {
+            List<FieldStateValues> comparisons = new List<FieldStateValues>();
+
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+                string sql = $"SELECT rowid, Location, Compare, Value FROM L_CompareTo";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                        while (rdr.Read())
+                        {
+                            FieldStateValues value = new FieldStateValues();
+                            value.Id = rdr.GetInt64(0);
+                            value.Location = rdr.GetString(1);
+                            value.Compare = rdr.GetString(2);
+                            value.Value = rdr.GetString(3);
+
+                            comparisons.Add(value);
+                        }
+                }
+                conn.Close();
+            }
+
+            return comparisons;
         }
         #endregion
     }

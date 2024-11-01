@@ -76,7 +76,7 @@ class CustomLoss(nn.Module):
 class Network(nn.Module):
   def __init__(self, input_dim, output_dim):
     super(Network, self).__init__()
-    hidden_layers = (input_dim + output_dim)# * 2
+    hidden_layers = 1000#(input_dim + output_dim)# * 2
 
     self.layer1 = nn.Linear(input_dim, hidden_layers)
     self.layer2 = nn.Linear(hidden_layers, hidden_layers)

@@ -38,8 +38,8 @@ AI2Deck =  'Tenpai'
 
 reset = False
 generations = 1
-totalGames = 3
-parallelGames = 3
+totalGames = 20
+parallelGames = 1
 
 def isrespondingPID(PID):
   #if platform == "linux" or platform == "linux2":
@@ -65,6 +65,20 @@ def resetDB():
   sql_delete_query = """DELETE from GameStats"""
   cur.execute(sql_delete_query)
   sql_delete_query = """DELETE from GameTable"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_ActionList"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_CompareTo"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_PlayRecord"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_FieldState"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_ActionState"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_Weights"""
+  cur.execute(sql_delete_query)
+  sql_delete_query = """DELETE from L_GameResult"""
   cur.execute(sql_delete_query)
   con.commit()
   con.close()
@@ -126,6 +140,7 @@ def runAi(Deck = "AIBase",
                         "IsFirst="+str(IsFirst), 
                         "Id="+str(Id),
                         "Port="+str(Port),
+                        "ShouldUpdate="+str(True)
                         ],
                         stdout=subprocess.DEVNULL
                         )
@@ -135,7 +150,7 @@ def runAi(Deck = "AIBase",
   return p
 
 def shuffle_deck(deck_name):
-  filePath = os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/'+ deck_name 
+  filePath =  os.getcwd() +'/edopro_bin/deck/' + deck_name + '.ydk'
 
   f = open(filePath,"r")
   main = []
@@ -260,10 +275,7 @@ def main():
   
   pool = getPool()
 
-  proc = multiprocessing.Process(target=get_action_weights.run_server, args=())
-  proc.start()
-
-  decks1 = ["AI_SnakeEyes", "AI_Tenpai", "AI_Yubel", "AI_FireKing"] #["Labrynth", "Labrynth2",
+  decks1 = ["AI_FireKing"]#, "AI_Tenpai", "AI_Yubel", "AI_FireKing"] #["Labrynth", "Labrynth2",
   # decks2 = decks1
   decks2 = ["AI_Labrynth"]
   #decks1 = ["SnakeEyes", "Tenpai", "Labrynth", "Labrynth2", "Branded", "Runick", "Runick2", "Runick3", "Yubel" ]
@@ -273,8 +285,16 @@ def main():
     resetDB()
     resetYgoPro()
     #MakeDeckRandom()
+    for deck1 in decks1:
+      shuffle_deck(deck1)
+    for deck2 in decks2:
+      shuffle_deck(deck2)
+
   for g in range(generations):
+    
     print("running generation " + str(g))
+    proc = multiprocessing.Process(target=get_action_weights.run_server, args=())
+    proc.start()
 
     jobs = []
     pairs = []
@@ -319,7 +339,7 @@ def main():
 
     end = time.time()
     print("Total Time Past:" + str(datetime.timedelta(seconds=int(end - start))))
-    print("Total Average Game Time:"+str(datetime.timedelta(seconds=int((end - start)/(len(decks1) * len(deck2) * totalGames)))))
+    print("Total Average Game Time:"+str(datetime.timedelta(seconds=int((end - start)/(len(decks1) * len(decks2) * totalGames)))))
 
     #MakeDeckRandom()
     #MakeDeckPytorch(5)

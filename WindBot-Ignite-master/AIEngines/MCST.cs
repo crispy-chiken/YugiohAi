@@ -81,11 +81,11 @@ namespace WindBot
                     SaveParent = false;
                 }
 
-                if (!SQLComm.GetNodeInfo(this))
+                /*if (!SQLComm.GetNodeInfo(this))
                 {
                     SQLComm.InsertNode(this);
                     SQLComm.GetNodeInfo(this);
-                }
+                }*/
             }
 
             public double Heuristic()
@@ -170,7 +170,6 @@ namespace WindBot
                 Path.Add(_current);
             PathIndex = 1;
             ActionCount = 0;
-            AvgCount = SQLComm.GetAvgCount();
         }
 
         public void OnGameEnd(int result, Duel duel, List<History> records)
@@ -178,7 +177,7 @@ namespace WindBot
             bool reset = SQLComm.ShouldBackPropagate;
             double reward = result == 0 ? 1 : 0;
             //double reward = result == 0 ? 1.0 - Math.Min(duel.Turn * 0.01, 0.1) - Math.Min(ActionCount * 0.001, 0.2): 0;
-            SQLComm.Backpropagate(Path, _lastNode, reward, ActionCount);// duel.Turn);
+           // SQLComm.Backpropagate(Path, _lastNode, reward, ActionCount);// duel.Turn);
 
             if (reset)
             {
@@ -232,7 +231,7 @@ namespace WindBot
                 foreach (Node n in possibleActions)
                 {
                     double visited = Math.Max(0.01, n.Visited);
-                    double estimate = SQLComm.GetNodeEstimate(n);
+                    //double estimate = SQLComm.GetNodeEstimate(n);
                     //double w = n.Rewards/visited + c * Math.Sqrt((Math.Log(n.Parent.Visited + 1) + 1) / visited);
                     double w = 0.1 * n.Rewards / visited + (n.Parent.Visited) / visited;//c * Math.Sqrt(Math.Log(n.Parent.Visited + 1) / visited);
                     if (n.AvgTurn > 0 && n.AvgTurn != 9999)
