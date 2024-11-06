@@ -76,6 +76,11 @@ namespace WindBot
                             ActionInfo action = null;
                             if (actions.ContainsKey(actionId))
                                 action = new ActionInfo(actions[actionId]);
+                            else
+                            {
+                                Logger.WriteErrorLine("No action for actionId " + actionId);
+                                action = new ActionInfo(actionId, "", "");
+                            }
 
                             Node parent = null;
                             if (mappings.ContainsKey(parentId))
@@ -185,37 +190,93 @@ namespace WindBot
             return total;
         }
 
-        public static void InsertNode(Node node)
+        public static void InsertNodes(List<Node> nodes)
         {
             if (!IsMCTS)
                 return;
+
+            List<Node> toInsert = new List<Node>();
+
+
             using (SqliteConnection conn = ConnectToDatabase())
             {
                 conn.Open();
 
                 SqliteTransaction transaction = conn.BeginTransaction();
 
-                long parentId = -4;
-                long childId = -4;
-                if (node.Parent != null && node.Parent.NodeId != -4 && node.SaveParent)
+                string inserts = "";
+
+                foreach (var node in nodes)
                 {
-                    parentId = node.Parent.NodeId;
-                }
-                if (node.Children.Count == 1 && node.SaveChild)
-                {
-                    childId = node.Children[0].NodeId;
+                    if (node.Parent != null && node.Parent.NodeId != -4 && (node.Children.Count == 0 || node.NodeId != -4))
+                    {
+                        if (node.Parent.NodeId == 0)
+                        {
+
+                        }
+
+                        inserts += $"(\"{Name}\",\"{node.Parent.NodeId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\"),";
+                    }
+                    else if (node.Parent != null)
+                    {
+                        toInsert.Add(node);
+                    }
+                    else // Should be only start here
+                    {
+                        string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"-4\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            cmd2.ExecuteNonQuery();
+                        }
+
+                        sql = "select last_insert_rowid()";
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            var id_insert = (long)cmd2.ExecuteScalar();
+
+                            if (id_insert == 0) // Already inserted
+                                continue;
+
+                            node.NodeId = id_insert;
+                        }
+                    }                    
                 }
 
-                string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
-                using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                inserts = inserts.Trim(',');
+
+                if (inserts.Length > 0)
                 {
-                    cmd2.ExecuteNonQuery();
+                    string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES " +
+                        inserts;
+
+                    using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                    {
+                        cmd2.ExecuteNonQuery();
+                    }
                 }
 
-                sql = "select last_insert_rowid()";
-                using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                // For those whos parent's id is unknown
+
+                foreach (var node in toInsert)
                 {
-                    node.NodeId = (long)cmd2.ExecuteScalar();
+                    if (node.Parent.NodeId == -4)
+                    {
+                        // Should just have parent as start here
+                        continue;
+                    }
+
+
+                    string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"{node.Parent.NodeId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
+                    using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                    {
+                        cmd2.ExecuteNonQuery();
+                    }
+
+                    sql = "select last_insert_rowid()";
+                    using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                    {
+                        node.NodeId = (long)cmd2.ExecuteScalar();
+                    }
                 }
 
                 transaction.Commit();
@@ -264,19 +325,18 @@ namespace WindBot
                     if (n.NodeId != -4)
                     {
                         sql = $"UPDATE MCST SET Reward = Reward + {totalRewards / rolloutCount}, " + //+ Math.Max(0, Math.Round(node.Heuristic() / RolloutCount) / 10)
-                            $"Visited = Visited + 1";
+                            $"Visited = Visited + 1, HistoryId = {n.History?.Id ?? 0}";
                         sql += $" WHERE rowid = \"{n.NodeId}\" AND IsFirst = \"{IsFirst}\" AND IsTraining = \"{IsTraining}\" AND Name = \"{Name}\"";
 
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                         {
+                            cmd2.CommandTimeout = 30;
                             rowsUpdated = cmd2.ExecuteNonQuery();
                         }
                     }
                     else
                     {
-                        // This probably never runs
                         long parentId = 0;
-                        long childId = -4;
                         if (n.Parent != null && n.Parent.NodeId != -4)
                         {
                             parentId = n.Parent.NodeId;
@@ -288,10 +348,17 @@ namespace WindBot
                             childId = n.Children[0].NodeId;
                         }*/
 
-                        sql = $"INSERT INTO MCST (Name,ParentId,ActionId,Reward,Visited,IsFirst,IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{childId}\",\"{n.Action.ActionId}\",\"{totalRewards / rolloutCount}\",\"1\",\"{IsFirst}\",\"{IsTraining}\")";
+                        sql = $"INSERT INTO MCST (Name,ParentId,ActionId,HistoryId, Reward,Visited,IsFirst,IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{n.Action.ActionId}\",\"{n.History?.Id ?? 0}\",\"{totalRewards / rolloutCount}\",\"1\",\"{IsFirst}\",\"{IsTraining}\")";
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                         {
+                            cmd2.CommandTimeout = 30;
                             rowsUpdated = cmd2.ExecuteNonQuery();
+                        }
+
+                        sql = "select last_insert_rowid()";
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            n.NodeId = (long)cmd2.ExecuteScalar();
                         }
                     }
 
@@ -549,38 +616,48 @@ namespace WindBot
             if (!ShouldRecord)
                 return;
 
-            playedCards = playedCards.Distinct().ToList();
-            using (SqliteConnection conn = ConnectToDatabase())
+            try
             {
-                conn.Open();
-
-                SqliteTransaction transaction = conn.BeginTransaction();
-
-                string sql = $"INSERT INTO GameTable (Name, IsFirst, PostSide, Pool, Result, Enemy) VALUES (\"{Name}\", \"{isFirst}\", \"{postSide}\", \"{Id}\", \"{result}\", \"{Opp}\")";
-                using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                playedCards = playedCards.Distinct().ToList();
+                using (SqliteConnection conn = ConnectToDatabase())
                 {
-                    cmd2.ExecuteNonQuery();
-                }
+                    conn.Open();
+                    conn.DefaultTimeout = 30;
+                    SqliteTransaction transaction = conn.BeginTransaction();
 
-                long rowid = 0;
-                sql = "select last_insert_rowid()";
-                using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
-                {
-                    rowid = (long)cmd2.ExecuteScalar();
-                }
-
-                foreach(CardQuant card in allCards)
-                {
-                    bool played = playedCards.Contains(card.Name);
-                    sql = $"INSERT INTO GameStats (GameId, CardName, CardId, Played, Quant, DeckLocation) VALUES (\"{rowid}\", \"{card.Name}\",\"{card.Id}\", \"{played}\", \"{card.Quant}\", \"{card.Location}\")";
+                    string sql = $"INSERT INTO GameTable (Name, IsFirst, PostSide, Pool, Result, Enemy) VALUES (\"{Name}\", \"{isFirst}\", \"{postSide}\", \"{Id}\", \"{result}\", \"{Opp}\")";
                     using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                     {
+                        cmd2.CommandTimeout = 30;
                         cmd2.ExecuteNonQuery();
                     }
-                }
 
-                transaction.Commit();
-                conn.Close();
+                    long rowid = 0;
+                    sql = "select last_insert_rowid()";
+                    using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                    {
+                        rowid = (long)cmd2.ExecuteScalar();
+                    }
+
+                    foreach (CardQuant card in allCards)
+                    {
+                        bool played = playedCards.Contains(card.Name);
+                        sql = $"INSERT INTO GameStats (GameId, CardName, CardId, Played, Quant, DeckLocation) VALUES (\"{rowid}\", \"{card.Name}\",\"{card.Id}\", \"{played}\", \"{card.Quant}\", \"{card.Location}\")";
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            cmd2.CommandTimeout = 30;
+                            cmd2.ExecuteNonQuery();
+                        }
+                    }
+
+                    transaction.Commit();
+                    conn.Close();
+                }
+            }
+            catch (SqliteException e)
+            {
+                Logger.WriteErrorLine(e.Message);
+                Logger.WriteErrorLine(e.StackTrace);
             }
         }
 
@@ -602,7 +679,7 @@ namespace WindBot
             using (SqliteConnection conn = ConnectToDatabase())
             {
                 conn.Open();
-
+                conn.DefaultTimeout = 60;
                 SqliteTransaction transaction = conn.BeginTransaction();
 
                 string sql;
@@ -613,6 +690,7 @@ namespace WindBot
                 sql = $"INSERT INTO L_GameResult (Name, Result, IsManual, ShouldUpdate, Date) VALUES (\"{Name}\", \"{reward}\", \"{IsManual}\", \"{ShouldUpdate}\", \"{DateTime.Now}\")";
                 using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                 {
+                    cmd2.CommandTimeout = 30;
                     cmd2.ExecuteNonQuery();
                 }
 
@@ -630,6 +708,7 @@ namespace WindBot
                         $"\"{record.PostP1Hand}\", \"{record.PostP1Field}\", \"{record.PostP2Hand}\", \"{record.PostP2Field}\")";
                     using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                     {
+                        cmd2.CommandTimeout = 30;
                         cmd2.ExecuteNonQuery();
                     }
 
@@ -637,6 +716,7 @@ namespace WindBot
                     using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                     {
                         id = (long)cmd2.ExecuteScalar();
+                        record.Id = id; // For if you need it later
                     }
 
                     foreach (var action in record.ActionInfo)
@@ -644,6 +724,7 @@ namespace WindBot
                         sql = $"INSERT INTO L_ActionState (ActionId, HistoryId, Performed) VALUES (\"{action.ActionId}\", \"{id}\", \"{action.Performed}\")";
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                         {
+                            cmd2.CommandTimeout = 30;
                             cmd2.ExecuteNonQuery();
                         }
                     }
@@ -654,6 +735,7 @@ namespace WindBot
                         sql = $"INSERT INTO L_FieldState (CompareId, HistoryId) VALUES (\"{compare.Id}\", \"{id}\")";
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                         {
+                            cmd2.CommandTimeout = 30;
                             cmd2.ExecuteNonQuery();
                         }
                     }
@@ -747,6 +829,7 @@ namespace WindBot
             long id = 0;
             using (SqliteConnection conn = ConnectToDatabase())
             {
+                conn.DefaultTimeout = 30;
                 conn.Open();
 
                 SqliteTransaction transaction = conn.BeginTransaction();

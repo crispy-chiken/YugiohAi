@@ -140,7 +140,6 @@ def runAi(Deck = "AIBase",
                         "IsFirst="+str(IsFirst), 
                         "Id="+str(Id),
                         "Port="+str(Port),
-                        "ShouldUpdate="+str(True)
                         ],
                         stdout=subprocess.DEVNULL
                         )

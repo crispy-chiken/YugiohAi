@@ -501,7 +501,7 @@ namespace WindBot.Game
 
             string otherName = _room.Position == 0 ? _room.Names[1] : _room.Names[0];
             string textResult = (result == 2 ? "Draw" : result == 0 ? "Win" : "Lose");
-            Logger.DebugWriteLine("Duel finished against " + otherName + ", result: " + textResult);
+            Logger.DebugWriteLine("Duel " + SQLComm.GamesPlayed +" finished against " + otherName + ", result: " + textResult);
             SQLComm.Wins += result == 0 ? 1 : 0;
 
             /*if (SQLComm.PreviousWins.Count >= SQLComm.PastWinsLimit)

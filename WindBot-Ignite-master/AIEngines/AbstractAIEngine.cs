@@ -73,6 +73,8 @@ namespace WindBot
             public int PostP2Hand = -1;
             public int PostP2Field = -1;
 
+            public long Id = -1;
+
             public History(GameInfo info, List<ActionInfo> actions, List<FieldStateValues> fieldState)
             {
                 Info = info;
@@ -181,7 +183,7 @@ namespace WindBot
         protected Executor source;
 
 
-        protected List<History> Records = new List<History>();
+        protected List<History> Records { get; set;  } = new List<History>();
         protected int ActionNumber { get; set; } = 0;
         protected ActionInfo BestAction = null;
 
@@ -192,11 +194,14 @@ namespace WindBot
             this.source = source;
         }
 
-        protected abstract ActionInfo GetBestAction(List<ActionInfo> actions, List<FieldStateValues> comparisons);
+        protected abstract ActionInfo GetBestAction(History history);
 
         public virtual void OnWin(int result)
         {
             SQLComm.SavePlayHistory(Records, result);
+            allSelectActions = SQLComm.GetAllActions().Values.ToList();
+            allFieldStateValues = SQLComm.GetAllComparisons();
+            Records.Clear();
         }
 
         public bool ShouldPerform(ClientCard card, string action, long desc, List<FieldStateValues> fieldState, Duel duel)
@@ -234,7 +239,8 @@ namespace WindBot
 
                 };
 
-                ActionInfo best = GetBestAction(actions, fieldState);
+                History history = new History(info, actions, fieldState);
+                ActionInfo best = GetBestAction(history);
                 if (best == null || best != actionInfo)
                 {
                     // return false;
@@ -244,7 +250,7 @@ namespace WindBot
                     best.Performed = true;
                 }
 
-                AddHistory(new History(info, actions, fieldState), duel);
+                AddHistory(history, duel);
 
                 return actionInfo.Performed;
             }
@@ -329,16 +335,18 @@ namespace WindBot
             {
                 actions.Add(new ActionInfo("", ExecutorType.GoToBattlePhase.ToString(), null));
             }
-            if (main.CanEndPhase)
+            else if (main.CanEndPhase)
             {
                 actions.Add(new ActionInfo("", ExecutorType.GoToEndPhase.ToString(), null));
             }
 
-            BestAction = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo best = GetBestAction(history);
+
             if (BestAction != null)
                 BestAction.Performed = true;
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
         }
         public void SetChain(IList<ClientCard> cards, IList<long> descs, bool forced, List<FieldStateValues> fieldState, Duel duel, AIUtil Util)
         {
@@ -361,13 +369,15 @@ namespace WindBot
             }
 
 
-            BestAction = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo best = GetBestAction(history);
+
             if (BestAction != null)
                 BestAction.Performed = true;
             //if (BestAction == dontPerform)
             //    BestAction = null;
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
 
         }
         public void SetBattle(BattlePhase battle, List<FieldStateValues> fieldState, Duel duel)
@@ -392,16 +402,18 @@ namespace WindBot
 
             if (battle.CanMainPhaseTwo)
             {
-                actions.Add(new ActionInfo("", ExecutorType.GoToMainPhase2.ToString(), null));
+                //actions.Add(new ActionInfo("", ExecutorType.GoToMainPhase2.ToString(), null));
             }
 
-            BestAction = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo best = GetBestAction(history);
+
             if (BestAction != null)
                 BestAction.Performed = true;
             //if (BestAction == dontPerform)
             //    BestAction = null;
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
         }
 
         public IList<ClientCard> SelectCards(ClientCard currentCard, int min, int max, long hint, bool cancelable, IList<ClientCard> selectable, List<FieldStateValues> fieldState, Duel duel)
@@ -426,14 +438,15 @@ namespace WindBot
                     actions.Add(new ActionInfo(card, "SelectAmount", currentCard, hint));
                 }
 
+                History history = new History(gameInfo, actions, fieldState);
+                ActionInfo choice = GetBestAction(history);
 
-                var choice = GetBestAction(actions, fieldState);
                 if (choice != null)
                 {
                     choice.Performed = true;
                 }
 
-                AddHistory(new History(gameInfo, actions, fieldState), duel);
+                AddHistory(history, duel);
 
                 toSelect = actions.FindIndex(x => x == choice) + min;
             }
@@ -456,16 +469,19 @@ namespace WindBot
                 while (actionCopy.Count > 0 && selected.Count < toSelect)
                 {
                     ActionNumber++;
-                    var choice = GetBestAction(actionCopy, fieldState);
+
+                    History history = new History(gameInfo, actions, fieldState);
+                    ActionInfo choice = GetBestAction(history);
+
                     if (choice != null)
                     {
                         choice.Performed = true;
                         selected.Add(choice.Card);
                         actionCopy.Remove(choice);
                     }
-                }
 
-                AddHistory(new History(gameInfo, actions, fieldState), duel);
+                    AddHistory(history, duel);
+                }
             }
 
             return selected;
@@ -499,11 +515,13 @@ namespace WindBot
                     }
                 }
 
-                BestAction = GetBestAction(actions, fieldState);
+                History history = new History(gameInfo, actions, fieldState);
+                BestAction = GetBestAction(history);
+
                 if (BestAction != null)
                     BestAction.Performed = true;
 
-                AddHistory(new History(gameInfo, actions, fieldState), duel);
+                AddHistory(history, duel);
 
                 return actions.IndexOf(BestAction);
             }
@@ -519,11 +537,13 @@ namespace WindBot
                     actions.Add(new ActionInfo(name + ":" + option + ":" + duel.Phase.ToString(), "SelectOption", null, desc));
                 }
 
-                BestAction = GetBestAction(actions, fieldState);
+                History history = new History(gameInfo, actions, fieldState);
+                BestAction = GetBestAction(history);
+
                 if (BestAction != null)
                     BestAction.Performed = true;
 
-                AddHistory(new History(gameInfo, actions, fieldState), duel);
+                AddHistory(history, duel);
 
                 return options.IndexOf(BestAction.Desc);
             }
@@ -545,14 +565,16 @@ namespace WindBot
                 actions.Add(new ActionInfo(BuildActionString(attacker, duel), "SelectAttacker", attacker));
             }
 
-            var choice = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo choice = GetBestAction(history);
+
             if (choice != null)
             {
                 choice.Performed = true;
             }
 
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
 
             return choice.Card;
         }
@@ -574,7 +596,8 @@ namespace WindBot
                 actions.Add(new ActionInfo(BuildActionString(attacker, duel) + ";" + BuildActionString(defender, duel), "SelectAttackTarget", defender));
             }
 
-            var choice = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo choice = GetBestAction(history);
 
             if (choice != null)
             {
@@ -582,7 +605,7 @@ namespace WindBot
             }
 
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
 
             return choice?.Card;
         }
@@ -604,7 +627,9 @@ namespace WindBot
             }
 
 
-            var choice = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo choice = GetBestAction(history);
+
             if (choice != null)
             {
                 choice.Performed = true;
@@ -612,7 +637,7 @@ namespace WindBot
 
             cardPosition = positions[actions.FindIndex(x => x.Performed)];
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
 
 
             return cardPosition;
@@ -635,7 +660,9 @@ namespace WindBot
             }
 
 
-            var choice = GetBestAction(actions, fieldState);
+            History history = new History(gameInfo, actions, fieldState);
+            ActionInfo choice = GetBestAction(history);
+
             if (choice != null)
             {
                 choice.Performed = true;
@@ -643,7 +670,7 @@ namespace WindBot
             }
 
 
-            AddHistory(new History(gameInfo, actions, fieldState), duel);
+            AddHistory(history, duel);
 
 
             return chosen;

@@ -14,8 +14,11 @@ namespace WindBot
 
         }
 
-        protected override ActionInfo GetBestAction(List<ActionInfo> actions, List<FieldStateValues> comparisons)
+        protected override ActionInfo GetBestAction(History history)
         {
+            List<ActionInfo> actions = history.ActionInfo;
+            List<FieldStateValues> comparisons = history.FieldState;
+
             var stopwatch = Stopwatch.StartNew();
 
             Console.WriteLine("Actions for Turn " + source.Duel.Turn + " Action # " + ActionNumber);
@@ -44,7 +47,7 @@ namespace WindBot
             var best = results[Program.Rand.Next(results.Count)];
             //FIXED RNG
             //if (!SQLComm.IsTraining)
-            //best = results[0];
+            best = results[0];
 
             // Randomness
             best = actions[Program.Rand.Next(actions.Count)];

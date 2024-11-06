@@ -25,6 +25,8 @@ namespace WindBot
             public bool SaveChild { get; set; } = true;
             public ClientCard Card { get; set; } = null;
 
+            public History History { get; set; } = null;
+
             public Node(Node parent, ActionInfo action) : this(parent, null, action)
             {
             }
@@ -85,6 +87,7 @@ namespace WindBot
         public void OnNewGame()
         {
             possibleActions = new List<Node>();
+            _nodeMappings = SQLComm.GetAllNodes();
             _current = GetNode(null, new ActionInfo("Start", "", 0));
             _lastNode = _current;
             if (Path.Count == 0)
@@ -98,23 +101,24 @@ namespace WindBot
          * For Multiple Actions
          */
 
-        public void AddPossibleAction(ActionInfo action)
+        public void AddPossibleAction(ActionInfo action, History history)
         {
             Node node = GetNode(_current, action);
+            node.History = history;
             possibleActions.Add(node);
         }
 
         /*
          * For single action
          */
-        public bool ShouldActivate(ActionInfo action, List<FieldStateValues> comparisons)
+        /*public bool ShouldActivate(ActionInfo action, List<FieldStateValues> comparisons)
         {
             Node toActivate = GetNode(_current, action);
             possibleActions.Add(toActivate);
             //possibleActions.Add(new Node(_current, cardId + "[No]", action));
             Node best = GetNextAction(comparisons);
             return best == toActivate;
-        }
+        }*/
 
         /**
          * Called after setting all possible actions
@@ -131,10 +135,10 @@ namespace WindBot
 
                 foreach (Node n in possibleActions)
                 {
-                    double visited = Math.Max(0.01, n.Visited);
+                    double visited = Math.Max(0.001, n.Visited);
                     //double estimate = SQLComm.GetNodeEstimate(n);
                     //double w = n.Rewards/visited + c * Math.Sqrt((Math.Log(n.Parent.Visited + 1) + 1) / visited);
-                    double w = 0.1 * n.Rewards / visited + c * Math.Sqrt(Math.Log(n.Parent.Visited + 1) / visited); //(n.Parent.Visited) / visited;//
+                    double w = c * (n.Parent.Visited) / visited;//Math.Sqrt(Math.Log(n.Parent.Visited + 1) / visited); // n.Rewards / visited +
                     //w += estimate;
                     if (CSVReader.InBaseActions(n.Action.Name, n.Action.Action, comparisons) && visited < 10)
                         w += 1;
@@ -145,14 +149,10 @@ namespace WindBot
                     {
                         close.Add(n);
                     }
-                    else
+                    else if (w >= weight)
                     {
                         close.Clear();
                         close.Add(n);
-                    }
-
-                    if (w >= weight)
-                    {
                         weight = w;
                     }
                 }
@@ -253,17 +253,16 @@ namespace WindBot
 
         public override void OnWin(int result)
         {
+            base.OnWin(result);
+            SQLComm.InsertNodes(Path);
             // Add any missing nodes
-            foreach(var node in _nodeMappings)
+            /*foreach(var node in _nodeMappings)
             {
                 if (node.NodeId == -4)
                 {
-                    if (node.Visited != 0)
-                        Console.WriteLine("Hunh?");
-                    SQLComm.InsertNode(node);
                     SQLComm.GetNodeInfo(node);
                 }
-            }
+            }*/
 
 
             bool reset = SQLComm.ShouldBackPropagate;
@@ -275,18 +274,20 @@ namespace WindBot
             {
                 Path.Clear();
             }
+            Path.Clear();
 
             if (ActionCount < BestActionCount && result == 0)
             {
                 BestActionCount = ActionCount;
                 BestRecord = Records;
-                base.OnWin(result);
             }
             OnNewGame();
         }
 
-        protected override ActionInfo GetBestAction(List<ActionInfo> actions, List<FieldStateValues> comparisons)
+        protected override ActionInfo GetBestAction(History history)
         {
+            List<ActionInfo> actions = history.ActionInfo;
+            List<FieldStateValues> comparisons = history.FieldState;
             var stopwatch = Stopwatch.StartNew();
            /* Console.WriteLine("Current State:---------");
             comparisons.Reverse();
@@ -298,7 +299,7 @@ namespace WindBot
 
             foreach (var action in actions)
             {
-                AddPossibleAction(action);
+                AddPossibleAction(action, history);
             }
 
             ActionInfo next = GetNextAction(comparisons).Action;
@@ -324,6 +325,7 @@ namespace WindBot
                     continue;
 
                 node = n;
+                node.Parent = parent; // TODO Check this
                 break;
             }
 

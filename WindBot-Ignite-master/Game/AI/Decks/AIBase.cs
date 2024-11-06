@@ -377,6 +377,8 @@ namespace WindBot.Game.AI.Decks
         public AIBase(GameAI ai, Duel duel)
             : base(ai, duel)
         {
+            Program.Rand = new Random(1);
+
             AddExecutor(ExecutorType.Activate, ShouldPerform);
             AddExecutor(ExecutorType.SpSummon, ShouldPerform);
             AddExecutor(ExecutorType.Summon, ShouldPerform);
@@ -445,11 +447,12 @@ namespace WindBot.Game.AI.Decks
         {
             Stopwatch watch = Stopwatch.StartNew();
 
-            aIEngine.ShouldPerform(null, "GoFirst", -1, new List<FieldStateValues>(), Duel);
+            if (!SQLComm.IsMCTS)
+                aIEngine.ShouldPerform(null, "GoFirst", -1, new List<FieldStateValues>(), Duel);
 
             Logger.DebugWriteLine("OnSelectHand Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
-            return true;
+            return SQLComm.IsFirst;
         }
 
         public override void OnNewTurn()
@@ -857,6 +860,8 @@ namespace WindBot.Game.AI.Decks
 
 
             postSide = false;
+
+            Program.Rand = new Random(1);
         }
 
         // Assume no extra deck side TODO

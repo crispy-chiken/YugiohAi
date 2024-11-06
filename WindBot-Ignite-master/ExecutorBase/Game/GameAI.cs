@@ -219,10 +219,10 @@ namespace WindBot.Game
             foreach (CardExecutor exec in Executor.Executors)
             {
                 Executor.SetCard(ExecutorType.GoToMainPhase2, null, 0);
-                if (exec.Type == ExecutorType.GoToMainPhase2 && battle.CanMainPhaseTwo && exec.Func()) // check if should enter main phase 2 directly
+                /*if (exec.Type == ExecutorType.GoToMainPhase2 && battle.CanMainPhaseTwo && exec.Func()) // check if should enter main phase 2 directly
                 {
                     return ToMainPhase2();
-                }
+                }*/
                 /*Executor.SetCard(ExecutorType.GoToEndPhase, null, 0);
                 if (exec.Type == ExecutorType.GoToEndPhase && battle.CanEndPhase && exec.Func()) // check if should enter end phase directly
                 {
