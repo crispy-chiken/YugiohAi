@@ -54,6 +54,15 @@ namespace WindBot
             {
                 return "[" + Id + "]" + Location + " " + Compare + " " + Value;
             }
+
+            public bool Equals(FieldStateValues o)
+            {
+                if (o == null)
+                    return false;
+                return o.Location == Location &&
+                       o.Value == Value &&
+                       o.Compare == Compare;
+            }
         }
 
         public class History
@@ -80,6 +89,13 @@ namespace WindBot
                 Info = info;
                 ActionInfo = actions;
                 FieldState = fieldState;
+            }
+
+            public bool Equals(History o)
+            {
+                if (o == null)
+                    return false;
+                return o.ActionInfo.Equals(ActionInfo) && o.FieldState.Equals(FieldState);
             }
         }
 
@@ -173,6 +189,17 @@ namespace WindBot
                 if (Desc >= 0)
                     str += " " + Desc.ToString();
                 return str;
+            }
+
+            public bool Equals(ActionInfo obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+                return obj.Name == Name &&
+                       obj.Action == Action &&
+                       obj.Desc == Desc;
             }
         }
 
@@ -341,7 +368,7 @@ namespace WindBot
             }
 
             History history = new History(gameInfo, actions, fieldState);
-            ActionInfo best = GetBestAction(history);
+            BestAction = GetBestAction(history);
 
             if (BestAction != null)
                 BestAction.Performed = true;
@@ -370,7 +397,7 @@ namespace WindBot
 
 
             History history = new History(gameInfo, actions, fieldState);
-            ActionInfo best = GetBestAction(history);
+            BestAction = GetBestAction(history);
 
             if (BestAction != null)
                 BestAction.Performed = true;
@@ -406,7 +433,7 @@ namespace WindBot
             }
 
             History history = new History(gameInfo, actions, fieldState);
-            ActionInfo best = GetBestAction(history);
+            BestAction = GetBestAction(history);
 
             if (BestAction != null)
                 BestAction.Performed = true;

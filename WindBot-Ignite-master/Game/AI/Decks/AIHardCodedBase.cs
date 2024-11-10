@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using WindBot;
 using WindBot.Game;
 using WindBot.Game.AI;
-using static WindBot.MCST;
+
 using static WindBot.NEAT;
 using System.Linq;
 using System;
@@ -777,7 +777,7 @@ namespace WindBot.Game.AI.Decks
                 // select enemy's card first
                 while (enemyCards.Count > 0 && selected.Count < max)
                 {
-                    ClientCard card = enemyCards[Program.Rand.Next(enemyCards.Count)];
+                    ClientCard card = enemyCards[Rand.Next(enemyCards.Count)];
                     selected.Add(card);
                     enemyCards.Remove(card);
                     cards.Remove(card);
@@ -791,7 +791,7 @@ namespace WindBot.Game.AI.Decks
                 // select deck's card first
                 while (deckCards.Count > 0 && selected.Count < max)
                 {
-                    ClientCard card = deckCards[Program.Rand.Next(deckCards.Count)];
+                    ClientCard card = deckCards[Rand.Next(deckCards.Count)];
                     selected.Add(card);
                     deckCards.Remove(card);
                     cards.Remove(card);
@@ -805,7 +805,7 @@ namespace WindBot.Game.AI.Decks
                 // select bot's card first
                 while (botCards.Count > 0 && selected.Count < max)
                 {
-                    ClientCard card = botCards[Program.Rand.Next(botCards.Count)];
+                    ClientCard card = botCards[Rand.Next(botCards.Count)];
                     selected.Add(card);
                     botCards.Remove(card);
                     cards.Remove(card);
@@ -831,7 +831,7 @@ namespace WindBot.Game.AI.Decks
                 // select max cards
                 while (selected.Count < max)
                 {
-                    ClientCard card = cards[Program.Rand.Next(cards.Count)];
+                    ClientCard card = cards[Rand.Next(cards.Count)];
                     selected.Add(card);
                     cards.Remove(card);
                 }
@@ -847,7 +847,7 @@ namespace WindBot.Game.AI.Decks
             // select random cards
             while (selected.Count < min)
             {
-                ClientCard card = cards[0];//cards[Program.Rand.Next(cards.Count)];
+                ClientCard card = cards[0];//cards[Rand.Next(cards.Count)];
                 if (!selected.Contains(card))
                     selected.Add(card);
                 cards.Remove(card);

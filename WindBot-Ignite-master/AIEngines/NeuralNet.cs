@@ -44,13 +44,13 @@ namespace WindBot
             // Take the top percentile
             var max_guess = results.Max(x => x.Weight);
             results = results.Where(x => x.Weight >= max_guess - 0.02).ToList();
-            var best = results[Program.Rand.Next(results.Count)];
+            var best = results[source.Rand.Next(results.Count)];
             //FIXED RNG
             //if (!SQLComm.IsTraining)
             best = results[0];
 
             // Randomness
-            best = actions[Program.Rand.Next(actions.Count)];
+            best = actions[source.Rand.Next(actions.Count)];
 
 
             if (!SQLComm.IsManual)

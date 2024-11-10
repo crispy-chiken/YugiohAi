@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIEngines\PathEngine.cs" />
     <Compile Include="AIEngines\MCSTEngine.cs" />
     <Compile Include="AIEngines\NeuralNet.cs" />
     <Compile Include="AIEngines\AbstractAIEngine.cs" />
@@ -137,7 +138,6 @@
     <Compile Include="Game\GamePacketFactory.cs" />
     <Compile Include="Game\Room.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="AIEngines\MCST.cs" />
     <Compile Include="AIEngines\NEAT.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

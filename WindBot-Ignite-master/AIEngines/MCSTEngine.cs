@@ -22,7 +22,7 @@ namespace WindBot
             public ActionInfo Action { get; set; }
 
             public bool SaveParent { get; set; } = true;
-            public bool SaveChild { get; set; } = true;
+            public bool SaveChild { get; set; } = false;
             public ClientCard Card { get; set; } = null;
 
             public History History { get; set; } = null;
@@ -101,7 +101,7 @@ namespace WindBot
          * For Multiple Actions
          */
 
-        public void AddPossibleAction(ActionInfo action, History history)
+        private void AddPossibleAction(ActionInfo action, History history)
         {
             Node node = GetNode(_current, action);
             node.History = history;
@@ -123,7 +123,7 @@ namespace WindBot
         /**
          * Called after setting all possible actions
          */
-        public Node GetNextAction(List<FieldStateValues> comparisons, bool pop = false)
+        private Node GetNextAction(List<FieldStateValues> comparisons, bool pop = false)
         {
             Node best = _current;
             double weight = -1;
@@ -159,7 +159,7 @@ namespace WindBot
 
                 //FIXED RNG
                 //if (!SQLComm.IsTraining)
-                best = close[Program.Rand.Next(close.Count)];
+                best = close[source.Rand.Next(close.Count)];
 
                 // Randomness
 
@@ -214,14 +214,14 @@ namespace WindBot
                 if (bestPossible.Count > 0)
                 {
                     if (SQLComm.IsTraining)
-                        best = bestPossible[Program.Rand.Next(0, bestPossible.Count)];
+                        best = bestPossible[source.Rand.Next(0, bestPossible.Count)];
                     else
                         best = bestPossible[0];
                 }
                 else
                 {
                     if (SQLComm.IsTraining)
-                        best = possibleActions[Program.Rand.Next(0, possibleActions.Count)];
+                        best = possibleActions[source.Rand.Next(0, possibleActions.Count)];
                     else
                         best = possibleActions[0];
                 }
@@ -245,7 +245,7 @@ namespace WindBot
             return best;
         }
 
-        public void Clear()
+        private void Clear()
         {
             possibleActions.Clear();
         }
@@ -286,6 +286,7 @@ namespace WindBot
 
         protected override ActionInfo GetBestAction(History history)
         {
+           // NewIntermediateNode($"{source.Duel.Turn};{ActionNumber}");
             List<ActionInfo> actions = history.ActionInfo;
             List<FieldStateValues> comparisons = history.FieldState;
             var stopwatch = Stopwatch.StartNew();
@@ -308,7 +309,7 @@ namespace WindBot
             return next;
         }
 
-        private Node GetNode(Node parent,  ActionInfo action, Node child = null)
+        private Node GetNode(Node parent, ActionInfo action, Node child = null)
         {
             Node node = null;
             long parentId = parent?.NodeId ?? -4;
@@ -338,6 +339,19 @@ namespace WindBot
             // Make sure the action is the lastest one
             node.Action = action;
 
+            return node;
+        }
+
+        private Node NewIntermediateNode(string name)
+        {
+            var action = new ActionInfo(name, "node", 0);
+            var node = GetNode(null, action);
+            node.SaveChild = false;
+            node.SaveParent = false;
+            Path.Add(node);
+            _current.SaveChild = true;
+            _current.Children.Add(node);
+            _current = node;
             return node;
         }
     }

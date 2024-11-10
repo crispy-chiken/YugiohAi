@@ -64,14 +64,15 @@ namespace WindBot
             using (SqliteConnection conn = ConnectToDatabase())
             {
                 conn.Open();
-                string sql = $"SELECT rowid, ParentId, ActionId, Reward, Visited FROM MCST WHERE IsFirst = \"{IsFirst}\" AND Name = \"{Name}\" ORDER BY rowid";
+                string sql = $"SELECT rowid, ParentId, ChildId, ActionId, Reward, Visited FROM MCST WHERE IsFirst = \"{IsFirst}\" AND Name = \"{Name}\" ORDER BY parentId";
                 using (SqliteCommand cmd = new SqliteCommand(sql, conn))
                 {
                     using (SqliteDataReader rdr = cmd.ExecuteReader())
                         while (rdr.Read())
                         {
                             long parentId = rdr.GetInt64(1);
-                            long actionId = rdr.GetInt64(2);
+                            long childId = rdr.GetInt64(2);
+                            long actionId = rdr.GetInt64(3);
 
                             ActionInfo action = null;
                             if (actions.ContainsKey(actionId))
@@ -82,14 +83,18 @@ namespace WindBot
                                 action = new ActionInfo(actionId, "", "");
                             }
 
+                            // Is this needed?
                             Node parent = null;
+                            Node child = null;
                             if (mappings.ContainsKey(parentId))
                                 parent = mappings[parentId];
+                            if (mappings.ContainsKey(childId))
+                                child = mappings[childId];
 
-                            Node node = new Node(parent, action);
+                            Node node = new Node(parent, child, action);
                             node.NodeId = long.Parse(rdr["rowid"].ToString());
-                            node.Rewards = rdr.GetDouble(3);
-                            node.Visited = rdr.GetInt32(4);
+                            node.Rewards = rdr.GetDouble(4);
+                            node.Visited = rdr.GetInt32(5);
 
                             mappings.Add(node.NodeId, node);
                         }
@@ -208,22 +213,9 @@ namespace WindBot
 
                 foreach (var node in nodes)
                 {
-                    if (node.Parent != null && node.Parent.NodeId != -4 && (node.Children.Count == 0 || node.NodeId != -4))
+                    if (node.Parent == null)// Should be only start here or intermediate nodes
                     {
-                        if (node.Parent.NodeId == 0)
-                        {
-
-                        }
-
-                        inserts += $"(\"{Name}\",\"{node.Parent.NodeId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\"),";
-                    }
-                    else if (node.Parent != null)
-                    {
-                        toInsert.Add(node);
-                    }
-                    else // Should be only start here
-                    {
-                        string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"-4\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
+                        string sql = $"INSERT INTO MCST (Name, ParentId, ChildId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"-4\",\"-4\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
                         using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                         {
                             cmd2.ExecuteNonQuery();
@@ -239,14 +231,37 @@ namespace WindBot
 
                             node.NodeId = id_insert;
                         }
-                    }                    
+                    }
+                    else if (node.NodeId == -4)
+                    {
+                        long parentId = -4;
+                        long childId = -4;
+
+                        if (node.SaveParent)
+                            parentId = node.Parent.NodeId;
+                        if (node.SaveChild && node.Children.Count > 0)
+                            childId = node.Children[0].NodeId;
+
+                        if (parentId == -4 && node.SaveParent)
+                        {
+                            toInsert.Add(node);
+                            continue;
+                        }
+
+                        inserts += $"(\"{Name}\",\"{parentId}\",\"{childId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\"),";
+                    }
+                    else
+                    {
+
+                    }
+       
                 }
 
                 inserts = inserts.Trim(',');
 
                 if (inserts.Length > 0)
                 {
-                    string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES " +
+                    string sql = $"INSERT INTO MCST (Name, ParentId, ChildId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES " +
                         inserts;
 
                     using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
@@ -262,11 +277,18 @@ namespace WindBot
                     if (node.Parent.NodeId == -4)
                     {
                         // Should just have parent as start here
-                        continue;
+                        //continue;
                     }
 
+                    long parentId = -4;
+                    long childId = -4;
 
-                    string sql = $"INSERT INTO MCST (Name, ParentId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"{node.Parent.NodeId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
+                    if (node.SaveParent)
+                        parentId = node.Parent.NodeId;
+                    if (node.SaveChild && node.Children.Count > 0)
+                        childId = node.Children[0].NodeId;
+
+                    string sql = $"INSERT INTO MCST (Name, ParentId, ChildId, ActionId, Reward, Visited, IsFirst, IsTraining) VALUES (\"{Name}\",\"{parentId}\",\"{childId}\",\"{node.Action.ActionId}\",\"0\",\"0\",\"{IsFirst}\",\"{IsTraining}\")";
                     using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
                     {
                         cmd2.ExecuteNonQuery();
