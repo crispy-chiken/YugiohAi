@@ -284,7 +284,7 @@ namespace WindBot
             OnNewGame();
         }
 
-        protected override ActionInfo GetBestAction(History history)
+        internal override ActionInfo GetBestAction(History history)
         {
            // NewIntermediateNode($"{source.Duel.Turn};{ActionNumber}");
             List<ActionInfo> actions = history.ActionInfo;

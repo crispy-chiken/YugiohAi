@@ -41,6 +41,7 @@ namespace WindBot
         public static Queue<int> PreviousWins = new Queue<int>();
         public static int WinsThreshold = 45;
         public static string sqlPath = $@"Data Source=./cardData.cdb";
+        internal static bool ShouldSurrender = false;
 
         public class CardQuant
         {

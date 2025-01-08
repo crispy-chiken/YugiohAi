@@ -140,6 +140,7 @@ namespace WindBot
                 SQLComm.IsHardCoded = Config.GetBool("IsHardCoded", SQLComm.IsHardCoded);
                 SQLComm.IsTraining = Config.GetBool("IsTraining", SQLComm.IsTraining);
                 SQLComm.ShouldUpdate = Config.GetBool("ShouldUpdate", SQLComm.ShouldUpdate);
+                SQLComm.ShouldRecord = Config.GetBool("ShouldRecord", SQLComm.ShouldRecord);
                 SQLComm.WinsThreshold = Config.GetInt("WinsThreshold", SQLComm.WinsThreshold);
                 SQLComm.PastWinsLimit = Config.GetInt("PastWinsLimit", SQLComm.PastWinsLimit);
                 //D:\Users\Crispy\Projects\YugiohAi\WindBot-Ignite-master\bin\Debug\Decks\AI_Yubel.ydk

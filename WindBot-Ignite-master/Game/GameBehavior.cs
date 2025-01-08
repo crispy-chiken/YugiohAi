@@ -301,7 +301,7 @@ namespace WindBot.Game
             if (SQLComm.IsMCTS && SQLComm.Wins >= SQLComm.WinsThreshold)
             {
                 Logger.WriteLine("MCTS Win limit reached, Cleaning up");
-                response = 0;
+                //response = 0;
             }
 
             Connection.Send(CtosMessage.RematchResponse, (byte)(response));
@@ -719,6 +719,11 @@ namespace WindBot.Game
                 }
                 if (choice == 1)
                     Connection.Send(CtosMessage.Surrender);
+            }
+            if (SQLComm.ShouldSurrender)
+            {
+                Connection.Send(CtosMessage.Surrender);
+                SQLComm.ShouldSurrender = false;
             }
         }
 

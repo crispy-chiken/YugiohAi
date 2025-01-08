@@ -276,7 +276,7 @@ def main():
 
   decks1 = ["AI_FireKing"]#, "AI_Tenpai", "AI_Yubel", "AI_FireKing"] #["Labrynth", "Labrynth2",
   # decks2 = decks1
-  decks2 = ["AI_Labrynth"]
+  decks2 = ["AI_FireKing"]
   #decks1 = ["SnakeEyes", "Tenpai", "Labrynth", "Labrynth2", "Branded", "Runick", "Runick2", "Runick3", "Yubel" ]
   #decks2 = ["SnakeEyes", "Tenpai", "Labrynth", "Labrynth2", "Branded", "Runick", "Runick2", "Runick3", "Yubel" ]
 
