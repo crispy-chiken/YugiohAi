@@ -34,11 +34,11 @@ from sklearn.neural_network import MLPClassifier
 import torch
 import torch.nn as nn
 
-from read_game_data import fetchDatabaseData, getTorchData, getBetterPrediction, getTorchPrediction, read_data
+#from read_game_data  import fetchDatabaseData, getTorchData, getBetterPrediction, getTorchPrediction, read_data
+from read_game_data_json import read_json, getTorchData, getTorchPrediction
+import read_game_data_json
 
 action_data = None
-compare_count = 0
-action_count = 0
 
 #Torch settings
 dtype = torch.float
@@ -48,22 +48,24 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 def load_data():
-  global action_data, compare_count, action_count
+  read_json()
+  global action_data#, compare_count, action_count
 
   action_data = getTorchData()
 
-  conn = sqlite3.connect(os.getcwd() +'/cardData.cdb')
-  c = conn.cursor()
-  c.execute('SELECT max(rowid) FROM L_CompareTo')
-  compare_count = c.fetchone()[0]
-  c.execute('SELECT max(rowid) FROM L_ActionList')
-  action_count = c.fetchone()[0]
-  conn.close()
+  # conn = sqlite3.connect(os.getcwd() +'/cardData.cdb')
+  # c = conn.cursor()
+  # c.execute('SELECT max(rowid) FROM L_CompareTo')
+  # compare_count = c.fetchone()[0]
+  # c.execute('SELECT max(rowid) FROM L_ActionList')
+  # action_count = c.fetchone()[0]
+  # conn.close()
 
   # print("Compare Count:" + str(compare_count))
 
 def get_predictions(data: typing.List[int], actions: typing.List[int], key_name: string):
-  global action_data, compare_count, action_count
+  global action_data
+  state_count, action_count = read_game_data_json.state_count, read_game_data_json.action_count
   if (action_data == None):
     return []
 
@@ -75,7 +77,8 @@ def get_predictions(data: typing.List[int], actions: typing.List[int], key_name:
   
   final_result = {}
   
-  input_length = 1 + compare_count + 1 + action_count + 1
+
+  input_length = 1 + state_count + 1 + action_count
   input_list = [0] * (input_length)
 
   if data[0] != '': # Some fail safe since a 0 data entry is ['']
@@ -85,7 +88,7 @@ def get_predictions(data: typing.List[int], actions: typing.List[int], key_name:
         input_list[index] = 1
 
   for id in actions:
-    index = compare_count + 1 + 1 + int(id) 
+    index = state_count + 1 + int(id) 
     if (index < len(input_list) and index >= 0):
       input_list[index] = 1
 
@@ -93,13 +96,13 @@ def get_predictions(data: typing.List[int], actions: typing.List[int], key_name:
   #     if int(id) > action_count:
   #       continue
 
-  #     input_list[compare_count + 1 + int(id)] = -1
+  #     input_list[state_count + 1 + int(id)] = -1
 
   # for id in actions:
   #     if int(id) > action_count:
   #       continue
 
-  #     input_list[int(id) - 1 + compare_count] = 1
+  #     input_list[int(id) - 1 + state_count] = 1
   #     predict = getTorchPrediction(action_data, [input_list])
   #     percentage = 0
   #     for key in predict:
@@ -108,8 +111,9 @@ def get_predictions(data: typing.List[int], actions: typing.List[int], key_name:
   #         final_result[key] = [0] * (1 + action_count)
   #       final_result[key][int(id)] = percentage#str(percentage)
           
-  #     input_list[int(id) - 1 + compare_count] = 0#-1
-
+  #     input_list[int(id) - 1 + state_count] = 0#-1
+  # print(action_data)
+  # print(len(input_list))
   final_result = getTorchPrediction(action_data, [input_list])
       
 
@@ -209,7 +213,7 @@ if __name__ == "__main__":
   global input_length
   input_length = 1
   torch.multiprocessing.set_start_method('spawn')
-  fetchDatabaseData(True)
+  #fetchDatabaseData(True)
   load_data()
   print("ready")
   #run_command_line()

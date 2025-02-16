@@ -21,22 +21,22 @@ import psutil
 # from keras.models import load_model
 
 import multiprocessing
-import read_game_data as read_game_data
+import read_game_data_json as read_game_data
 import get_action_weights as get_action_weights
 
 import torch
 
 
 #The Deck name and location	
-AI1Deck = 'Random1'
-AI2Deck =  'Random2'#'Swordsoul'#
+AI1Deck = 'AIBase'
+AI2Deck =  'AIBase'#'Swordsoul'#AI_Combined
 AIMaster = 'Swordsoul'#'Master'#
 
-deck1 = 'AI_Swordsoul.ydk'#'AI_Random1.ydk'
-deck2 = 'AI_Swordsoul.ydk'#'AI_Random2.ydk'
+deck1 = 'AI_SnakeEyes.ydk'#'AI_Random1.ydk'#'AI_SnakeEyes.ydk'
+deck2 = 'AI_SnakeEyes.ydk'#'AI_Random1.ydk'#'AI_Random2.ydk'
 
-totalGames = 1000 # Games before any of the below
-cycles = 1 # Trains decks
+totalGames = 10 # Games before any of the below
+cycles = 10 # Trains decks
 generations = 1 # Shuffles Decks
 parallelGames = 1
 
@@ -70,6 +70,17 @@ def isrespondingPID(PID):
 def deleteData():
 
   folder = './data'
+  for filename in os.listdir(folder):
+      file_path = os.path.join(folder, filename)
+      try:
+          if os.path.isfile(file_path) or os.path.islink(file_path):
+              os.unlink(file_path)
+          elif os.path.isdir(file_path):
+              shutil.rmtree(file_path)
+      except Exception as e:
+          print('Failed to delete %s. Reason: %s' % (file_path, e))
+  
+  folder = './GameData'
   for filename in os.listdir(folder):
       file_path = os.path.join(folder, filename)
       try:
@@ -160,6 +171,8 @@ def parseArg():
     totalGames = int(sys.argv[sys.argv.index("--games")+1])
 
 def runAi(Deck = "Random1", 
+          DeckFile = "",
+          ExportPath="",
           Name = "Random1",
           Hand = 0,
           TotalGames = 1,
@@ -181,7 +194,9 @@ def runAi(Deck = "Random1",
   if platform == "linux" or platform == "linux2":
     file_name = os.getcwd() + "/WindBot.exe"
 
-  p = subprocess.Popen([file_name,"Deck="+Deck,
+  arguments = [file_name,"Deck="+Deck,
+                        "DeckFile="+DeckFile,
+                        "ExportPath="+ExportPath,
                         "Name="+str(Name),
                         "Hand="+str(Hand),
                         "IsTraining="+str(IsTraining), 
@@ -194,7 +209,10 @@ def runAi(Deck = "Random1",
                         "Id="+str(Id),
                         "Port="+str(Port),
                         "IsMCTS="+str(IsMCTS)
-                        ],
+                        ]
+  print(" ".join(arguments))
+
+  p = subprocess.Popen( arguments,
                         stdout=subprocess.DEVNULL
                         )
     
@@ -203,7 +221,7 @@ def runAi(Deck = "Random1",
   return p
 
 def shuffle_deck(deck_name):
-  filePath = os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/'+ deck_name 
+  filePath = os.getcwd() + '/edopro_bin/deck/'+ deck_name 
 
   f = open(filePath,"r")
   main = []
@@ -254,7 +272,7 @@ def shuffle_deck(deck_name):
 def swap_decks(deck1, deck2, name1, name2):
   if deck1 == deck2:
     return
-  path = os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/'
+  path = os.getcwd() + '/edopro_bin/deck/'
   File1 = path + deck1
   File2 = path + deck2
 
@@ -270,8 +288,8 @@ def setup():
       resetDB()
     shuffle_deck(deck1)
     shuffle_deck(deck2)
-    # src_dir=os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/' + deck1
-    # dst_dir=os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/' + deck2
+    # src_dir=os.getcwd() + '/edopro_bin/deck/' + deck1
+    # dst_dir=os.getcwd() + '/edopro_bin/deck/' + deck2
     # shutil.copy(src_dir,dst_dir)
 
   resetYgoPro()
@@ -299,7 +317,9 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
   
   print("	runningAi1 " + str(Id1) + ":" + Deck1)
 
-  p1 = runAi( Deck = Deck1, 
+  p1 = runAi( Deck = 'AIBase', 
+             DeckFile= os.getcwd() + '/edopro_bin/deck/'+Deck1,
+             ExportPath= os.getcwd() + '/GameData',
               Name = Id1,
               Hand = 2,
               TotalGames = totalGames,
@@ -315,14 +335,16 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
             )
   time.sleep(1)
   print("	runningAi2 "+ str(Id2) + ":" + Deck2)
-  p2 = runAi(Deck = Deck2, 
+  p2 = runAi(Deck = 'AIBase', 
+             DeckFile=os.getcwd() + '/edopro_bin/deck/'+Deck2,
+             ExportPath= os.getcwd() + '/GameData',
               Name = Id2,
               Hand = 3,
               TotalGames = totalGames,
               RolloutCount = rolloutCount,
               IsFirst = (not isFirst),
               IsTraining = isTraining,
-              ShouldUpdate= False,#True,#isTraining,#
+              ShouldUpdate= True,#True,#isTraining,#
               WinsThreshold = winThresh,
               PastWinsLimit = pastWinLim,
               Id = Id2,
@@ -377,8 +399,8 @@ def main():
       shuffle_deck(deck2)
     
     for c in range(cycles):
-      read_game_data.read_data()
-      get_action_weights.fetchDatabaseData()
+      #read_game_data.read_data()
+      #get_action_weights.fetchDatabaseData()
       get_action_weights.load_data()
       if reset or swap:
         resetMCTS()
@@ -410,7 +432,7 @@ def main():
       for i in range(len(pairs)):
         print("generation " + str(g) + " cycle: " + str(c) +" running game " + str(i) + ":" + str(pairs[i][0]) + "vs" + str(pairs[i][1]) + ": Total games " + str(totalGames))
         port = 7911 + i
-        p = multiprocessing.Process(target=main_game_runner, args=(isTraining, totalGames, str(pairs[i][0]), str(pairs[i][1]), AI1Deck, AI2Deck, port, isFirst))
+        p = multiprocessing.Process(target=main_game_runner, args=(isTraining, totalGames, str(pairs[i][0]), str(pairs[i][1]), deck1, deck2, port, isFirst))
         #psutil.Process(p.pid).nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
         jobs.append(p)
         p.start()
@@ -424,12 +446,14 @@ def main():
       # Swap the decks
       if swap:
         isFirst = not isFirst
+      
+      read_game_data.read_data()
 
     if g <= generations - 1:
       limit = parallelGames * cycles
       
-      read_game_data.read_data()
-      read_game_data.createBetterDataset()
+      #read_game_data.read_data()
+      #read_game_data.createBetterDataset()
       #softResetDB()
   read_game_data.read_data()
 

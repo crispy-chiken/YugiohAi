@@ -192,7 +192,8 @@ namespace WindBot
 
         public override void OnWin(int result)
         {
-            SQLComm.SavePlayHistory(Records, result);
+            JsonExporter.SavePlayHistory(Records, result);
+            //SQLComm.SavePlayHistory(Records, result);
         }
 
         public override IList<ClientCard> SelectCards(ClientCard currentCard, int min, int max, long hint, bool cancelable, IList<ClientCard> selectable, List<FieldStateValues> fieldState, Duel duel)
@@ -533,7 +534,7 @@ namespace WindBot
             var best = results[Program.Rand.Next(results.Count)];
             //FIXED RNG
             //if (!SQLComm.IsTraining)
-            best = results[0];
+            //best = results[0];
 
 
 

@@ -263,7 +263,7 @@ def main():
   proc = multiprocessing.Process(target=get_action_weights.run_server, args=())
   proc.start()
 
-  decks1 = ["AI_SnakeEyes", "AI_Tenpai", "AI_Yubel", "AI_FireKing"] #["Labrynth", "Labrynth2",
+  decks1 = ["AI_SnakeEyes", "AI_Tenpai", "AI_Yubel", "AI_FireKing"] #"Labrynth", "Labrynth2",
   # decks2 = decks1
   decks2 = ["AI_Labrynth"]
   #decks1 = ["SnakeEyes", "Tenpai", "Labrynth", "Labrynth2", "Branded", "Runick", "Runick2", "Runick3", "Yubel" ]

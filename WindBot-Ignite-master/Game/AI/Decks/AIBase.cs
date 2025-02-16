@@ -381,14 +381,14 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.Summon, ShouldPerform);
             AddExecutor(ExecutorType.MonsterSet, ShouldPerform);
             AddExecutor(ExecutorType.SummonOrSet, ShouldPerform);
-            AddExecutor(ExecutorType.Repos, ShouldPerform);
+            //AddExecutor(ExecutorType.Repos, ShouldPerform);
             AddExecutor(ExecutorType.SpellSet, ShouldPerform);
 
 
             AddExecutor(ExecutorType.GoToBattlePhase, ShouldPerform);
             AddExecutor(ExecutorType.GoToMainPhase2, ShouldPerform);
             AddExecutor(ExecutorType.GoToEndPhase, ShouldPerform);
-           // AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
+            AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
 
             aIEngine = new NeuralNet(this);
         }
@@ -655,8 +655,8 @@ namespace WindBot.Game.AI.Decks
 
         public override CardPosition OnSelectPosition(int cardId, IList<CardPosition> positions)
         {
-            return aIEngine.OnSelectPosition(cardId, positions, GetFieldState(), Duel);
-            //return base.OnSelectPosition(cardId, positions);
+            //return aIEngine.OnSelectPosition(cardId, positions, GetFieldState(), Duel);
+            return base.OnSelectPosition(cardId, positions);
         }
 
 
@@ -845,8 +845,8 @@ namespace WindBot.Game.AI.Decks
         {
             if (attackers.Count == 0)
                 return null;
-            return aIEngine.OnSelectAttacker(attackers, GetFieldState(), Duel);
-            //return base.OnSelectAttacker(attackers, defenders);
+            //return aIEngine.OnSelectAttacker(attackers, GetFieldState(), Duel);
+            return base.OnSelectAttacker(attackers, defenders);
         }
 
 

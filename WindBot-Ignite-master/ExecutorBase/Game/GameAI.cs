@@ -473,7 +473,7 @@ namespace WindBot.Game
                 if (exec.Type == ExecutorType.GoToEndPhase && main.CanEndPhase && exec.Func()) // check if should enter end phase directly
                 {
                     _dialogs.SendEndTurn();
-                    return new MainPhaseAction(MainPhaseAction.MainAction.ToEndPhase);
+                    //return new MainPhaseAction(MainPhaseAction.MainAction.ToEndPhase);
                 }
                 Executor.SetCard(ExecutorType.GoToBattlePhase, null, -1);
                 if (exec.Type==ExecutorType.GoToBattlePhase && main.CanBattlePhase && exec.Func()) // check if should enter battle phase directly

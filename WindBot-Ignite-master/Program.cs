@@ -133,6 +133,7 @@ namespace WindBot
 
             if (!SQLComm.HasParameters) // Need to set a flag, or the program will overwrite these values for some reason
             {
+                JsonExporter.ExportPath = Config.GetString("ExportPath", JsonExporter.ExportPath);
                 SQLComm.RolloutCount = Config.GetInt("RolloutCount", SQLComm.RolloutCount);
                 SQLComm.TotalGames = Config.GetInt("TotalGames", SQLComm.TotalGames);
                 SQLComm.IsFirst = Config.GetBool("IsFirst", SQLComm.IsFirst);
