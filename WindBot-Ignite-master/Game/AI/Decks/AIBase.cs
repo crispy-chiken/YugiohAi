@@ -854,7 +854,7 @@ namespace WindBot.Game.AI.Decks
 
             SQLComm.SavePlayedCards(Duel.IsFirst, postSide, result, used, deckQuant);
 
-            Rand = new Random(1);
+            //Rand = new Random(1);
 
             aIEngine.OnWin(result);
 

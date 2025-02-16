@@ -14,7 +14,13 @@ namespace WindBot
 
         }
 
-        protected override ActionInfo GetBestAction(History history)
+        public override void OnWin(int result)
+        {
+            base.OnWin(result);
+            source.Rand = new Random(1);
+        }
+
+        internal override ActionInfo GetBestAction(History history)
         {
             List<ActionInfo> actions = history.ActionInfo;
             List<FieldStateValues> comparisons = history.FieldState;
@@ -43,14 +49,14 @@ namespace WindBot
             var results = actions.OrderByDescending(x => x.Weight).ToList();
             // Take the top percentile
             var max_guess = results.Max(x => x.Weight);
-            results = results.Where(x => x.Weight >= max_guess - 0.02).ToList();
+            results = results.Where(x => x.Weight >= max_guess - 0.01).ToList(); // randomize result
             var best = results[source.Rand.Next(results.Count)];
             //FIXED RNG
             //if (!SQLComm.IsTraining)
-            best = results[0];
+            //best = results[0];
 
             // Randomness
-            best = actions[source.Rand.Next(actions.Count)];
+            //best = actions[source.Rand.Next(actions.Count)];
 
 
             if (!SQLComm.IsManual)

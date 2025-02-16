@@ -21,6 +21,7 @@ import psutil
 # from keras.models import load_model
 
 import multiprocessing
+from export_database import export_database
 import read_game_data as read_game_data
 import get_action_weights as get_action_weights
 
@@ -28,15 +29,11 @@ import torch
 
 
 #The Deck name and location	
-AI1Deck = 'Random1'
-AI2Deck =  'Random2'#'Swordsoul'#
-AIMaster = 'Swordsoul'#'Master'#
-
-deck1 = 'AI_Swordsoul.ydk'#'AI_Random1.ydk'
-deck2 = 'AI_Swordsoul.ydk'#'AI_Random2.ydk'
+deck1 = 'AI_FireKing.ydk'#'AI_Random1.ydk'
+deck2 = 'AI_FireKing2.ydk'#'AI_Random2.ydk'
 
 totalGames = 1000 # Games before any of the below
-cycles = 1 # Trains decks
+cycles = 80 # Trains decks
 generations = 1 # Shuffles Decks
 parallelGames = 1
 
@@ -159,16 +156,15 @@ def parseArg():
   if "--games" in sys.argv:
     totalGames = int(sys.argv[sys.argv.index("--games")+1])
 
-def runAi(Deck = "Random1", 
+def runAi(Deck = "AIBase", 
+          DeckFile = "",
           Name = "Random1",
           Hand = 0,
           TotalGames = 1,
-          RolloutCount = 0,
           IsFirst = True,
           IsTraining = True,
           ShouldUpdate = True,
-          WinsThreshold = 50,
-          PastWinsLimit = 20,
+          ShouldRecord = True,
           Id = 0,
           Port = 7911,
           IsMCTS= False
@@ -180,17 +176,17 @@ def runAi(Deck = "Random1",
 
   if platform == "linux" or platform == "linux2":
     file_name = os.getcwd() + "/WindBot.exe"
-
-  p = subprocess.Popen([file_name,"Deck="+Deck,
+  
+  p = subprocess.Popen([file_name,
+                        "Deck="+"AIBase",
+                        "DeckFile="+DeckFile,
                         "Name="+str(Name),
                         "Hand="+str(Hand),
                         "IsTraining="+str(IsTraining), 
                         "ShouldUpdate="+str(ShouldUpdate), 
+                        "ShouldRecord="+str(ShouldRecord),
                         "TotalGames="+str(TotalGames), 
-                        "RolloutCount="+str(RolloutCount), 
                         "IsFirst="+str(IsFirst), 
-                        "WinsThreshold="+str(WinsThreshold), 
-                        "PastWinsLimit="+str(PastWinsLimit),
                         "Id="+str(Id),
                         "Port="+str(Port),
                         "IsMCTS="+str(IsMCTS)
@@ -203,7 +199,7 @@ def runAi(Deck = "Random1",
   return p
 
 def shuffle_deck(deck_name):
-  filePath = os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/'+ deck_name 
+  filePath = os.getcwd() + '/edopro_bin/deck/' + deck_name 
 
   f = open(filePath,"r")
   main = []
@@ -254,7 +250,7 @@ def shuffle_deck(deck_name):
 def swap_decks(deck1, deck2, name1, name2):
   if deck1 == deck2:
     return
-  path = os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/'
+  path = os.getcwd() + '/edopro_bin/deck/'
   File1 = path + deck1
   File2 = path + deck2
 
@@ -270,14 +266,14 @@ def setup():
       resetDB()
     shuffle_deck(deck1)
     shuffle_deck(deck2)
-    # src_dir=os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/' + deck1
-    # dst_dir=os.getcwd() + '/WindBot-Ignite-master/bin/Debug/Decks/' + deck2
+    # src_dir=os.getcwd() + '/edopro_bin/deck/' + deck1
+    # dst_dir=os.getcwd() + '/edopro_bin/deck/' + deck2
     # shutil.copy(src_dir,dst_dir)
 
   resetYgoPro()
 
-  if not isTraining:
-    AI2Deck = AIMaster
+  # if not isTraining:
+  #   AI2Deck = AIMaster
 
 def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFirst):
   start = time.time()
@@ -299,32 +295,28 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
   
   print("	runningAi1 " + str(Id1) + ":" + Deck1)
 
-  p1 = runAi( Deck = Deck1, 
+  p1 = runAi( DeckFile= Deck1,
               Name = Id1,
               Hand = 2,
               TotalGames = totalGames,
-              RolloutCount = rolloutCount,
               IsFirst = (isFirst),
               IsTraining = isTraining,
               ShouldUpdate= True,#isTraining,
-              WinsThreshold = winThresh,
-              PastWinsLimit = pastWinLim,
               Id = Id1,
               Port = port,
-              IsMCTS=isTraining#False#
+              IsMCTS=True#False#
             )
   time.sleep(1)
   print("	runningAi2 "+ str(Id2) + ":" + Deck2)
-  p2 = runAi(Deck = Deck2, 
+  p2 = runAi(
+              DeckFile= Deck2,
               Name = Id2,
               Hand = 3,
               TotalGames = totalGames,
-              RolloutCount = rolloutCount,
               IsFirst = (not isFirst),
-              IsTraining = isTraining,
+              IsTraining = False,
               ShouldUpdate= False,#True,#isTraining,#
-              WinsThreshold = winThresh,
-              PastWinsLimit = pastWinLim,
+              ShouldRecord=False,
               Id = Id2,
               Port = port,
               IsMCTS=False
@@ -393,24 +385,27 @@ def main():
       jobs = []
       pairs = []
       bots = list(range(parallelGames * 2))
-      if (isTraining and AI2Deck != AIMaster) and False:
-        while bots:
-          r1 = bots.pop(random.randrange(0, len(bots)))
-          r2 = bots.pop(random.randrange(0, len(bots)))
-          pairs.append((r1, r2))
-      else:
-        while bots:
-          r1 = bots.pop(0)
-          r2 = bots.pop(0)
-          if swap and c % 2 == 1:
-            pairs.append((r2, r1))
-          else:
-            pairs.append((r1, r2))    
+      while bots:
+        r1 = bots.pop(0)
+        r2 = bots.pop(0)
+        if swap and (c + g) % 2 == 1:
+          pairs.append((r2, r1))
+        else:
+          pairs.append((r1, r2))    
 
       for i in range(len(pairs)):
         print("generation " + str(g) + " cycle: " + str(c) +" running game " + str(i) + ":" + str(pairs[i][0]) + "vs" + str(pairs[i][1]) + ": Total games " + str(totalGames))
         port = 7911 + i
-        p = multiprocessing.Process(target=main_game_runner, args=(isTraining, totalGames, str(pairs[i][0]), str(pairs[i][1]), AI1Deck, AI2Deck, port, isFirst))
+        p = multiprocessing.Process(target=main_game_runner, 
+                                    args=(
+                                      isTraining,
+                                      totalGames, 
+                                      str(pairs[i][0]), 
+                                      str(pairs[i][1]), 
+                                      os.getcwd() +'/edopro_bin/deck/' + deck1, 
+                                      os.getcwd() +'/edopro_bin/deck/' + deck2, 
+                                      port, 
+                                      isFirst))
         #psutil.Process(p.pid).nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
         jobs.append(p)
         p.start()
@@ -424,14 +419,16 @@ def main():
       # Swap the decks
       if swap:
         isFirst = not isFirst
+      read_game_data.read_data()
 
     if g <= generations - 1:
       limit = parallelGames * cycles
       
-      read_game_data.read_data()
-      read_game_data.createBetterDataset()
+      #read_game_data.read_data()
+      #read_game_data.createBetterDataset()
       #softResetDB()
   read_game_data.read_data()
+  export_database()
 
 if __name__ == "__main__":
   torch.multiprocessing.set_start_method('spawn')

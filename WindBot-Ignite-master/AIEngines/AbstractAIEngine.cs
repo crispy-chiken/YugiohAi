@@ -216,12 +216,14 @@ namespace WindBot
 
         private List<History> CurrentTurn = new List<History>();
 
+        protected const string DONT_PERFORM_STR = "DontPerform";
+
         public AbstractAIEngine(Executor source)
         {
             this.source = source;
         }
 
-        protected abstract ActionInfo GetBestAction(History history);
+        internal abstract ActionInfo GetBestAction(History history);
 
         public virtual void OnWin(int result)
         {
@@ -261,7 +263,7 @@ namespace WindBot
                 ActionInfo actionInfo = new ActionInfo(BuildActionString(card, duel), action, card, desc);
                 List<ActionInfo> actions = new List<ActionInfo>
                 {
-                    new ActionInfo("DontPerform","", 0.45),
+                    new ActionInfo(DONT_PERFORM_STR,"", 0.45),
                     actionInfo
 
                 };
@@ -383,7 +385,7 @@ namespace WindBot
             ActionNumber++;
             GameInfo gameInfo = new GameInfo(SQLComm.Id, duel.Turn, ActionNumber);
             List<ActionInfo> actions = new List<ActionInfo>();
-            var dontPerform = new ActionInfo("DontPerform", "", 0.45);
+            var dontPerform = new ActionInfo(DONT_PERFORM_STR, "", 0.45);
 
             if (!forced)
                 actions.Add(dontPerform);
@@ -416,7 +418,7 @@ namespace WindBot
 
             GameInfo gameInfo = new GameInfo(SQLComm.Id, duel.Turn, ActionNumber);
             List<ActionInfo> actions = new List<ActionInfo>();
-            var dontPerform = new ActionInfo("ToAttack", "", 0.45);
+            var dontPerform = new ActionInfo(DONT_PERFORM_STR, "", 0.45); // AKA to attack
 
             actions.Add(dontPerform);
 
@@ -584,7 +586,7 @@ namespace WindBot
             List<ActionInfo> actions = new List<ActionInfo>();
             GameInfo gameInfo = new GameInfo(SQLComm.Id, duel.Turn, ActionNumber);
 
-            //var dontPerform = new ActionInfo("DontPerform", "", 0.45);
+            //var dontPerform = new ActionInfo(DONT_PERFORM_STR, "", 0.45);
             //actions.Add(dontPerform);
 
             foreach (ClientCard attacker in attackers)
