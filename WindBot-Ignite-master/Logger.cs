@@ -10,16 +10,20 @@ namespace WindBot
         public static void WriteLine(string message)
         {
 #if !LIBWINDBOT
+
             Console.WriteLine("[" + DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + "] " + message);
 #else
 			Log.Info("Edoprowindbot", "[" + DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + "] " + message);
 #endif
         }
-        public static void DebugWriteLine(string message)
+        public static void DebugWriteLine(string message, ConsoleColor forground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
 #if DEBUG
 #if !LIBWINDBOT
+           /* Console.BackgroundColor = background;
+            Console.ForegroundColor = forground;
             Console.WriteLine("[" + DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + "] " + message);
+            Console.ResetColor();*/
 #else
             Log.Debug("Edoprowindbot", "[" + DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + "] " + message);
 #endif

@@ -76,7 +76,7 @@ class CustomLoss(nn.Module):
 class Network(nn.Module):
   def __init__(self, input_dim, output_dim):
     super(Network, self).__init__()
-    hidden_layers = (input_dim + output_dim)# * 2
+    hidden_layers = 1000#(input_dim + output_dim)# * 2
 
     self.layer1 = nn.Linear(input_dim, hidden_layers)
     self.layer2 = nn.Linear(hidden_layers, hidden_layers)
@@ -535,8 +535,8 @@ def showGameHistory():
     # if result != 1:
     #   continue
 
-    if 'SnakeEyes' not in ai_name:
-      continue
+    # if 'SnakeEyes' not in ai_name:
+    #   continue
 
     #Go first or second 
     # if record.turnId != 0:
@@ -1197,6 +1197,8 @@ def compileData():
         if history.id not in action_state:
           continue
         
+
+        skipAction = False
         posssible_actions = action_state[history.id]
         # All possible actions as input
         for state in posssible_actions:
@@ -1208,10 +1210,23 @@ def compileData():
           # Mark which action you performed
           if (state.performed == 'True'):
             output_list[state.actionId] = result
+
+            # Ignore skip actions?
+            if ("DontPerform" in action_list[state.actionId].name or 
+                "GoToEndPhase" in action_list[state.actionId].action or  
+                "GoToBattlePhase" in action_list[state.actionId].action or
+                "GoToMainPhase" in action_list[state.actionId].action):
+              skipAction = True
+              break
+
+
           elif result == 1 and output_list[state.actionId] == -1: 
             output_list[state.actionId] = 0
         
         if len(posssible_actions) <= 1:
+          continue
+
+        if skipAction:
           continue
 
         data.append(input_list)

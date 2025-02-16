@@ -15,6 +15,7 @@ namespace WindBot
     public class CSVReader
     {
         public static string csvPath = $@"../../../baseaction.csv";
+        public static string csvCombos = $@"../../../combos.csv";
 
         public static Dictionary<ActionInfo, List<FieldStateValues>> BaseActions = new Dictionary<ActionInfo, List<FieldStateValues>>();
 
@@ -64,6 +65,11 @@ namespace WindBot
             }
         }
 
+        public static ActionInfo GetNextAction(List<ActionInfo> previousActions)
+        {
+            return null;
+        }
+
         public static List<double> GetBaseActionValues(int length, List<ActionInfo> actions, List<FieldStateValues> comparisons)
         {
             double bonus = 0.5;
@@ -71,7 +77,7 @@ namespace WindBot
 
             foreach(var action in actions)
             {
-                var sequence = BaseActions.Keys.Where(x => x.Name == action.Name && x.Action == action.Action);
+                var sequence = BaseActions.Keys.Where(x => action.Name.Contains(x.Name) && x.Action == action.Action);
                 if (sequence.Any())
                 {
                     foreach(var c in BaseActions[sequence.First()])

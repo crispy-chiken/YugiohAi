@@ -21,6 +21,7 @@ import psutil
 # from keras.models import load_model
 
 import multiprocessing
+from export_database import export_database
 import read_game_data_json as read_game_data
 import get_action_weights as get_action_weights
 
@@ -176,12 +177,10 @@ def runAi(Deck = "Random1",
           Name = "Random1",
           Hand = 0,
           TotalGames = 1,
-          RolloutCount = 0,
           IsFirst = True,
           IsTraining = True,
           ShouldUpdate = True,
-          WinsThreshold = 50,
-          PastWinsLimit = 20,
+          ShouldRecord = True,
           Id = 0,
           Port = 7911,
           IsMCTS= False
@@ -201,11 +200,9 @@ def runAi(Deck = "Random1",
                         "Hand="+str(Hand),
                         "IsTraining="+str(IsTraining), 
                         "ShouldUpdate="+str(ShouldUpdate), 
+                        "ShouldRecord="+str(ShouldRecord),
                         "TotalGames="+str(TotalGames), 
-                        "RolloutCount="+str(RolloutCount), 
                         "IsFirst="+str(IsFirst), 
-                        "WinsThreshold="+str(WinsThreshold), 
-                        "PastWinsLimit="+str(PastWinsLimit),
                         "Id="+str(Id),
                         "Port="+str(Port),
                         "IsMCTS="+str(IsMCTS)
@@ -221,7 +218,7 @@ def runAi(Deck = "Random1",
   return p
 
 def shuffle_deck(deck_name):
-  filePath = os.getcwd() + '/edopro_bin/deck/'+ deck_name 
+  filePath = os.getcwd() + '/edopro_bin/deck/' + deck_name 
 
   f = open(filePath,"r")
   main = []
@@ -294,8 +291,8 @@ def setup():
 
   resetYgoPro()
 
-  if not isTraining:
-    AI2Deck = AIMaster
+  # if not isTraining:
+  #   AI2Deck = AIMaster
 
 def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFirst):
   start = time.time()
@@ -323,15 +320,12 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
               Name = Id1,
               Hand = 2,
               TotalGames = totalGames,
-              RolloutCount = rolloutCount,
               IsFirst = (isFirst),
               IsTraining = isTraining,
               ShouldUpdate= True,#isTraining,
-              WinsThreshold = winThresh,
-              PastWinsLimit = pastWinLim,
               Id = Id1,
               Port = port,
-              IsMCTS=isTraining#False#
+              IsMCTS=True#False#
             )
   time.sleep(1)
   print("	runningAi2 "+ str(Id2) + ":" + Deck2)
@@ -341,10 +335,10 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
               Name = Id2,
               Hand = 3,
               TotalGames = totalGames,
-              RolloutCount = rolloutCount,
               IsFirst = (not isFirst),
               IsTraining = isTraining,
               ShouldUpdate= True,#True,#isTraining,#
+              ShouldRecord=False,
               WinsThreshold = winThresh,
               PastWinsLimit = pastWinLim,
               Id = Id2,
@@ -415,19 +409,13 @@ def main():
       jobs = []
       pairs = []
       bots = list(range(parallelGames * 2))
-      if (isTraining and AI2Deck != AIMaster) and False:
-        while bots:
-          r1 = bots.pop(random.randrange(0, len(bots)))
-          r2 = bots.pop(random.randrange(0, len(bots)))
-          pairs.append((r1, r2))
-      else:
-        while bots:
-          r1 = bots.pop(0)
-          r2 = bots.pop(0)
-          if swap and c % 2 == 1:
-            pairs.append((r2, r1))
-          else:
-            pairs.append((r1, r2))    
+      while bots:
+        r1 = bots.pop(0)
+        r2 = bots.pop(0)
+        if swap and (c + g) % 2 == 1:
+          pairs.append((r2, r1))
+        else:
+          pairs.append((r1, r2))    
 
       for i in range(len(pairs)):
         print("generation " + str(g) + " cycle: " + str(c) +" running game " + str(i) + ":" + str(pairs[i][0]) + "vs" + str(pairs[i][1]) + ": Total games " + str(totalGames))
@@ -456,6 +444,7 @@ def main():
       #read_game_data.createBetterDataset()
       #softResetDB()
   read_game_data.read_data()
+  export_database()
 
 if __name__ == "__main__":
   torch.multiprocessing.set_start_method('spawn')

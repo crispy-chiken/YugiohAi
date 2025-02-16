@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using WindBot;
 using WindBot.Game;
 using WindBot.Game.AI;
-using static WindBot.MCST;
+
 using static WindBot.NEAT;
 using System.Linq;
 using System;
