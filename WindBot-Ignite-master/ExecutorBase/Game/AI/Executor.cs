@@ -55,6 +55,11 @@ namespace WindBot.Game.AI
             //For overriding 
         }
 
+        public virtual void OnDuelStart()
+        {
+            // For overriding
+        }
+
         /// <summary>
         /// Called when the AI has to decide if it should attack
         /// </summary>

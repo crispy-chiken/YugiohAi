@@ -446,7 +446,7 @@ namespace WindBot
                     {
                         node.IsManditory = true;
                         node.Skip = true;
-                        //_nextPath.Remove(node);
+                        _nextPath.Remove(node);
                         removed = true;
                         Logger.WriteLine($"Selected to remove: {node}");
                         break;
@@ -488,19 +488,17 @@ namespace WindBot
                     {
                         Console.WriteLine("No more removable nodes");
                         Records = BestRecord;
-                        base.OnWin(0);
+                        //base.OnWin(0);
                         SQLComm.GamesPlayed = SQLComm.TotalGames;
                     }
                 }
             }
-
+            base.OnWin(result);
             // base.onwin stuff
             allSelectActions = SQLComm.GetAllActions().Values.ToList();
             allFieldStateValues = SQLComm.GetAllComparisons();
             Records.Clear();
             OnNewGame();
-            if (result == 0)
-                source.Rand = new Random(1);
         }
 
         private Node ActionToNode(ActionInfo action, List<Node> nodes)

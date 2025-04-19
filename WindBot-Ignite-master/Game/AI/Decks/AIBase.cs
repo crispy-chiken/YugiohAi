@@ -376,8 +376,6 @@ namespace WindBot.Game.AI.Decks
         public AIBase(GameAI ai, Duel duel)
             : base(ai, duel)
         {
-            Rand = new Random(1);
-
             AddExecutor(ExecutorType.Activate, ShouldPerform);
             AddExecutor(ExecutorType.SpSummon, ShouldPerform);
             AddExecutor(ExecutorType.Summon, ShouldPerform);
@@ -393,7 +391,7 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
 
             if (SQLComm.IsMCTS)
-                aIEngine = new PathEngine(this);
+                aIEngine = new MCTSEngine(this);
             else
                 aIEngine = new NeuralNet(this);
         }
@@ -454,6 +452,13 @@ namespace WindBot.Game.AI.Decks
             Logger.WriteLine("Going first? " + SQLComm.IsFirst);
 
             return SQLComm.IsFirst;
+        }
+
+        public override void OnDuelStart()
+        {
+            base.OnDuelStart();
+            if (SQLComm.FixedRNG)
+                Rand = new Random(1);
         }
 
         public override void OnNewTurn()
@@ -853,8 +858,6 @@ namespace WindBot.Game.AI.Decks
 
 
             SQLComm.SavePlayedCards(Duel.IsFirst, postSide, result, used, deckQuant);
-
-            //Rand = new Random(1);
 
             aIEngine.OnWin(result);
 

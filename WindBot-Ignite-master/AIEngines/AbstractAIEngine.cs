@@ -264,7 +264,8 @@ namespace WindBot
                 ActionInfo actionInfo = new ActionInfo(BuildActionString(card, duel), action, card, desc);
                 List<ActionInfo> actions = new List<ActionInfo>
                 {
-                    new ActionInfo(DONT_PERFORM_STR,"", 0.45),
+                    //new ActionInfo(DONT_PERFORM_STR,"", 0.45),
+                    new ActionInfo(DONT_PERFORM_STR, DONT_PERFORM_STR, null),
                     actionInfo
 
                 };

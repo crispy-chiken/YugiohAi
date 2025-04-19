@@ -39,6 +39,7 @@ from read_game_data_json import read_json, getTorchData, getTorchPrediction
 import read_game_data_json
 
 action_data = None
+critic_data = None
 
 #Torch settings
 dtype = torch.float
@@ -49,9 +50,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_data():
   read_json()
-  global action_data#, compare_count, action_count
+  global action_data, critic_data#, compare_count, action_count
 
-  action_data = getTorchData()
+  action_data, critic_data = getTorchData()
 
   # conn = sqlite3.connect(os.getcwd() +'/cardData.cdb')
   # c = conn.cursor()

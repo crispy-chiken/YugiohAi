@@ -68,6 +68,7 @@ namespace WindBot.Game
         public void OnStart()
         {
             _dialogs.SendDuelStart();
+            Executor.OnDuelStart();
         }
 
         public void OnWin(int result)

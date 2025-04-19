@@ -144,6 +144,7 @@ namespace WindBot
                 SQLComm.ShouldRecord = Config.GetBool("ShouldRecord", SQLComm.ShouldRecord);
                 SQLComm.WinsThreshold = Config.GetInt("WinsThreshold", SQLComm.WinsThreshold);
                 SQLComm.PastWinsLimit = Config.GetInt("PastWinsLimit", SQLComm.PastWinsLimit);
+                SQLComm.FixedRNG = Config.GetBool("FixedRNG", SQLComm.FixedRNG);
                 //D:\Users\Crispy\Projects\YugiohAi\WindBot-Ignite-master\bin\Debug\Decks\AI_Yubel.ydk
                 if (Info.DeckFile != null)
                 {

@@ -387,12 +387,12 @@ namespace WindBot.Game
             byte[] replay = packet.ReadToEnd();
 
             
-            const string directory = "Replays";
+            const string directory = "replay";
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
 
             string otherName = _room.Position == 0 ? _room.Names[1] : _room.Names[0];
-            string file = DateTime.Now.ToString("yyyy-MM-dd.HH-mm.") + otherName + ".yrp";
+            string file = DateTime.Now.ToString("yyyy-MM-dd.HH-mm.") + otherName + ".yrpX";
             string fullname = Path.Combine(directory, file);
 
             if (Regex.IsMatch(file, @"^[\w\-. ]+$"))

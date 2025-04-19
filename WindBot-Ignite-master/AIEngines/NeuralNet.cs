@@ -17,7 +17,6 @@ namespace WindBot
         public override void OnWin(int result)
         {
             base.OnWin(result);
-            source.Rand = new Random(1);
         }
 
         internal override ActionInfo GetBestAction(History history)

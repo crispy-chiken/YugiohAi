@@ -37,9 +37,11 @@ deck1 = 'AI_SnakeEyes.ydk'#'AI_Random1.ydk'#'AI_SnakeEyes.ydk'
 deck2 = 'AI_SnakeEyes.ydk'#'AI_Random1.ydk'#'AI_Random2.ydk'
 
 totalGames = 10 # Games before any of the below
-cycles = 10 # Trains decks
+cycles = 1 # Trains decks
 generations = 1 # Shuffles Decks
 parallelGames = 1
+
+FixedRNG=False
 
 rolloutCount = 1
 isFirst = True
@@ -91,6 +93,7 @@ def deleteData():
               shutil.rmtree(file_path)
       except Exception as e:
           print('Failed to delete %s. Reason: %s' % (file_path, e))
+  os.mkdir('./data/critic')
 
 def resetDB():
 
@@ -183,8 +186,9 @@ def runAi(Deck = "Random1",
           ShouldRecord = True,
           Id = 0,
           Port = 7911,
-          IsMCTS= False
+          IsMCTS= False,
           ):
+  global FixedRNG
   currentdir = os.getcwd()
   os.chdir(os.getcwd()+'/WindBot-Ignite-master/bin/Debug')
 
@@ -205,7 +209,8 @@ def runAi(Deck = "Random1",
                         "IsFirst="+str(IsFirst), 
                         "Id="+str(Id),
                         "Port="+str(Port),
-                        "IsMCTS="+str(IsMCTS)
+                        "IsMCTS="+str(IsMCTS),
+                        "FixedRNG="+str(FixedRNG)
                         ]
   print(" ".join(arguments))
 
@@ -325,7 +330,7 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
               ShouldUpdate= True,#isTraining,
               Id = Id1,
               Port = port,
-              IsMCTS=True#False#
+              IsMCTS=True and FixedRNG#False#
             )
   time.sleep(1)
   print("	runningAi2 "+ str(Id2) + ":" + Deck2)
@@ -339,8 +344,6 @@ def main_game_runner(isTraining, totalGames, Id1, Id2, Deck1, Deck2, port, isFir
               IsTraining = isTraining,
               ShouldUpdate= True,#True,#isTraining,#
               ShouldRecord=False,
-              WinsThreshold = winThresh,
-              PastWinsLimit = pastWinLim,
               Id = Id2,
               Port = port,
               IsMCTS=False
@@ -435,6 +438,7 @@ def main():
       if swap:
         isFirst = not isFirst
       
+      read_game_data.deleteData()
       read_game_data.read_data()
 
     if g <= generations - 1:
@@ -443,6 +447,7 @@ def main():
       #read_game_data.read_data()
       #read_game_data.createBetterDataset()
       #softResetDB()
+  read_game_data.deleteData()
   read_game_data.read_data()
   export_database()
 

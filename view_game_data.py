@@ -160,17 +160,134 @@ def showGameHistory():
   state_count, action_count = read_game_data_json.state_count, read_game_data_json.action_count
   global action_list, compare_to
 
-  action_data = getTorchData()
+  action_data, critic_data = getTorchData()
+  
+  data = read_json()
+  while True:
+    print("Valid names:" + str(data.keys()))
+    name = input("Enter name:")
+    while name not in data:
+      name = input("Invalid name, valid names:" + str(data.keys()))
+
+    print("len of data for " + name + ":" + str(len(data[name]) - 1))
+    for j in range(len(data[name])):
+      print(str(j) + " result:" + str(data[name][j][0]["result"]))
+
+    res1 = data[name][get_data(1, len(data[name]) - 1)]
+
+    print("Result len: " + str(len(res1)))
+    
+    for i in range(len(res1)):
+      r = res1[i]
+      actions = r["actions"]
+      state = r["state"]
+      performed = r["performed"]
+      result = r["result"]
+
+      input_length = 1 + state_count + 1 + action_count
+      input_list = [0] * (input_length)
+
+      for id in state:
+        index = int(id)
+        if (index < len(input_list) and index >= 0):
+          input_list[index] = 1
+
+      for id in actions:
+        index = state_count + 1 + int(id) 
+        if (index < len(input_list) and index >= 0):
+          input_list[index] = 1
+
+      # Only show wins
+      # if result != 1:
+      #   continue
+
+
+      # Find ones with more than 2 choices
+      # if len(actions) <= 2:
+      #   continue
+
+      print("--------Field State--------")
+      for j in state:
+        print("  " + str(compare_to[j]))
+
+      print("--------Possible Actions--------")
+
+      for j in actions:
+        print("  (" + str(j) + ")" + str(j == performed) + "| " + str(action_list[j]))
+      
+      final_result = []
+      final_result = getTorchPrediction(action_data, [input_list])
+      critic_result = getTorchPrediction(critic_data, [input_list])
+
+      avg = 0
+      avg2 = 0
+      cnt = 0
+      for key in final_result:
+        res = final_result[key]
+
+        text = key + ":"
+        nth = len(res)#4
+        ind = np.argpartition(res, -nth)[-nth:]
+        index = ind[np.argsort(res[ind])]
+        index = index[::-1]
+
+        # index = sorted(range(len(output)), key=lambda k: output[k])
+        # index = index[::-1]
+        for i in index:
+          if i not in actions:
+            continue
+          text += "[" + str(i) + "]" + ":" + str(round(res[i]*100)) + ","
+          avg += res[i]
+          cnt += 1
+
+        #text += " max " + str(max(res)*100  )
+      
+        print(text)
+        #print(sum(result))
+      
+      for key in critic_result:
+        print(str(key) + ":[critic]:" + str(critic_result[key]))
+
+      # avg/=len(final_result)
+      # cnt = max(1,cnt)
+      # avg2 /= cnt
+      # avg /= max(1,cnt)
+      # print("Avg:" + str(avg))
+      # print("Avg2:" + str(avg2))
+
+      better = getBetterPrediction(final_result, actions, 0)[0][:4]
+      print("Better Prediction MAX :" + str(better))
+      better = getBetterPrediction(final_result, actions, 1)[0][:4]
+      print("Better Prediction AVG :" + str(better))
+    
+      #print("Expected answer:" + str(result))
+      print("Result:" + str(result) + " Source:" + str(name)) 
+
+      if len(actions) <= 1:
+        continue
+      if len(actions) == 2 and performed == None:
+        continue
+
+      user_in = input("press to continue..., type s to skip")
+      if user_in == 's':
+        break
+
+def showGameHistoryRandom():
+  state_count, action_count = read_game_data_json.state_count, read_game_data_json.action_count
+  global action_list, compare_to
+
+  action_data, critic_data = getTorchData()
 
   raw_records = read_json()
-
+        
   records = []
   print("compiling data ")
   # Reformat records
   for name in raw_records:
-    for data in raw_records[name]:
-      data["name"] = name
-      records.append(data)
+    for game in raw_records[name]:
+      for data in game:
+        data["name"] = name
+        records.append(data)
 
   random.shuffle(records)
   print("done")
@@ -215,6 +332,7 @@ def showGameHistory():
     
     final_result = []
     final_result = getTorchPrediction(action_data, [input_list])
+    critic_result = getTorchPrediction(critic_data, [input_list])
 
     avg = 0
     avg2 = 0
@@ -241,6 +359,9 @@ def showGameHistory():
     
       print(text)
       #print(sum(result))
+    
+    for key in critic_result:
+      print(str(key) + ":[critic]:" + str(critic_result[key]))
 
     # avg/=len(final_result)
     # cnt = max(1,cnt)
@@ -283,6 +404,13 @@ def showGameHistory():
     if (leave):
       break
 
+def get_data(index, length):
+  ind = int(input("enter index for game " + str(index) + ":"))
+  while not(0 <= ind <= length):
+    ind = int(input("enter index for game" + str(index) +".Valid range is 0-" + str(length) + ":"))
+  
+  return ind
+
 def getSimilarFieldStates(recordId):
   pass
 def getSimilarActionPerformed(recordId):
@@ -294,4 +422,5 @@ if __name__ == "__main__":
   read_json()
   clearLocalData()
   fetchDatabaseData()
-  showGameHistory()
+  showGameHistoryRandom()
+  #showGameHistory()
