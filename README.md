@@ -1,6 +1,9 @@
 # Yugioh Ai
 This is a Yugioh Ai Simulator.
 The final build will have Ai find the best deck as well as play optimally.
+
+[Discord](https://discord.gg/ZtdQ7cmuUR)
+
 ## Breakdown
 There are 2 Ais that need to made. A deck building Ai which is written in python. And a game Ai written in c#.
 
