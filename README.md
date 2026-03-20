@@ -4,6 +4,12 @@ The final build will have Ai find the best deck as well as play optimally.
 
 [Discord](https://discord.gg/ZtdQ7cmuUR)
 
+## Video
+[![AI Learns Snake eyes combos](https://img.youtube.com/vi/boo75sCnxpM/0.jpg)](https://www.youtube.com/watch?v=boo75sCnxpM)
+
+[![AI Plays Yugioh](https://img.youtube.com/vi/dxBGokCkbrE/0.jpg)](https://www.youtube.com/watch?v=dxBGokCkbrE)
+
+
 ## Breakdown
 There are 2 Ais that need to made. A deck building Ai which is written in python. And a game Ai written in c#.
 
