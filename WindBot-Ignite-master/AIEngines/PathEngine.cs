@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using WindBot.Game;
 using WindBot.Game.AI;
+using WindBot.Game.AI.Decks;
 using WindBot.Game.AI.Decks.Util;
 using YGOSharp.OCGWrapper.Enums;
 
@@ -131,7 +132,7 @@ namespace WindBot
 
         NeuralNet net { get; set; }
 
-        public PathEngine(Executor source) : base(source)
+        public PathEngine(AIBase source) : base(source)
         {
             _start = new Node(null, new ActionInfo("Start", "", 0));
             _bestPath = new List<PathNode>();

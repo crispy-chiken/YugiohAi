@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using WindBot.Game.AI;
+using WindBot.Game.AI.Decks;
 
 namespace WindBot
 {
     public class NeuralNet : AbstractAIEngine
     {
-        public NeuralNet(Executor source) :
+        public NeuralNet(AIBase source) :
             base(source)
         {
 

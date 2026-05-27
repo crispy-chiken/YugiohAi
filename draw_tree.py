@@ -1,71 +1,57 @@
-from argparse import Action
 import math
 import os
 import sqlite3
 from pyvis.network import Network
 import networkx as nx
+import matplotlib.pyplot as plt
 
+from read_game_data_json import Action
+
+G = nx.DiGraph()
+
+action_list = {}
+states = {}
 
 conn = sqlite3.connect(os.getcwd() +'/cardData.cdb')
 c = conn.cursor()
 
-c.execute('SELECT Count(Visited) FROM MCST WHERE Visited > 0')
-total = c.fetchone()[0]
-print("Total search made=" + str(total))
-
-nx_graph = nx.DiGraph()
-const = 0.5
-
-c.execute('SELECT rowid, * FROM MCST')
+print("fetch action list")
+c.execute('SELECT rowid, Name, Action FROM L_ActionList')
 records = c.fetchall()
-group_count = 0
+for record in records:
+  action_list[record[0]] = Action(record[0], record[1], record[2])
+
+c.execute('SELECT rowid, * FROM ComboLines')
+records = c.fetchall()
+
 for record in records:
     rowid = record[0]
-    name = record[1]
-    parentid = record[2]
-    actionid = record[3]
-    reward = record[4]
-    visited = max(0.0001, record[5])
-    isFirst = record[6]
-    isTraining = record[7]
+    heuristic = record[1]
+    heuristicBest = record[2]
+    parentid = record[3]
+    actionid = record[4]
+    isend = record[5]
+    name = record[6]
+    isFirst = record[7]
+    visited = record[8]
 
-    if visited < 1:
-      continue
+    action = action_list[int(actionid)]
+    node_name = str(rowid) + action.name + action.action
+    G.add_node(node_name)
+    states[rowid] = node_name
 
-    activation = reward + const * math.sqrt((math.log(total + 1) + 1) / visited)
-    activation = min(activation, 25)
-    nx_graph.add_node(rowid, label=f'{rowid} {isFirst} {isTraining} {actionid}', group=1)
-    if parentid != -4:
-      nx_graph.add_edge(parentid, rowid, weight=activation, group=2)
-    # if childid != -4:
-    #   nx_graph.add_edge(rowid, childid, weight=activation, group=3)
-
-    # if (action == "GoToEndPhase"):
-    #   group_count += 1
-
-# Get Best average moves?
-# c.execute("Select cardId,Action, SUM(Reward) as r,SUM(Visited) as v from MCST WHERE IsTraining='False' group by cardid, action order by cardid, action")
-# records = c.fetchall()
-# for record in records:
-#     cardid = record[0]
-#     action = record[1]
-#     reward = record[2]
-    
-#     visited =record[3]
-#     #const = 0
-
-#     activation = 0
-#     activation2 = 0
-#     if (visited > 0):
-#       actication = round((reward + const * math.sqrt((math.log(total + 1) + 1) / (visited))) * 100)/100
-#       activation2 = round(reward / (visited) * 1000)/10
-
-#     print(f"{activation}| {activation2} | {cardid} | {action}")
 
 c.close()
 
-nt = Network('1000px', '1000px', directed=True)
-# populates the nodes and edges data structures
-nt.from_nx(nx_graph)
-nt.show_buttons(filter_=['physics'])
-nt.show('nx.html')
+pos = nx.planar_layout(G)
+nx.draw(G, pos, node_size=0, alpha=1, edge_color="r", font_size=16, with_labels=True)
+ax = plt.gca()
+ax.margins(0.08)
+plt.show()
+
+# nt = Network('1000px', '1000px', directed=True)
+# # populates the nodes and edges data structures
+# # uses PyVis
+# nt.from_nx(nx_graph)
+# nt.show_buttons(filter_=['physics'])
+# nt.show('nx.html')

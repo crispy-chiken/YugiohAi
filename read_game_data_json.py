@@ -460,26 +460,31 @@ def read_json():
         name = os.path.basename(p).split("_")[0]
         game_data = []
         for data in f:
-          j = json.loads(data)
-          
-          j["actions"] = list(map(int, j["actions"].split(',')))
-          j["actions"].sort()
-          if len(j["state"]) > 0:
-            j["state"] = list(map(int, j["state"].split(',')))
-            j["state"].sort()
-          else:
-            j["state"] = []
-          if j["performed"] != None:
-            j["performed"] = int(j["performed"])
-          else:
-            j["performed"] = None
-          j["result"] = int(j["result"])
+          data = data.strip("\n")
 
-          action_count = max(action_count, max(j["actions"]))
-          if len(j["state"]) > 0:
-            state_count = max(state_count, max(j["state"]))
-          
-          game_data.append(j)
+          try:
+            j = json.loads(data)
+            
+            j["actions"] = list(map(int, j["actions"].split(',')))
+            j["actions"].sort()
+            if len(j["state"]) > 0:
+              j["state"] = list(map(int, j["state"].split(',')))
+              j["state"].sort()
+            else:
+              j["state"] = []
+            if j["performed"] != None:
+              j["performed"] = int(j["performed"])
+            else:
+              j["performed"] = None
+            j["result"] = int(j["result"])
+
+            action_count = max(action_count, max(j["actions"]))
+            if len(j["state"]) > 0:
+              state_count = max(state_count, max(j["state"]))
+            
+            game_data.append(j)
+          except:
+            print("error occured when parsing")
 
         if name not in compiled:
           compiled[name] = []
@@ -815,7 +820,10 @@ def fetchDatabaseData():
   print("output"+str(output_length))
  
 if __name__ == "__main__":
+  print("start time " + str(datetime.datetime.now()))
   torch.multiprocessing.set_start_method('spawn')
   torch.backends.cudnn.benchmark = True
   deleteData()
   read_data()
+
+  print("end time " + str(datetime.datetime.now()))

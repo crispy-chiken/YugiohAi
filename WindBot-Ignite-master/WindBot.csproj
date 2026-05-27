@@ -63,10 +63,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIEngines\SearchEngine.cs" />
     <Compile Include="AIEngines\PathEngine.cs" />
     <Compile Include="AIEngines\MCSTEngine.cs" />
     <Compile Include="AIEngines\NeuralNet.cs" />
     <Compile Include="AIEngines\AbstractAIEngine.cs" />
+    <Compile Include="AIEngines\Util\ActivationUtil.cs" />
+    <Compile Include="AIEngines\Util\Heuristics.cs" />
     <Compile Include="CSVReader.cs" />
     <Compile Include="Game\AI\Decks\AIBranded.cs" />
     <Compile Include="Game\AI\Decks\AIBase.cs" />

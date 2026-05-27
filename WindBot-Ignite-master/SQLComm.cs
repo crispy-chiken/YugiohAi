@@ -42,6 +42,7 @@ namespace WindBot
         public static int WinsThreshold = 45;
         public static string sqlPath = $@"Data Source=./cardData.cdb";
         internal static bool ShouldSurrender = false;
+        internal static bool IsDone = false;
         internal static bool FixedRNG = false;
 
         public class CardQuant
@@ -430,6 +431,266 @@ namespace WindBot
 
         #endregion
 
+        #region ComboSearch
+
+        public static List<SearchEngine.Node> GetAllSearchNodes()
+        {
+            Dictionary<long, SearchEngine.Node> mappings = new Dictionary<long, SearchEngine.Node>();
+            var actions = GetAllActions();
+
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+                string sql = $"SELECT rowid, actionId, heuristic, heuristicBest, isEnd, Visited FROM ComboLines WHERE isFirst = \"{IsFirst}\" AND name = \"{Name}\" ORDER BY parentId";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            long actionId = rdr.GetInt64(1);
+                            float heuristic = rdr.GetFloat(2);
+                            float heuristicBest = rdr.GetFloat(3);
+                            bool isEnd = rdr.GetString(4) == "True";
+                            int visited = rdr.GetInt32(5);
+
+                            ActionInfo action = null;
+                            if (actions.ContainsKey(actionId))
+                                action = new ActionInfo(actions[actionId]);
+                            else
+                            {
+                                Logger.WriteErrorLine("No action for actionId " + actionId);
+                                action = new ActionInfo(actionId, "", "");
+                            }
+
+                            SearchEngine.Node node = new SearchEngine.Node(null, action);
+                            node.NodeId = long.Parse(rdr["rowid"].ToString());
+                            node.Heuristic = heuristic;
+                            node.BestHeuristic = heuristicBest;
+                            node.IsEnd = isEnd;
+                            node.Visited = visited;
+
+                            mappings.Add(node.NodeId, node);
+                        }
+                    }
+                }
+
+                sql = $"SELECT StateId, ActionId, NextStateId from C_StateAction";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            long stateId = rdr.GetInt64(0);
+                            long actionId = rdr.GetInt64(1);
+                            long nextStateId = rdr.GetInt64(2);
+
+                            SearchEngine.Node node = mappings[stateId];
+                            SearchEngine.Node nextNode = null;
+                            //if (mappings.ContainsKey(nextStateId))
+                            if (nextStateId != -4)
+                            {
+                                nextNode = mappings[nextStateId];
+                                nextNode.Parent = node;
+                            }
+
+
+                            node.Children.Add(new SearchEngine.ActionResult(new ActionInfo(actionId), nextNode));
+                            node.ActionIds.Add(actionId);
+
+                        }
+                    }
+                }
+
+                sql = $"SELECT StateId, CompareId from C_StateField";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            long stateId = rdr.GetInt64(0);
+                            long compareId = rdr.GetInt64(1);
+
+                            SearchEngine.Node node = mappings[stateId];
+
+                            node.CompareIds.Add(compareId);
+
+                        }
+                    }
+                }
+            }
+
+            return mappings.Values.ToList();
+        }
+
+        public static void InsertSearchNodes(List<SearchEngine.Node> nodes)
+        {
+            List<SearchEngine.Node> toInsert = new List<SearchEngine.Node>();
+
+
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+
+                SqliteTransaction transaction = conn.BeginTransaction();
+
+
+                foreach (var node in nodes)
+                {
+                    if (node.NodeId == -4)
+                    {
+                        string sql = $"INSERT INTO ComboLines (name, actionId, heuristic, heuristicBest, isFirst, isEnd, Visited) VALUES (\"{Name}\",\"{node.Action.ActionId}\",\"{node.Heuristic}\",\"{node.BestHeuristic}\",\"{IsFirst}\",\"{node.IsEnd}\",0)";
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            cmd2.ExecuteNonQuery();
+                        }
+
+                        sql = "select last_insert_rowid()";
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            node.NodeId = (long)cmd2.ExecuteScalar();
+                        }
+
+                        // Insert field state
+                        if (node.History != null && node.History.FieldState.Count > 0)
+                        {
+                            sql = $"INSERT INTO C_StateField (StateId, CompareId) VALUES ";
+
+                            foreach (var state in node.History.FieldState)
+                            {
+                                sql += $"(\"{node.NodeId}\",\"{state.Id}\"),";
+                            }
+                            sql = sql.Trim(',');
+
+                            using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                            {
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+                        // Insert Action nodes
+                        /*if (node.Children.Count > 0)
+                        {
+                            sql = $"INSERT INTO C_StateAction (StateId, ActionId, NextStateId) VALUES ";
+
+                            foreach (var action in node.Children)
+                            {
+                                long nextNodeId = -4;
+                                if (action.NextNode != null)
+                                    nextNodeId = action.NextNode.NodeId;
+                                sql += $"(\"{node.NodeId}\",\"{action.Action.ActionId}\",\"{nextNodeId}\"),";
+                            }
+                            sql = sql.Trim(',');
+
+                            using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                            {
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }*/
+                    }
+                    else
+                    {
+                        // Node was already inserted
+                    }
+
+                }
+
+                transaction.Commit();
+                conn.Close();
+            }
+        }
+
+        public static void UpdateSearchNodes(List<SearchEngine.Node> nodes)
+        {
+            InsertSearchNodes(nodes);
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+
+                SqliteTransaction transaction = conn.BeginTransaction();
+
+
+                int rowsUpdated = 0;
+
+                Queue<SearchEngine.Node> q = new Queue<SearchEngine.Node>(nodes);
+
+                while (q.Count > 0)
+                {
+                    SearchEngine.Node n = q.Dequeue();
+                    if (n == null)
+                        continue;
+
+                    if (n.NodeId != -4)
+                    {
+                        string sql = $"UPDATE ComboLines SET heuristicBest = {n.BestHeuristic}, "
+                            +$"heuristic = {n.Heuristic}, "
+                            +$"isEnd = \"{n.IsEnd}\", "
+                            +$"Visited = Visited + 1 "
+                            +$"WHERE rowid = \"{n.NodeId}\"";
+
+                        using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                        {
+                            cmd2.CommandTimeout = 30;
+                            rowsUpdated = cmd2.ExecuteNonQuery();
+                        }
+
+                        if (rowsUpdated > 0 && n.IsEnd)
+                        {
+
+                        }
+
+                        // Update all action path
+
+                        // Insert Action nodes
+                        if (n.Children.Count > 0)
+                        {
+                            sql = $"INSERT INTO C_StateAction (StateId, ActionId, NextStateId) VALUES ";
+
+                            foreach (var action in n.Children)
+                            {
+                                long nextNodeId = -4;
+                                if (action.NextNode != null)
+                                    nextNodeId = action.NextNode.NodeId;
+                                sql += $"(\"{n.NodeId}\",\"{action.Action.ActionId}\",\"{nextNodeId}\"),";
+                            }
+                            sql = sql.Trim(',');
+
+                            using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                            {
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+
+                       /*foreach (var action in n.Children)
+                        {
+                            if (action.NextNode == null)
+                                continue;
+
+                            sql = $"UPDATE INTO C_StateAction SET NextStateId = {action.NextNode.NodeId} WHERE StateId = {n.NodeId} and ActionId = {action.Action.ActionId}";
+                            using (SqliteCommand cmd2 = new SqliteCommand(sql, conn, transaction))
+                            {
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }*/
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+
+                transaction.Commit();
+                conn.Close();
+            }
+
+            ShouldBackPropagate = false;
+            IsRollout = false;
+            TotalRewards = 0;
+        }
+
+        #endregion
+
         #region NEAT
         public static void Setup(NEAT neat)
         {
@@ -795,6 +1056,27 @@ namespace WindBot
             return id;
         }
 
+        public static void GetComparison(FieldStateValues state)
+        {
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+                string sql = $"SELECT Location, Compare, Value FROM L_CompareTo WHERE " +
+                    $"rowid = \"{state.Id}\"";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                        while (rdr.Read())
+                        {
+                            state.Location = rdr.GetString(0);
+                            state.Compare = rdr.GetString(1);
+                            state.Value = rdr.GetString(2);
+                        }
+                }
+                conn.Close();
+            }
+        }
+
         private static long NewComparisonId(FieldStateValues compare)
         {
             long id = 0;
@@ -846,6 +1128,33 @@ namespace WindBot
             if (id == -4)
                 return NewActionId(action);
             return id;
+        }
+
+        public static void GetAction(ActionInfo info)
+        {
+            using (SqliteConnection conn = ConnectToDatabase())
+            {
+                conn.Open();
+                string sql = $"SELECT Name, Action FROM L_ActionList WHERE " +
+                    $"rowid = \"{info.ActionId}\"";
+                using (SqliteCommand cmd = new SqliteCommand(sql, conn))
+                {
+                    using (SqliteDataReader rdr = cmd.ExecuteReader())
+                        while (rdr.Read())
+                        {
+                            string name = rdr.GetString(0);
+                            string action = rdr.GetString(1);
+
+                            var last_dividor = name.LastIndexOf(";");
+
+                            info.Name = name.Substring(0, last_dividor);
+                            info.Desc = long.Parse(name.Substring(last_dividor + 1));
+
+                            info.Action = action;
+                        }
+                }
+                conn.Close();
+            }
         }
 
         private static long NewActionId(ActionInfo action)

@@ -281,15 +281,6 @@ namespace WindBot.Game
                 //Logger.WriteErrorLine($"Could not write result {SQLComm.Name}");
             }
 
-            if (SQLComm.RolloutCount <= 1)
-            {
-                SQLComm.ShouldBackPropagate = true;
-            }
-            else if (SQLComm.GamesPlayed % SQLComm.RolloutCount == 0)
-            {
-                Logger.WriteLine("Backpropergate");
-                SQLComm.ShouldBackPropagate = true;
-            }
 
             int response = 1;
             if (SQLComm.GamesPlayed >= SQLComm.TotalGames && SQLComm.TotalGames > 0)
@@ -302,6 +293,10 @@ namespace WindBot.Game
             {
                 Logger.WriteLine("MCTS Win limit reached, Cleaning up");
                 //response = 0;
+            }
+            if (SQLComm.IsDone)
+            {
+                response = 0;
             }
 
             Connection.Send(CtosMessage.RematchResponse, (byte)(response));

@@ -391,7 +391,7 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
 
             if (SQLComm.IsMCTS)
-                aIEngine = new MCTSEngine(this);
+                aIEngine = new SearchEngine(this);
             else
                 aIEngine = new NeuralNet(this);
         }
@@ -434,7 +434,7 @@ namespace WindBot.Game.AI.Decks
                     used.Add(Card.Name);
             }
 
-            Logger.DebugWriteLine("ShouldPerform Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("ShouldPerform Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return perform;
         }
@@ -447,7 +447,7 @@ namespace WindBot.Game.AI.Decks
             if (!SQLComm.IsMCTS)
                 aIEngine.ShouldPerform(null, "GoFirst", -1, new List<FieldStateValues>(), Duel);
 
-            Logger.DebugWriteLine("OnSelectHand Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectHand Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             Logger.WriteLine("Going first? " + SQLComm.IsFirst);
 
@@ -477,7 +477,7 @@ namespace WindBot.Game.AI.Decks
 
             aIEngine.OnNewTurn(Duel);
 
-            Logger.DebugWriteLine("OnNewTurn Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnNewTurn Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
 
@@ -488,7 +488,7 @@ namespace WindBot.Game.AI.Decks
             base.OnNewPhase();
             aIEngine.OnNewPhase();
 
-            Logger.DebugWriteLine("OnNewPhase Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnNewPhase Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
         public override void SetMain(MainPhase main)
@@ -509,7 +509,7 @@ namespace WindBot.Game.AI.Decks
             materialSelected = 0;
             aIEngine.SetMain(main, fieldState, Duel);
 
-            Logger.DebugWriteLine("SetMain Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("SetMain Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
         public override void SetBattle(BattlePhase battle)
@@ -536,7 +536,7 @@ namespace WindBot.Game.AI.Decks
 
             aIEngine.SetBattle(battle, fieldState, Duel);
 
-            Logger.DebugWriteLine("SetMain Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("SetMain Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
 
@@ -548,7 +548,7 @@ namespace WindBot.Game.AI.Decks
             var cardId = Util.GetCardIdFromDesc(desc);
             var res =  aIEngine.ShouldPerform(null, "YesNo", desc, GetFieldState(), Duel);
 
-            Logger.DebugWriteLine("OnSelectYesNo Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectYesNo Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return res;
         }
@@ -696,7 +696,7 @@ namespace WindBot.Game.AI.Decks
                 previousActions.Add(new PreviousAction() { cardId = card.Id, type = ExecutorType.Select, description = hint });
             }
 
-            Logger.DebugWriteLine("OnSelectCard Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectCard Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return selected;
         }
@@ -710,7 +710,7 @@ namespace WindBot.Game.AI.Decks
             var res = aIEngine.OnSelectPosition(cardId, positions, GetFieldState(), Duel);
             //return base.OnSelectPosition(cardId, positions);
 
-            Logger.DebugWriteLine("OnSelectPosition Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectPosition Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return res;
         }
@@ -731,7 +731,7 @@ namespace WindBot.Game.AI.Decks
 
             aIEngine.SetChain(cards, descs, forced, GetFieldState(), Duel, Util);
 
-            Logger.DebugWriteLine("OnSelectPosition Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectPosition Time:" + watch.Elapsed, ConsoleColor.Yellow);
         }
 
         // As Chain activates
@@ -779,8 +779,7 @@ namespace WindBot.Game.AI.Decks
             base.OnChainEnd();
             if (chainLinkCount != 0)
                 chainLinkCount = 0;
-            // TODO Fix?
-            aIEngine.OnChainSolved();
+            aIEngine.OnChainEnd();
         }
 
         public override int OnSelectOption(IList<long> options)
@@ -789,7 +788,7 @@ namespace WindBot.Game.AI.Decks
 
             var res = aIEngine.SelectOption(options, GetFieldState(), Duel, Util);
 
-            Logger.DebugWriteLine("OnSelectOption Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectOption Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return res;
         }
@@ -803,7 +802,7 @@ namespace WindBot.Game.AI.Decks
 
             var res = aIEngine.OnAnnounceCard(Util.GetLastChainCard(), avail, GetFieldState(), Duel);
 
-            Logger.DebugWriteLine("OnAnnounceCard Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnAnnounceCard Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return res;
         }
@@ -923,7 +922,7 @@ namespace WindBot.Game.AI.Decks
             var res = aIEngine.OnSelectAttacker(attackers, GetFieldState(), Duel);
 
             //return base.OnSelectAttacker(attackers, defenders);
-            Logger.DebugWriteLine("OnSelectAttacker Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectAttacker Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return res;
         }
@@ -952,7 +951,7 @@ namespace WindBot.Game.AI.Decks
             // Always attack for now
             ClientCard toAttack = aIEngine.OnSelectAttackTarget(attacker, defenders, fieldState, Duel);
 
-            Logger.DebugWriteLine("OnSelectAttackTarget Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("OnSelectAttackTarget Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             if (toAttack != null || attacker.CanDirectAttack)
                 return AI.Attack(attacker, toAttack);//toAttack == null if it is a direct attack
@@ -1250,7 +1249,7 @@ namespace WindBot.Game.AI.Decks
                             ""));
             }
 
-            Logger.DebugWriteLine("     FieldStateValues Time:" + watch.Elapsed, ConsoleColor.Yellow);
+            //Logger.DebugWriteLine("     FieldStateValues Time:" + watch.Elapsed, ConsoleColor.Yellow);
 
             return c;
         }

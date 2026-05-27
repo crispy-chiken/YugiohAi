@@ -39,6 +39,11 @@ namespace WindBot
                         data.Add(state.Id.ToString());
                     }
 
+                    if (record.ActionInfo.Where(x => x.Performed).FirstOrDefault() == null)
+                    {
+                        continue;
+                    }
+
                     var values = new Dictionary<string, string>
                     {
                         { "actions", string.Join(",", actions) },

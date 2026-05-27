@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using WindBot.Game;
 using WindBot.Game.AI;
+using WindBot.Game.AI.Decks;
 using WindBot.Game.AI.Decks.Util;
 using YGOSharp.OCGWrapper.Enums;
 
@@ -78,7 +79,7 @@ namespace WindBot
         int BestActionCount { get; set; } = int.MaxValue;
         public List<History> BestRecord { get; set; } = new List<History>();
 
-        public MCTSEngine(Executor source) : base(source)
+        public MCTSEngine(AIBase source) : base(source)
         {
             Path = new List<Node>();
             OnNewGame();

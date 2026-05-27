@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using WindBot.Game;
 using WindBot.Game.AI;
+using WindBot.Game.AI.Decks;
 using WindBot.Game.AI.Decks.Util;
 using YGOSharp.OCGWrapper;
 using YGOSharp.OCGWrapper.Enums;
@@ -43,6 +44,12 @@ namespace WindBot
                     Id = SQLComm.GetComparisonId(this);
                     allFieldStateValues.Add(this);
                 }
+            }
+
+            public FieldStateValues(long id)
+            {
+                Id = id;
+                SQLComm.GetComparison(this);
             }
 
             public FieldStateValues()
@@ -123,6 +130,23 @@ namespace WindBot
             public long Desc = -1;
 
             public double Weight = -1;
+
+            public ActionInfo(long actionId)
+            {
+                ActionId = actionId;
+                if (actionId - 1 < allSelectActions.Count)
+                {
+                    var copy = allSelectActions[(int)actionId - 1];
+                    this.Name = copy.Name;
+                    this.Action = copy.Action;
+                    this.ActionId = copy.ActionId;
+                    this.Performed = copy.Performed;
+                    this.Desc = copy.Desc;
+                    this.Weight = copy.Weight;
+                }
+                else
+                    SQLComm.GetAction(this);
+            }
 
             public ActionInfo(long actionId, string name, string action)
             {
@@ -207,7 +231,7 @@ namespace WindBot
         protected static List<ActionInfo> allSelectActions = SQLComm.GetAllActions().Values.ToList();
         protected static List<FieldStateValues> allFieldStateValues = SQLComm.GetAllComparisons();
 
-        protected Executor source;
+        protected AIBase source;
 
 
         protected List<History> Records { get; set;  } = new List<History>();
@@ -218,7 +242,7 @@ namespace WindBot
 
         protected const string DONT_PERFORM_STR = "DontPerform";
 
-        public AbstractAIEngine(Executor source)
+        public AbstractAIEngine(AIBase source)
         {
             this.source = source;
         }
@@ -265,7 +289,7 @@ namespace WindBot
                 List<ActionInfo> actions = new List<ActionInfo>
                 {
                     //new ActionInfo(DONT_PERFORM_STR,"", 0.45),
-                    new ActionInfo(DONT_PERFORM_STR, DONT_PERFORM_STR, null),
+                    new ActionInfo(DONT_PERFORM_STR + actionInfo.ActionId, DONT_PERFORM_STR, null),
                     actionInfo
 
                 };
@@ -287,7 +311,7 @@ namespace WindBot
             }
         }
 
-        public void OnNewTurn(Duel duel)
+        public virtual void OnNewTurn(Duel duel)
         {
             ActionNumber = 0;
             foreach (var info in CurrentTurn)
@@ -307,17 +331,22 @@ namespace WindBot
             BestAction = null;
         }
 
-        public void OnChainSolving()
+        public virtual void OnChainSolving()
         {
             BestAction = null;
         }
 
-        public void OnChainSolved()
+        public virtual void OnChainSolved()
         {
             BestAction = null;
         }
 
-        public void SetMain(MainPhase main, List<FieldStateValues> fieldState, Duel duel)
+        public virtual void OnChainEnd()
+        {
+            BestAction = null;
+        }
+
+        public virtual void SetMain(MainPhase main, List<FieldStateValues> fieldState, Duel duel)
         {
             List<ActionInfo> actions = new List<ActionInfo>();
 
@@ -387,7 +416,7 @@ namespace WindBot
             ActionNumber++;
             GameInfo gameInfo = new GameInfo(SQLComm.Id, duel.Turn, ActionNumber);
             List<ActionInfo> actions = new List<ActionInfo>();
-            var dontPerform = new ActionInfo(DONT_PERFORM_STR, "", 0.45);
+            var dontPerform = new ActionInfo(DONT_PERFORM_STR + "InChain", "", 0.45);
 
             if (!forced)
                 actions.Add(dontPerform);
@@ -420,7 +449,7 @@ namespace WindBot
 
             GameInfo gameInfo = new GameInfo(SQLComm.Id, duel.Turn, ActionNumber);
             List<ActionInfo> actions = new List<ActionInfo>();
-            var dontPerform = new ActionInfo(DONT_PERFORM_STR, "", 0.45); // AKA to attack
+            var dontPerform = new ActionInfo(DONT_PERFORM_STR + "InBattle", "", 0.45); // AKA to attack
 
             actions.Add(dontPerform);
 
